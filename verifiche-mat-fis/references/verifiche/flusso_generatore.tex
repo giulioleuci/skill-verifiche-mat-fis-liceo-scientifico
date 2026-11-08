@@ -1,0 +1,25 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\title{Flusso del generatore di verifiche}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+Questa sintesi stampabile accompagna il riferimento operativo
+\texttt{flusso\_generatore.md}. Macro, preamboli e impaginazione restano
+negli asset canonici; il progetto conserva revisioni e approvazioni.
+\begin{enumerate}
+\item Identificare comando, materia e anno, riusare contesto e preferenze e leggere soltanto la scheda pertinente. Chiedere solo i parametri mancanti e annotare l’eventuale necessità di prove adattate per BES, inclusi DSA, o esigenze di tempo.
+\item Progettare lo standard. Per matematica in terza, quarta e quinta di almeno 100 minuti: un problema in 3 o 4 punti e 3 o 4 quesiti singoli senza sottopunti, salvo richiesta diversa. Se i punti del problema sono dipendenti, chiedere se fornire risultati intermedi e attendere la scelta, salvo risposta già acquisita.
+\item Proporre sempre costanti e formule utili con un elenco numerato, usando i nomi delle costanti, non i simboli. In fisica proporre il catalogo di \texttt{supporti\_prova.md}, inclusa la permeabilità magnetica del vuoto; in matematica quarta i valori notevoli di seno e coseno e le formule di addizione e sottrazione pertinenti. Attendere la conferma esplicita delle voci da inserire e registrare contenuti e versioni destinatarie.
+\item Presentare obiettivi, tempi, dipendenze, risultati e supporti concordati. Attendere l'approvazione esplicita della revisione della scaletta standard; registrarla nel progetto. Una revisione invariata già approvata non richiede una seconda conferma.
+\item Generare la prova completa dall'asset canonico, senza soluzioni, titolo, materia o fila, in bianco, nero e grigio. I risultati intermedi concordati e i supporti generali esplicitamente confermati costituiscono le eccezioni al divieto di risultati. Dopo le consegne usare \verb|\vfill|, poi il blocco \verb|\supportiprova{...}| prima degli identificativi studente. Attendere la scelta prima di generare; omettere il blocco se i supporti vengono rifiutati. Nel correttore non valutare come richiamo autonomo quanto già fornito.
+\item Progettare le prove adattate richieste dallo standard approvato, ereditandone le scelte pertinenti. Concordare durata, carico, adattamenti e font; mantenere sempre argomenti, difficoltà e profondità. Chiedere se occorrono formulario o mappa concettuale specifici, concordarne il contenuto esatto e attenderne la conferma esplicita. Attendere un’approvazione distinta della scaletta adattata.
+\item Risolvere i punti, verificare ogni passaggio quantitativo con Python e conservare gli script accanto alla prova. Rivedere la prosa, compilare con il motore effettivo e controllare testo e PDF. Consegnare sorgente e PDF verificato oppure dichiarare le dipendenze mancanti e il comando necessario.
+\item Nelle revisioni controllare impatti su calcoli, scaletta, registro, livelli, correttore, svolgimento e versioni derivate. Aggiornare confronti e copertura; riallineare i derivati e ottenere approvazione delle revisioni sostanziali interessate.
+\end{enumerate}
+\end{document}

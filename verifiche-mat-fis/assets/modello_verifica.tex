@@ -1,0 +1,169 @@
+\documentclass[a4paper,10pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% --- TIPOGRAFIA ELEGANTE: PALATINO E MATEMATICA ARMONIZZATA ---
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+\usepackage{microtype}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{tikz}
+
+% Risoluzione compatibilità siunitx e physics
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\newcommand{\um}[2]{\SI[output-decimal-marker={,}]{#1}{#2}}
+
+\bracketedpoints
+\pointpoints{punto}{punti}
+\marginpointname{ punti}
+\boxedpoints
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% GEOMETRIA PAGINA %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{
+   top=1.0cm,
+   bottom=1.0cm,
+   left=0.8cm,
+   right=0.8cm
+}
+
+\pagestyle{headandfoot}
+% INTESTAZIONE VUOTA: Divieto assoluto di titolo, materia, indicazione fila
+\firstpageheader{}{}{}
+\firstpagefooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+\runningheader{}{}{}
+\runningfooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% STILE MONOCROMATICO %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REGOLA: Solo toni di bianco, nero e sfumature di grigio (gray!*, black!*)
+
+% Badge compatto per numerazione degli esercizi
+\newcommand{\badgeQ}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape=rectangle, rounded corners=2pt, fill=gray!15, draw=gray!40, line width=0.4pt, inner sep=2.5pt, minimum width=1.6em] (char) {\small\textbf{#1}};%
+  }%
+}
+\renewcommand{\questionlabel}{\badgeQ{\thequestion}\enspace}
+\renewcommand{\partlabel}{\textbf{\alph{partno})}}
+
+% Caselle di spunta (checkbox) per griglie e quesiti
+\newcommand{\cbox}{\ensuremath{\vcenter{\hbox{\tikz{\draw[black!75, line width=0.5pt, rounded corners=1.2pt] (0,0) rectangle (3.0mm, 3.0mm);}}}}}
+
+% Box consegne/istruzioni con sfondo tenue senza intestazione "Istruzioni"
+\tcbset{
+  istruzionibox/.style={
+    colback=gray!6,
+    colframe=gray!30,
+    arc=2pt,
+    boxrule=0.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt,
+    fontupper=\small
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% GRIGLIE DI VALUTAZIONE %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- OPZIONE 1: Griglia Competenze con Legenda a Destra ---
+\newcommand{\grigliacompetenze}{
+\vspace{1mm}
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+\footnotesize
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l cc >{\columncolor{gray!20}}c ccc c}
+\toprule
+\rowcolor{gray!10}
+\textbf{Indicatori} & \textbf{N} & \textbf{Q} & \cellcolor{gray!20}\textbf{S} & \textbf{D} & \textbf{B} & \textbf{O} & \textbf{Voto} \\
+\midrule
+Analizzare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \multirow{4}{*}{\rule{1.4cm}{0pt}} \\
+Sviluppare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+Argomentare   & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+Comunicare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+\scriptsize \color{black!75}
+\textbf{Legenda giudizi:}\par\vspace{1mm}
+\begin{tabular}{@{}ll@{}}
+\textbf{N}: Non sufficiente & \textbf{D}: Discreto \\
+\textbf{Q}: Quasi sufficiente & \textbf{B}: Buono \\
+\textbf{S}: Sufficiente & \textbf{O}: Ottimo \\
+\end{tabular}
+\end{minipage}
+}
+
+% --- OPZIONE 2: Griglia Recupero per Argomenti (senza legenda) ---
+\newcommand{\linearecupero}[1]{#1 & \cbox & \cbox & \cbox & \\}
+
+\newcommand{\grigliarecupero}[1]{
+\vspace{1mm}
+\noindent
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{0.54\textwidth} ccc p{0.24\textwidth}}
+\toprule
+\rowcolor{gray!12}
+\textbf{Nucleo tematico / Obiettivo} & \textbf{NR} & \textbf{PR} & \textbf{R} & \textbf{Note / Esito} \\
+\midrule
+#1
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+% Contenuto facoltativo: soltanto costanti, formule o supporti approvati.
+\newcommand{\supportiprova}[1]{%
+  \par\noindent\begin{minipage}{\linewidth}\small
+  #1
+  \end{minipage}\par\vspace{3mm}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% intestazione sempre presente e non modificabile salvo esplicita richiesta dell'utente
+\begin{tcolorbox}[istruzionibox]
+È consentito l'uso di penne nere o blu (non è consentito l'uso del lapis e del bianchetto).
+È consentito l'uso della calcolatrice scientifica non grafica.
+Scrivere i passaggi in modo chiaro e leggibile, esplicitando formule, passaggi fondamentali e motivando le scelte principali.
+\end{tcolorbox}
+
+\vspace{1.5mm}
+
+% Inserire qui le consegne concordate e gli esercizi della scaletta approvata. \begin{questions} && \end{questions}
+\null
+\vfill
+
+% Inserire qui \supportiprova{...} solo con il contenuto confermato dal docente.
+% Attendere la scelta esplicita; se i supporti sono rifiutati, omettere il blocco e mantenere \vfill.
+% Identificativi studente su riga aperta.
+\noindent
+\textbf{Cognome e Nome:}\enspace\hrulefill\hspace{1cm}%
+\textbf{Classe:}\enspace\makebox[2.5cm]{\hrulefill}\hspace{1cm}%
+\textbf{Data:}\enspace\makebox[2.5cm]{\hrulefill}
+
+\vspace{3mm}
+% Sostituire o omettere questa griglia secondo il tipo di prova concordato.
+\grigliacompetenze
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- lingua, codifica, font (testo + matematica) ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{mathpazo}                 % Palatino per testo e matematica
+\usepackage{microtype}
+
+% ---------- matematica ----------
+\usepackage{amsmath,amssymb,amsfonts,mathtools,bm,cancel,mathrsfs,nicefrac}
+\DeclareMathOperator{\sen}{sen}       % seno all'italiana
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{cotg}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arctg}{arctg}
+\newcommand{\dd}{\mathrm{d}}                       % differenziale
+\newcommand{\vv}[1]{\vec{#1}}                      % vettore con freccia
+\newcommand{\norma}[1]{\left\lvert#1\right\rvert} % modulo di vettore
+\newcommand{\pedice}[1]{_{\text{#1}}}              % pedice testuale: E\pedice{in}
+
+% ---------- unità di misura e numeri (virgola decimale) ----------
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},per-mode=symbol,
+         inter-unit-product=\ensuremath{{}\cdot{}},group-digits=false}
+
+% ---------- grafici e figure ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{graphicx}
+% Grafici collocati nel punto pertinente dello svolgimento.
+\newenvironment{grafico}{\begin{figure}[h!]\centering}{\end{figure}}
+
+% ---------- impaginazione ----------
+\usepackage[a4paper,left=1.8cm,right=1.8cm,top=2.3cm,bottom=2.2cm]{geometry}
+\usepackage{fancyhdr,lastpage,needspace,enumitem,booktabs,array,colortbl,tabularx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\headheight}{14pt}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=2pt,topsep=2pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2pt,topsep=2pt,parsep=0pt}
+
+% ---------- struttura dello svolgimento ----------
+\newcommand{\materia}{}
+\newcommand{\classe}{}
+\newcommand{\esercizio}[1]{\needspace{10\baselineskip}\par\vspace{1em}{\large\bfseries Esercizio #1}\par}
+\newcommand{\punto}[1]{\needspace{5\baselineskip}\par\medskip\textbf{#1}\par}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.3pt}
+\lhead{\small Svolgimento\ \materia}
+\cfoot{\small Pag.\ \thepage\ di \pageref{LastPage}}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Svolgimento\ \materia}\\[3pt]
+\classe
+\end{center}
+% Inserire lo svolgimento dei soli esercizi della versione approvata.
+\end{document}
