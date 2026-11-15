@@ -1,6 +1,6 @@
 # Stato, confronto e copertura del progetto
 
-Questi strumenti lavorano sui materiali della prova, fuori dalla cartella installata della skill. Non sostituiscono la revisione didattica né il consenso del docente. Dipendenza Python: `openpyxl`, dichiarata in [requirements.txt](../requirements.txt). Installarla con `python -m pip install -r requirements.txt` dalla cartella della skill.
+Comandi `stato`, `approva`, `confronta` e `copertura` di `scripts/progetto.py`, da eseguire dalla radice della skill. Lavorano sui materiali della prova, fuori dalla cartella installata della skill. Non sostituiscono la revisione didattica né il consenso del docente. Dipendenza Python: `openpyxl`, dichiarata in [requirements.txt](../requirements.txt). Installarla con `python -m pip install -r requirements.txt` dalla cartella della skill.
 
 ## File di progetto
 
@@ -33,15 +33,17 @@ Prima di generare o rigenerare, usare `stato`, rileggere il documento confermato
 
 ## Confronto fra registri
 
-`python scripts/progetto.py confronta prima.xlsx dopo.xlsx` valida entrambi i registri e confronta le evidenze tramite `ID evidenza`, indipendentemente dall'ordine. Restituisce evidenze mantenute, modificate (campi prima/dopo), eliminate e aggiunte; copertura degli argomenti con ID e nome; pesi per indicatore e argomento nelle due versioni. Le differenze di `Punto/gruppo` sono visibili nelle evidenze modificate.
+`python scripts/progetto.py confronta prima.xlsx dopo.xlsx` valida entrambi i registri e confronta le evidenze tramite `ID evidenza`, indipendentemente dall'ordine. Se gli ID sono stati rinumerati, il confronto per ID non identifica da solo le azioni corrispondenti: usa la mappa delle revisioni e verifica manualmente i risultati. Restituisce evidenze mantenute, modificate (campi prima/dopo), eliminate e aggiunte; copertura degli argomenti con sigla e nome; pesi per indicatore e argomento nelle due versioni. Le differenze di `Punto/gruppo` sono visibili nelle evidenze modificate.
 
-Per accorpamenti o separazioni, passare `--derivazioni percorso/derivazioni.json`: oggetto con ID del registro successivo come chiavi e liste di ID del registro precedente come valori. Ogni riferimento viene controllato. Conservare questa mappa e la motivazione nelle revisioni di progetto. Non riutilizzare l'ID di un'evidenza per una prestazione diversa; riordino, peso e descrizione affinata mantengono invece l'ID.
+Legge entrambi i layout del registro (`merged` e `flat`), descritti nel [correttore](correttore.md#6-registro-excel-prima-del-latex).
+
+Per accorpamenti o separazioni, passare `--derivazioni percorso/derivazioni.json`: oggetto con ID del registro successivo come chiavi e liste di ID del registro precedente come valori. Ogni riferimento viene controllato. Conservare questa mappa e la motivazione nelle revisioni di progetto. Rinumera gli ID in ordine di riga dopo inserimenti, eliminazioni o riordini. Registra una mappa completa tra gli ID delle revisioni e le derivazioni, conserva le note sulle azioni corrispondenti e riallinea i riferimenti; un ID può riferirsi ad azioni diverse in revisioni diverse.
 
 Integrare il confronto con un giudizio motivato su richieste, difficoltà, tempi, profondità e obiettivi concordati. Un argomento presente e un totale di 1000 non dimostrano da soli l'equivalenza didattica. Il programma non la certifica.
 
 ## Matrice di copertura
 
-Preparare `matrice_copertura.json` per ogni versione. Schema:
+Preparare `matrice_copertura.json` per ogni versione di cui si genera lo svolgimento studenti, perché i passaggi verificati sono quelli dello svolgimento. Schema:
 
 | Campo | Tipo e significato |
 |---|---|
@@ -54,10 +56,8 @@ Preparare `matrice_copertura.json` per ogni versione. Schema:
 | `passaggi` | Lista degli ID univoci dei passaggi effettivamente presenti nello svolgimento studenti. |
 | `copertura_evidenze` | Oggetto: ogni ID evidenza è associato alla lista dei passaggi che ne spiegano gli elementi valutati. |
 
-Per evidenze comuni a più punti, usare nella colonna `Punto/gruppo` i riferimenti separati da virgole. La corrispondenza deve essere esplicita e limitata allo stesso esercizio. I passaggi possono essere condivisi da più evidenze, senza ripeterne il contenuto nello svolgimento.
+Per evidenze comuni a più punti, usare nella colonna `Punto/gruppo` i riferimenti separati da virgole. La corrispondenza deve essere esplicita e limitata allo stesso esercizio. Le evidenze complessive usano `Intero elaborato` nelle colonne `Esercizio` e `Punto/gruppo`, la sigla argomento riservata `TRASVERSALE` e il nome `Competenze trasversali`; si collocano in fondo al registro e non si associano alle singole richieste. Nella matrice non inserirle in `richieste[].evidenze`, ma includerle in `copertura_evidenze` con i passaggi dello svolgimento che permettono di valutarle. Il controllo di copertura non richiede loro una richiesta specifica, ma verifica che i passaggi esistano. I passaggi possono essere condivisi da più evidenze, senza ripeterne il contenuto nello svolgimento.
 
 `python scripts/progetto.py copertura percorso/matrice_copertura.json` segnala richieste prive di valutazione, evidenze senza richiesta, passaggi mancanti e riferimenti inesistenti. Esce con codice 1 se rileva problemi, 0 se la matrice è coerente. La matrice è uno strumento interno: non inserire ID valutativi nello svolgimento studenti. Controllare a mano che l'elenco delle richieste sia completo e che i passaggi indicati spieghino davvero gli aspetti valutati: i collegamenti corretti non verificano il contenuto matematico.
 
-## Calibrazione Base facoltativa
-
-Su richiesta simulare una prestazione plausibile: specificare quali parti completa, quali errori commette e quali passaggi omette. Assegnare le percentuali alle singole evidenze secondo i descrittori e calcolare la somma ponderata, confrontandola con circa 600/1000. Annotare ipotesi e conseguenze sui pesi. Applicare il 60% uniforme a tutte le evidenze produce 600 per costruzione e non prova la taratura. Non bloccare il normale flusso quando la simulazione non è richiesta.
+La calibrazione Base facoltativa è descritta nel [correttore](correttore.md#10-calibrazione-base-facoltativa).

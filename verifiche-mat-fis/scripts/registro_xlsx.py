@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """Registro da 1 a 40 evidenze, totale Max 1000; JSON: lista di oggetti COLS.
 
-ID evidenza e ID Argomento: stringhe non vuote senza spazi esterni. ID evidenza
-è assegnato dall'autore e resta invariato per riordini, pesi e descrizioni.
+ID evidenza e Sigla argomento: stringhe non vuote senza spazi esterni. ID evidenza
+è assegnato dall'autore; nelle revisioni rinumerate serve una mappa delle azioni.
 Esercizio: testo non vuoto o intero positivo; Punto/gruppo: testo non vuoto
 ("intero" per quesiti singoli). Max: intero positivo. Gli altri campi sono
-testi non vuoti; Note utente è una stringa opzionale. ID e nome argomento
-hanno corrispondenza univoca nella versione. Schemi precedenti sono rifiutati.
+testi non vuoti; Note utente è una stringa opzionale. Sigla e nome argomento
+hanno corrispondenza univoca nella versione.
 
 write crea senza sovrascrivere; update conserva note per ID e blocca eliminazioni
 di ID annotati o note in conflitto: archiviare e gestire esplicitamente le note
 nel registro prima di riprovare. Accorpamenti/separazioni richiedono nuovi ID e
-tracciamento esplicito della derivazione nella revisione, mai ID riciclati.
+tracciamento esplicito della derivazione nella revisione.
 """
 import argparse
+from collections import Counter
 from io import BytesIO
 import json
 import os
@@ -24,11 +25,71 @@ from zipfile import BadZipFile
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
 from openpyxl.utils.exceptions import InvalidFileException
 
 
-COLS = ["ID evidenza", "Esercizio", "Punto/gruppo", "Indicatore", "ID Argomento", "Max",
+COLS = ["ID evidenza", "Esercizio", "Punto/gruppo", "Indicatore", "Sigla argomento", "Max",
         "Descrizione evidenza", "Nome completo argomento", "Note utente"]
+
+# Colonne calcolate inserite dopo Max nel foglio Excel (non fanno parte dello schema JSON).
+PCT_COLS = ["% esercizio", "% verifica"]
+N_PCT = len(PCT_COLS)
+
+# Colonna 1-based di «Descrizione evidenza» nel foglio con le colonne percentuale.
+_DESC_COL = 6 + N_PCT + 1  # = 9
+
+CARBON = "1C1C1C"
+TEXT = "FFFFFF"
+MUTED = "E0E0E0"
+GRID = "222222"
+
+# Intestazioni attese per tutti i formati supportati in lettura: (has_pct, span, header).
+_HEADERS = [
+    (True,  4, COLS[:6] + PCT_COLS + ["Descrizione evidenza", None, None, None] + COLS[7:]),
+    (True,  1, COLS[:6] + PCT_COLS + COLS[6:]),
+    (False, 4, COLS[:7] + [None, None, None] + COLS[7:]),
+    (False, 1, list(COLS)),
+]
+
+
+def _format_sheet(ws, layout):
+    ws.sheet_view.showGridLines = False
+    ws.freeze_panes = "A2"
+    # Colonne: ID, Esercizio, Punto/gruppo, Indicatore, Sigla, Max, %Es, %Ver, Desc(x4 merged/x1 flat), Nome, Note
+    if layout == "merged":
+        widths = [12, 12, 20, 12, 16, 8, 8, 8, 15, 15, 15, 15, 20, 18]
+    else:
+        widths = [12, 12, 20, 12, 16, 8, 8, 8, 20, 20, 18]
+    for column, width in enumerate(widths, start=1):
+        ws.column_dimensions[get_column_letter(column)].width = width
+    edge = Side(style="hair", color=GRID)
+    pct_col_set = set(range(7, 7 + N_PCT))  # 1-based: {7, 8}
+    for row in ws.iter_rows():
+        is_header = row[0].row == 1
+        for cell in row:
+            cell.fill = PatternFill(fill_type="solid", fgColor=CARBON)
+            cell.font = Font(name="Open Sans", size=8, bold=is_header,
+                             color=TEXT if is_header else MUTED)
+            cell.alignment = Alignment(
+                horizontal="center" if cell.column in ({1, 2, 4, 6} | pct_col_set) else "left",
+                vertical="center",
+                wrap_text=True,
+            )
+            cell.border = Border(bottom=edge)
+            if cell.column == 6 and not is_header:
+                cell.font = Font(name="Inconsolata", size=8, color=TEXT)
+            if cell.column in pct_col_set and not is_header:
+                # Valore già moltiplicato per 100; '"%" letterale per non ri-moltiplicare.
+                cell.number_format = '0"%"'
+        if is_header:
+            ws.row_dimensions[1].height = 28
+        else:
+            desc_width = sum(widths[_DESC_COL - 1: _DESC_COL + 2]) if layout == "merged" else widths[_DESC_COL - 1]
+            description = ws.cell(row[0].row, _DESC_COL).value
+            lines = max(1, (len(str(description or "")) + desc_width - 1) // desc_width)
+            ws.row_dimensions[row[0].row].height = min(60, max(18, lines * 12))
 
 
 def _error(row, column, problem):
@@ -58,17 +119,17 @@ def validate(rows, row_numbers=None):
                 _error(number, column, "testo obbligatorio non vuoto" if column != "Note utente" else "attesa una stringa")
             elif len(value) > 32767 or ILLEGAL_CHARACTERS_RE.search(value):
                 _error(number, column, "testo non rappresentabile in una cella Excel")
-            if column in ("ID evidenza", "ID Argomento") and value != value.strip():
+            if column in ("ID evidenza", "Sigla argomento") and value != value.strip():
                 _error(number, column, "ID senza spazi iniziali o finali")
         if row["Indicatore"] not in ("ANA", "SVI", "ARG", "COM"):
             _error(number, "Indicatore", "ammessi ANA, SVI, ARG, COM")
-        eid, tid, name = row["ID evidenza"], row["ID Argomento"], row["Nome completo argomento"].strip()
+        eid, tid, name = row["ID evidenza"], row["Sigla argomento"], row["Nome completo argomento"].strip()
         if eid in ids:
             _error(number, "ID evidenza", f"ID duplicato: {eid}")
         if tid in topics and topics[tid] != name:
-            _error(number, "Nome completo argomento", f"ID Argomento {tid} associato a nomi diversi")
+            _error(number, "Nome completo argomento", f"Sigla argomento {tid} associata a nomi diversi")
         if name in names and names[name] != tid:
-            _error(number, "ID Argomento", f"nome argomento già associato a {names[name]}")
+            _error(number, "Sigla argomento", f"nome argomento già associato a {names[name]}")
         ids.add(eid)
         topics[tid], names[name] = name, tid
         result.append({**row, "Note utente": row.get("Note utente", "")})
@@ -89,20 +150,36 @@ def _read(path):
         raise ValueError(f"registro Excel non valido: {error}") from error
     try:
         ws = wb.active
-        header = [cell.value for cell in ws[1]]
-        if header != COLS:
+        header = [ws.cell(1, column).value for column in range(1, ws.max_column + 1)]
+        # Rileva formato: colonne percentuale presenti e ampiezza merge di Descrizione evidenza.
+        match = next(((hp, sp) for hp, sp, h in _HEADERS if header == h), None)
+        if match is None:
             _error(1, "intestazioni", f"schema non valido; colonne richieste: {', '.join(COLS)}. Nessuna migrazione automatica")
+        has_pct, span = match
+        pct_skip = N_PCT if has_pct else 0
+        desc_col = 7 + pct_skip          # 1-based, es. 9 (new) o 7 (old)
+        last = get_column_letter(desc_col - 1 + span)
+        desc_letter = get_column_letter(desc_col)
         rows, numbers = [], []
-        for cells in ws.iter_rows(min_row=2):
+        expected_merges = {f"{desc_letter}1:{last}1"} if span > 1 else set()
+        for number in range(2, ws.max_row + 1):
+            cells = [ws.cell(number, column) for column in range(1, ws.max_column + 1)]
             if all(cell.value in (None, "") for cell in cells):
                 continue
+            if span > 1:
+                expected_merges.add(f"{desc_letter}{number}:{last}{number}")
             row = {}
-            for column, cell in zip(COLS, cells):
+            # Legge le 6 colonne iniziali, salta le colonne percentuale, poi Descrizione (1 logica), poi resto.
+            logical_cells = cells[:6] + cells[6 + pct_skip: 7 + pct_skip] + cells[6 + pct_skip + span:]
+            for column, cell in zip(COLS, logical_cells):
                 if cell.data_type in ("f", "e"):
                     _error(cell.row, column, "formule ed errori Excel non ammessi")
                 row[column] = "" if column == "Note utente" and cell.value is None else cell.value
             rows.append(row)
-            numbers.append(cells[0].row)
+            numbers.append(number)
+        actual_merges = {str(merged_range) for merged_range in ws.merged_cells.ranges}
+        if actual_merges != expected_merges:
+            _error(1, "celle unite", "le celle unite non corrispondono al formato previsto")
         return validate(rows, numbers), numbers
     finally:
         wb.close()
@@ -113,16 +190,54 @@ def _source(src):
         return validate(json.load(source))
 
 
-def _save(rows, dst, previous=None):
+def _save(rows, dst, previous=None, layout="merged"):
+    if layout not in ("merged", "flat"):
+        raise ValueError(f"layout non supportato: {layout}")
     dst = Path(dst)
+
+    # Totali per esercizio usati per le percentuali indicative.
+    exercise_totals: dict = {}
+    for row in rows:
+        ex = str(row["Esercizio"])
+        exercise_totals[ex] = exercise_totals.get(ex, 0) + row["Max"]
+
+    desc_col = _DESC_COL  # = 9 (1-based)
+    desc_letter = get_column_letter(desc_col)
+
     wb = Workbook()
     ws = wb.active
-    ws.append(COLS)
-    for row in rows:
-        ws.append([row[column] for column in COLS])
-        for cell in ws[ws.max_row]:
-            if isinstance(cell.value, str):
-                cell.data_type = "s"  # Le note e i testi sono letterali, anche se iniziano con '='.
+    if layout == "merged":
+        ws.append(COLS[:6] + PCT_COLS + ["Descrizione evidenza", None, None, None] + COLS[7:])
+        ws.merge_cells(f"{desc_letter}1:{get_column_letter(desc_col + 3)}1")
+        for row in rows:
+            ex = str(row["Esercizio"])
+            pct_ex = round(row["Max"] / exercise_totals[ex] * 100)
+            pct_tot = round(row["Max"] / 1000 * 100)
+            ws.append([row[column] for column in COLS[:6]] +
+                      [pct_ex, pct_tot,
+                       row["Descrizione evidenza"], None, None, None,
+                       row["Nome completo argomento"], row["Note utente"]])
+            number = ws.max_row
+            # Nome (desc_col+4) e Note (desc_col+5) sono dopo il merge di 4 celle.
+            for column in list(range(1, 7)) + [desc_col, desc_col + 4, desc_col + 5]:
+                cell = ws.cell(number, column)
+                if isinstance(cell.value, str):
+                    cell.data_type = "s"
+            ws.merge_cells(start_row=number, start_column=desc_col,
+                           end_row=number, end_column=desc_col + 3)
+    else:
+        ws.append(COLS[:6] + PCT_COLS + COLS[6:])
+        for row in rows:
+            ex = str(row["Esercizio"])
+            pct_ex = round(row["Max"] / exercise_totals[ex] * 100)
+            pct_tot = round(row["Max"] / 1000 * 100)
+            ws.append([row[column] for column in COLS[:6]] +
+                      [pct_ex, pct_tot] +
+                      [row[column] for column in COLS[6:]])
+            for cell in ws[ws.max_row]:
+                if isinstance(cell.value, str):
+                    cell.data_type = "s"
+    _format_sheet(ws, layout)
     fd, temporary = tempfile.mkstemp(prefix=f".{dst.name}.", suffix=".xlsx", dir=dst.parent)
     os.close(fd)
     try:
@@ -139,14 +254,14 @@ def _save(rows, dst, previous=None):
         Path(temporary).unlink(missing_ok=True)
 
 
-def write(src, dst):
+def write(src, dst, layout="merged"):
     """Crea un nuovo registro; una destinazione esistente è sempre rifiutata."""
     if os.path.lexists(dst):
         raise FileExistsError(f"destinazione già esistente: {dst}; usare update per aggiornarla")
-    _save(_source(src), dst)
+    _save(_source(src), dst, layout=layout)
 
 
-def update(src, dst):
+def update(src, dst, layout="merged"):
     """Aggiorna esplicitamente conservando tutte le note per ID evidenza."""
     dst = Path(dst)
     if dst.is_symlink():
@@ -164,12 +279,17 @@ def update(src, dst):
         if by_id[eid]["Note utente"] not in ("", note):
             _error(number, "Note utente", f"nota in conflitto per ID {eid}; conservare e gestire esplicitamente la nota esistente")
         by_id[eid]["Note utente"] = note
-    _save(rows, dst, previous)
+    _save(rows, dst, previous, layout)
 
 
 def check(path):
     rows = read(path)
     print(f"evidenze={len(rows)} (1-40) somma Max=1000 (1000)")
+    for field in ("Esercizio", "Indicatore", "Sigla argomento"):
+        totals = Counter()
+        for row in rows:
+            totals[str(row[field])] += row["Max"]
+        print(f"{field}: " + ", ".join(f"{key}={value}" for key, value in totals.items()))
 
 
 def main(argv=None):
@@ -180,14 +300,16 @@ def main(argv=None):
         command = commands.add_parser(name, help=description)
         command.add_argument("src", help="JSON delle evidenze con colonne COLS")
         command.add_argument("dst", help="registro .xlsx")
-    command = commands.add_parser("check", help="valida schema, campi, evidenze e totale")
+        command.add_argument("--layout", choices=("merged", "flat"), default="merged",
+                             help="formato Excel (default: merged; flat solo se richiesto)")
+    command = commands.add_parser("check", help="valida schema, campi, evidenze e totale; stampa i riepiloghi per esercizio, indicatore e argomento")
     command.add_argument("path", help="registro .xlsx")
     args = parser.parse_args(argv)
     try:
         if args.command == "check":
             check(args.path)
         else:
-            {"write": write, "update": update}[args.command](args.src, args.dst)
+            {"write": write, "update": update}[args.command](args.src, args.dst, args.layout)
     except (ValueError, OSError, BadZipFile, InvalidFileException, KeyError) as error:
         print(f"Errore: {error}", file=sys.stderr)
         return 1

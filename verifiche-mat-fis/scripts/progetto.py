@@ -22,6 +22,9 @@ from openpyxl.utils.exceptions import InvalidFileException
 from registro_xlsx import read
 
 
+EVIDENZA_GLOBALE = "Intero elaborato"
+
+
 def leggi_json(path):
     with open(path, encoding='utf-8') as source:
         return json.load(source)
@@ -161,7 +164,7 @@ def confronta(before, after, derivazioni=None):
     result = {'mantenuti': kept, 'modificati': changes,
               'eliminati': sorted(left.keys() - right.keys()), 'aggiunti': sorted(right.keys() - left.keys()),
               'derivazioni': derivazioni}
-    for key, field in (('pesi_argomenti', 'ID Argomento'), ('pesi_indicatori', 'Indicatore')):
+    for key, field in (('pesi_argomenti', 'Sigla argomento'), ('pesi_indicatori', 'Indicatore')):
         totals = []
         for rows in (left.values(), right.values()):
             tally = defaultdict(int)
@@ -171,7 +174,7 @@ def confronta(before, after, derivazioni=None):
         result[key] = {item: {'prima': totals[0][item], 'dopo': totals[1][item]}
                        for item in sorted(totals[0].keys() | totals[1].keys())}
     result['obiettivi'] = {
-        label: {row['ID Argomento']: row['Nome completo argomento'] for row in rows.values()}
+        label: {row['Sigla argomento']: row['Nome completo argomento'] for row in rows.values()}
         for label, rows in (('prima', left), ('dopo', right))}
     result['valutazione'] = 'Il confronto non certifica l’equivalenza didattica: motivarla con il docente.'
     return result
@@ -205,6 +208,9 @@ def copertura(path):
             if not isinstance(evidence, str) or evidence not in rows:
                 issues.append(f"richiesta {request['id']}: evidenza sconosciuta {evidence}")
                 continue
+            if str(rows[evidence]['Esercizio']) == EVIDENZA_GLOBALE:
+                issues.append(f"richiesta {request['id']}: evidenza complessiva non associabile a una richiesta specifica {evidence}")
+                continue
             linked.add(evidence)
             if str(rows[evidence]['Esercizio']) != str(request['esercizio']):
                 issues.append(f"richiesta {request['id']}: esercizio diverso per {evidence}")
@@ -212,7 +218,11 @@ def copertura(path):
             if request['punto'] not in points:
                 issues.append(f"richiesta {request['id']}: punto diverso per {evidence}")
     for evidence in rows:
-        if evidence not in linked:
+        row = rows[evidence]
+        is_global = str(row['Esercizio']) == EVIDENZA_GLOBALE
+        if is_global and row['Punto/gruppo'] != EVIDENZA_GLOBALE:
+            issues.append(f'evidenza {evidence}: punto/gruppo deve essere {EVIDENZA_GLOBALE}')
+        if not is_global and evidence not in linked:
             issues.append(f'evidenza {evidence}: priva di richiesta corrispondente')
         links = coverage.get(evidence, [])
         if not isinstance(links, list) or not links:
