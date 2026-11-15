@@ -12,7 +12,7 @@ Rispondi in italiano, con frasi dirette e concise. Ricava comando, materia e ann
 | Comando | Cosa fa | Leggi |
 |---|---|---|
 | `nuova-verifica` | Scaletta, approvazione, LaTeX e PDF della prova standard | [generatore](references/generatore.md) |
-| `varianti` | Versioni ordinarie equivalenti (Fila A/B…) | [generatore §5](references/generatore.md#5-varianti-ordinarie) |
+| `varianti` | Versioni derivate, anche per assenti o con esigenze combinate | [generatore §5](references/generatore.md#5-varianti-ordinarie) |
 | `recupero` | Prova mirata con griglia NR/PR/R | [generatore §6](references/generatore.md#6-recupero) |
 | `correttore` | Evidenze e registro Excel della prova fornita, fino all’approvazione | [correttore](references/correttore.md) |
 | `genera-correttore` | Correttore docente dalla revisione approvata; svolgimento studenti solo se richiesto esplicitamente | [correttore §8](references/correttore.md#8-generazione-e-consegna), [latex](references/latex.md) |

@@ -47,7 +47,14 @@ A ogni modifica riepiloga l’impatto su calcoli, scaletta, registro, livelli, c
 
 Valgono anche, per i criteri di derivazione, nel [correttore](correttore.md#7-standard-varianti-e-prove-adattate); le due approvazioni riguardano oggetti distinti: scaletta della prova e registro del correttore.
 
-Le varianti mantengono obiettivi, processi cognitivi, difficoltà e tempo comparabili. Se non già concordata, chiedi la strategia: variazione numerica, contesto isomorfo, inversione di dati e incognite, quesiti equivalenti o combinazione per esercizio. Non presumere che cambiare numeri garantisca equipollenza: risolvi i punti e confronta onere dei calcoli, dipendenze e tempi.
+Prima di proporre la variante, se la finalità non è già chiara, chiedi al docente quale obiettivo ha: per assenti, ridotta per esigenze di tempo, entrambe le cose o un'altra esigenza da specificare. Riusa quanto già esplicitato e chiarisci solo i vincoli mancanti. La finalità guida l'entità delle modifiche e la strategia, che va concordata con il docente.
+
+- **Per assenti**: proponi la massima variazione compatibile con gli stessi obiettivi, argomenti, processi cognitivi, difficoltà e profondità, per rendere la prova distinta dall'originale. Cambia per quanto possibile impostazione, contesti, dati e formulazione dei quesiti, usando anche quesiti equivalenti; non limitarti a sostituire i numeri. Mantieni comparabile la durata, salvo esigenze diverse concordate.
+- **Ridotta**: concorda il tempo disponibile e applica i criteri per le prove adattate (§7), limitando le modifiche a quelle necessarie per ridurre il carico e mantenere copertura e profondità.
+- **Per assenti e ridotta**: combina la massima variazione didatticamente compatibile con la riduzione del carico e la durata concordata; applica anche il flusso e l'approvazione distinta delle prove adattate (§7).
+- **Altra finalità**: concorda il grado di variazione e i vincoli pertinenti in funzione dello scopo.
+
+Per le varianti ordinarie conserva tempi comparabili. Proponi, secondo la finalità, variazione numerica, contesto isomorfo, inversione di dati e incognite, quesiti equivalenti o una combinazione per esercizio. Non presumere che cambiare numeri garantisca equipollenza: risolvi i punti e confronta onere dei calcoli, dipendenze e tempi.
 
 Verifica con Python dati, domini, unità e risultati di ogni versione e conserva gli script accanto alle prove. Usa file e cartelle distinti con identificativi neutri; fila, materia e titolo non compaiono nelle prove stampate. I risultati intermedi seguono l’eccezione concordata. Riusa le scelte sui supporti già confermate per le versioni coperte; per aggiunte o modifiche mostra il nuovo elenco e attendi conferma. Aggiorna valori e risultati in tutte le versioni pertinenti e conserva le associazioni tra punti originari e derivati. Registra standard di riferimento, durata, font e revisione nel progetto.
 
