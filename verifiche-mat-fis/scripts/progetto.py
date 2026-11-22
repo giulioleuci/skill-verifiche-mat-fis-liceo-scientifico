@@ -164,12 +164,12 @@ def confronta(before, after, derivazioni=None):
     result = {'mantenuti': kept, 'modificati': changes,
               'eliminati': sorted(left.keys() - right.keys()), 'aggiunti': sorted(right.keys() - left.keys()),
               'derivazioni': derivazioni}
-    for key, field in (('pesi_argomenti', 'Sigla argomento'), ('pesi_indicatori', 'Indicatore')):
+    for key, field in (('pesi_argomenti', 'Sigla argomento'), ('pesi_indicatori', 'Indicatore'), ('pesi_livelli', 'Livello')):
         totals = []
         for rows in (left.values(), right.values()):
             tally = defaultdict(int)
             for row in rows:
-                tally[row[field]] += row['Max']
+                tally[str(row[field])] += row['Max']
             totals.append(tally)
         result[key] = {item: {'prima': totals[0][item], 'dopo': totals[1][item]}
                        for item in sorted(totals[0].keys() | totals[1].keys())}

@@ -10,7 +10,7 @@ Identifica comando, materia e anno dal contesto prima di caricare riferimenti; p
 2. Acquisisci il testo completo della verifica (testo, PDF o foto) e gli argomenti con nomi sintetici forniti o confermati dal docente, partendo dall’elenco predefinito della scheda come proposta. Chiarisci subito parti illeggibili, dati incoerenti o richieste ambigue.
 3. Conferma sempre quali contenuti dell’anno in corso sono stati svolti; per gli anni precedenti usali senza nuova conferma, salvo dubbi specifici. L’elenco predefinito non attesta il programma svolto: non inventare argomenti né attribuire al docente contenuti non confermati.
 4. Acquisisci standard di riferimento, eventuali pesi imposti, soluzione del docente, metodi richiesti o esclusi, adattamenti concordati pertinenti e preferenze mancanti. Riusa metodi e soluzioni del docente.
-5. Chiedi soltanto se necessari durata, livello della classe, strumenti ulteriori rispetto alla calcolatrice sempre disponibile e vincoli della singola prova.
+5. Chiedi soltanto se necessari durata, livello della classe (basso, medio o alto, sempre da chiedere se non noto), strumenti ulteriori rispetto alla calcolatrice sempre disponibile e vincoli della singola prova.
 
 Non fissare durata, livello, programma svolto o percentuali come valori automatici. Riassumi il contesto e prosegui soltanto sulle parti che non dipendono da informazioni ancora da chiarire.
 
@@ -45,7 +45,7 @@ Esempi: ad alta granularità si possono accoppiare la risoluzione di due equazio
 
 ## 3. Pesi
 
-Distribuisci i massimi per importanza, difficoltà e tempo delle azioni effettivamente osservabili. I pesi orientativi dei criteri disciplinari e le priorità della scheda non impongono evidenze mancanti; rispetta i limiti per argomento indicati dalle schede.
+Distribuisci i massimi per importanza, difficoltà e tempo delle azioni effettivamente osservabili, entro i vincoli per livello dei [criteri](criteri_disciplinari.md#livelli-di-difficoltà-della-richiesta): ogni evidenza eredita il livello della richiesta di origine (`1`, `2`, `2A`, `3`). I pesi orientativi dei criteri disciplinari e le priorità della scheda non impongono evidenze mancanti; rispetta i limiti per argomento indicati dalle schede.
 
 - Per ogni esercizio o argomento senza grafici e tabelle, COM non supera il 10% del relativo totale, salvo brainstorming e accordo esplicito con il docente.
 - Con grafici, distingui le evidenze grafiche da quelle di sola forma: il grafico pesa nettamente più di notazione, unità e sequenza delle formule dello stesso esercizio; se serve riserva a questi aspetti una piccola parte del COM dell’esercizio, orientativamente il 20%. Ogni grafico riceve un peso motivato dalla sua richiesta; non imporre confronti fra i COM di esercizi diversi, così più esercizi grafici possono coesistere.
@@ -75,23 +75,23 @@ COM valuta lo stesso errore ripetuto una volta per evidenza; nessuna detrazione 
 
 Mostra la proposta con i riepiloghi per esercizio, indicatore e sigla argomento; offri la calibrazione Base solo come controllo facoltativo (§10). Genera inizialmente soltanto `registro_evidenze.xlsx`, una riga per evidenza, con questi campi logici:
 
-`ID evidenza`, `Esercizio`, `Punto/gruppo`, `Indicatore`, `Sigla argomento`, `Max`, `% esercizio`, `% verifica`, `Descrizione evidenza`, `Nome completo argomento`, `Note utente`.
+`ID evidenza`, `Esercizio`, `Punto/gruppo`, `Indicatore`, `Sigla argomento`, `Max`, `% esercizio`, `% verifica`, `Descrizione evidenza`, `Nome completo argomento`, `Livello`, `Note utente`.
 
 Le colonne `% esercizio` e `% verifica` sono calcolate dallo script e non fanno parte dello schema JSON: mostrano, per ogni evidenza, la percentuale del suo `Max` rispetto al totale dell'esercizio e rispetto al totale della verifica (1000), arrotondate all'intero più vicino. Sono puramente indicative: la somma delle percentuali può non fare 100.
 
-`Note utente` è inizialmente vuota. Le due colonne percentuale (`% esercizio`, `% verifica`) sono inserite dallo script tra `Max` e `Descrizione evidenza` e non vanno incluse nel JSON. Il formato predefinito (`merged`) unisce la cella `Descrizione evidenza` su quattro colonne contigue (I:L, dopo lo spostamento delle percentuali) e sposta a destra i campi successivi; non chiedere se applicarlo. Usa `--layout flat` soltanto se il docente chiede esplicitamente un foglio senza celle unite, senza proporgli di scegliere. `check`, `update` e `progetto.py` leggono sia i registri nuovi (con colonne percentuale) sia quelli vecchi (senza); `update` salva nel layout indicato, `merged` per default. Stile applicato dallo script: fondo carbone `#1C1C1C` in tutte le celle, comprese vuote e unite, senza fondo di input perché il registro non contrassegna campi d’inserimento; intestazioni bianche in grassetto, testo `#E0E0E0`, Open Sans 8 pt, Inconsolata 8 pt per `Max` e per le colonne percentuale, linee `#222222`, testo a capo, colonne larghe al massimo 20 caratteri.
+`Livello` vale `1`, `2`, `2A` o `3`. `Note utente` è inizialmente vuota. Le due colonne percentuale (`% esercizio`, `% verifica`) sono inserite dallo script tra `Max` e `Descrizione evidenza` e non vanno incluse nel JSON. Il formato predefinito (`merged`) unisce la cella `Descrizione evidenza` su quattro colonne contigue (I:L, dopo lo spostamento delle percentuali) e sposta a destra i campi successivi; non chiedere se applicarlo. Usa `--layout flat` soltanto se il docente chiede esplicitamente un foglio senza celle unite, senza proporgli di scegliere. `check`, `update` e `progetto.py` leggono sia i registri nuovi (con colonne percentuale) sia quelli vecchi (senza) e quelli senza `Livello`, che `check` rifiuta finché non si aggiorna; `update` salva nel layout indicato, `merged` per default. Stile applicato dallo script: fondo carbone `#1C1C1C` in tutte le celle, comprese vuote e unite, senza fondo di input perché il registro non contrassegna campi d’inserimento; intestazioni bianche in grassetto, testo `#E0E0E0`, Open Sans 8 pt, Inconsolata 8 pt per `Max` e per le colonne percentuale, linee `#222222`, testo a capo, colonne larghe al massimo 20 caratteri.
 
 Dalla radice della skill (richiede `openpyxl`):
 
 | Comando | Effetto |
 |---|---|
-| `python scripts/registro_xlsx.py write evidenze.json percorso/registro_evidenze.xlsx` | Crea il registro; rifiuta destinazioni esistenti. |
-| `python scripts/registro_xlsx.py check percorso/registro_evidenze.xlsx` | Valida schema, campi e totale e stampa i riepiloghi per esercizio, indicatore e sigla argomento. |
-| `python scripts/registro_xlsx.py update evidenze.json percorso/registro_evidenze.xlsx` | Solo per aggiornamenti espliciti: conserva le note per ID e rifiuta eliminazioni di evidenze annotate o note in conflitto. |
+| `python scripts/registro_xlsx.py write evidenze.json percorso/registro_evidenze.xlsx --classe medio` | Crea il registro; rifiuta destinazioni esistenti. |
+| `python scripts/registro_xlsx.py check percorso/registro_evidenze.xlsx --classe medio` | Valida schema, campi, totale e livelli e stampa i riepiloghi per esercizio, indicatore, sigla argomento e livello. |
+| `python scripts/registro_xlsx.py update evidenze.json percorso/registro_evidenze.xlsx --classe medio` | Solo per aggiornamenti espliciti: conserva le note per ID e rifiuta eliminazioni di evidenze annotate o note in conflitto. |
 
 Gli input sono validati prima della sostituzione atomica del file; i formati non riconosciuti sono rifiutati. Non aggirare gli errori riscrivendo il registro a mano. Se una rinumerazione cambia il significato di un ID annotato, non usare `update`: conserva il registro precedente, associa le note alle azioni tramite la mappa delle revisioni, crea un nuovo registro con `write` e controlla a mano note e riferimenti.
 
-Attendi revisione e conferma esplicita del docente sulla revisione precisa. Il docente può modificare campi e `Note utente`; dopo la conferma rileggi il file e usa `check`, non la proposta originaria. Errori, campi mancanti, associazioni incoerenti, massimi non interi o non positivi, totale diverso da 1000 o conteggio fuori 1–40 impediscono il LaTeX: proponi correzioni, aggiorna esplicitamente conservando le note, chiedi l’approvazione della nuova revisione, poi rileggi e controlla. Non chiedere una seconda approvazione di un registro invariato già approvato. Registra l’approvazione con l’impronta del file tramite `progetto.py approva` ([progetto](progetto.md)).
+Attendi revisione e conferma esplicita del docente sulla revisione precisa. Il docente può modificare campi e `Note utente`; dopo la conferma rileggi il file e usa `check`, non la proposta originaria. Errori, campi mancanti, associazioni incoerenti, massimi non interi o non positivi, totale diverso da 1000, conteggio fuori 1–40 o livelli fuori dagli intervalli (L1 20–25%, L3 10–20%, accessi sotto il 30% di L2, esercizio senza evidenza `1` o `2A`) impediscono il LaTeX: proponi correzioni, aggiorna esplicitamente conservando le note, chiedi l’approvazione della nuova revisione, poi rileggi e controlla. Non chiedere una seconda approvazione di un registro invariato già approvato. Registra l’approvazione con l’impronta del file tramite `progetto.py approva` ([progetto](progetto.md)).
 
 Chiedi esplicitamente se il docente vuole nel correttore la descrizione scritta dei livelli osservabili. Per impostazione predefinita non inserirla; aggiungila solo su richiesta e registra la scelta per la versione. La scelta riguarda la presenza dei livelli nel documento, non i criteri interni usati per costruire le evidenze.
 
@@ -147,7 +147,7 @@ Rileggi il registro aggiornato dal docente, controlla la revisione e applica le 
 
 ## 10. Calibrazione Base facoltativa
 
-Solo su richiesta, mai come passaggio obbligatorio che blocca il flusso. Simula una prestazione Base concreta e plausibile: quali parti completa, quali errori commette, quali passaggi omette, con percentuali per evidenza coerenti con i descrittori. Calcola la somma ponderata e confrontala con circa 600/1000; annota ipotesi e conseguenze sui pesi e sui livelli. Il 60% uniforme su ogni evidenza produce 600 per costruzione e non dimostra la taratura. La marcatura delle richieste essenziali non impone che i loro massimi sommino al 60%.
+Solo su richiesta, mai come passaggio obbligatorio che blocca il flusso. Simula una prestazione Base concreta e plausibile: quali parti completa, quali errori commette, quali passaggi omette, con percentuali per evidenza coerenti con i descrittori. Uno studente Base completa L1 e circa metà di L2; chi ha solo le basi ottiene L1 più gli accessi di L2. Calcola la somma ponderata e confrontala con circa 600/1000; annota ipotesi e conseguenze sui pesi e sui livelli. Il 60% uniforme su ogni evidenza produce 600 per costruzione e non dimostra la taratura. La marcatura delle richieste essenziali non impone che i loro massimi sommino al 60%.
 
 ## 11. Checklist di consegna
 

@@ -1,0 +1,70 @@
+\documentclass[a4paper,10pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% --- TIPOGRAFIA: stessa del modello canonico ---
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+\usepackage{microtype}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage[table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\newcommand{\um}[2]{\SI[output-decimal-marker={,}]{#1}{#2}}
+
+\geometry{top=1.6cm,bottom=1.0cm,left=0.8cm,right=0.8cm,headsep=0.3cm}
+
+% INTESTAZIONE: solo punteggi e codice variante (deroga al divieto di fila, solo per i quiz).
+\pagestyle{headandfoot}
+\firstpageheader{}{\small %%PUNTEGGI%%}{\scriptsize Codice: \textbf{%%CODICE%%}}
+\runningheader{}{\small %%PUNTEGGI%%}{\scriptsize Codice: \textbf{%%CODICE%%}}
+\firstpagefooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+\runningfooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+
+% --- STILE MONOCROMATICO ---
+\newcommand{\badgeQ}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape=rectangle, rounded corners=2pt, fill=gray!15, draw=gray!40, line width=0.4pt, inner sep=2.5pt, minimum width=1.6em] (char) {\small\textbf{#1}};%
+  }%
+}
+\renewcommand{\questionlabel}{\badgeQ{\thequestion}\enspace}
+\renewcommand{\choicelabel}{\textbf{\Alph{choice}}\enspace}
+\newcommand{\cbox}{\ensuremath{\vcenter{\hbox{\tikz{\draw[black!75, line width=0.5pt, rounded corners=1.2pt] (0,0) rectangle (3.0mm, 3.0mm);}}}}}
+
+\tcbset{
+  istruzionibox/.style={
+    colback=gray!6, colframe=gray!30, arc=2pt, boxrule=0.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt, fontupper=\small
+  }
+}
+
+\begin{document}
+\begin{tcolorbox}[istruzionibox]
+È consentito l'uso di penne nere o blu (non è consentito l'uso del lapis e del bianchetto).
+È consentito l'uso della calcolatrice scientifica non grafica.
+Per ogni domanda una sola risposta è corretta: segnare la risposta scelta con una croce nella griglia.
+\end{tcolorbox}
+
+\vspace{2mm}
+\noindent
+\textbf{Cognome e Nome:}\enspace\hrulefill\hspace{1cm}%
+\textbf{Classe:}\enspace\makebox[2.5cm]{\hrulefill}\hspace{1cm}%
+\textbf{Data:}\enspace\makebox[2.5cm]{\hrulefill}
+
+%%GRIGLIA%%
+
+\vspace{2mm}
+\begin{questions}
+%%DOMANDE%%
+\end{questions}
+\end{document}

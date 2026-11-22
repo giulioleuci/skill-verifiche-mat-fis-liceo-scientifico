@@ -45,6 +45,8 @@ I comandi seguenti vanno indicati nelle richieste all'assistente (non sono coman
 | `rigenera-correttore`| Aggiorna il correttore recependo modifiche al registro Excel | [references/correttore.md](verifiche-mat-fis/references/correttore.md) |
 | `stato`, `confronta`, `copertura` | Gestisce lo stato delle revisioni e la matrice di copertura | [references/progetto.md](verifiche-mat-fis/references/progetto.md) |
 | `verifica-calcoli` | Genera ed esegue script Python per verificare tutti i passaggi numerici | - |
+| `quiz` | Quiz a scelta multipla da Excel: varianti randomizzate, griglia sul foglio, chiavi | [references/quiz.md](verifiche-mat-fis/references/quiz.md) |
+| `correggi-quiz` | Corregge i quiz e produce statistiche (studenti, domande, classe) | [references/quiz.md](verifiche-mat-fis/references/quiz.md) |
 | `compila` | Compila i file LaTeX verificando pacchetti e testo estratto | [references/latex.md](verifiche-mat-fis/references/latex.md) |
 | `aiuto` | Mostra i comandi pertinenti al contesto | [SKILL.md](verifiche-mat-fis/SKILL.md) |
 
@@ -53,6 +55,7 @@ I comandi seguenti vanno indicati nelle richieste all'assistente (non sono coman
 - `verifiche-mat-fis/SKILL.md`: definizione delle regole, dei vincoli e dei flussi della skill.
 - `verifiche-mat-fis/scripts/registro_xlsx.py`: utility per la creazione e validazione del registro evidenze Excel (foglio .xlsx con sfondo scuro `#1C1C1C`, indicatori ANA/SVI/ARG/COM, punteggio totale 1000 e colonne con percentuali per esercizio e complessive).
 - `verifiche-mat-fis/scripts/progetto.py`: utility per il tracciamento del ciclo di vita del progetto, delle approvazioni e delle revisioni.
+- `verifiche-mat-fis/scripts/quiz.py`: generazione (`genera`) e correzione con statistiche (`correggi`) dei quiz a scelta multipla; `test_quiz.py` ne verifica il flusso. Adattato da [multiple-choice-randomizer-latex](https://github.com/giulioleuci/multiple-choice-randomizer-latex) (GPL-3.0).
 - `verifiche-mat-fis/assets/`: modelli LaTeX per le prove, i correttori docenti e gli svolgimenti studenti.
 - `verifiche-mat-fis/references/`: criteri disciplinari, schede argomenti per classe (1ª–5ª) e guide operative.
 

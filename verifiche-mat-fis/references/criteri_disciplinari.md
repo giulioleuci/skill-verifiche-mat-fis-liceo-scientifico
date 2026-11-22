@@ -22,8 +22,8 @@ Ogni aspetto va a un solo indicatore, senza doppio conteggio; ogni evidenza ha u
 | Programma e prerequisiti | ANA / SVI / ARG / COM | Può usare gli argomenti matematici e fisici degli anni precedenti. Per gli argomenti dell’anno in corso non già confermati e nei casi dubbi chiede conferma al docente prima di usarli. |
 | Strumenti | ANA / SVI | La calcolatrice è sempre disponibile. Se una formula o un risultato intermedio è fornito, valuta il suo uso e non lo premia come scelta autonoma. |
 | Strategia | ANA | Richiede una dichiarazione della strategia solo quando la formula non la rende già chiara. |
-| Dati e incognite | ANA | In prima e seconda richiede una raccolta esplicita di dati, incognite, ipotesi e tesi pertinenti. Dalla terza possono emergere da formule e rappresentazioni, salvo gli obblighi della geometria euclidea dimostrativa. |
-| Lettura del testo | ANA | Pesa l’individuazione dei dati in base alla complessità; dà più peso ai dati impliciti che alla semplice trascrizione. |
+| Dati e incognite | ANA | In prima e seconda, nei problemi, richiede una raccolta esplicita di dati, incognite, ipotesi e tesi pertinenti. Dalla terza possono emergere da formule e rappresentazioni, salvo gli obblighi della geometria euclidea dimostrativa. |
+| Lettura del testo | ANA | Livello 1. Evidenza esplicita solo in prima e seconda e solo nei problemi (non nei quesiti singoli); dalla terza non è un’evidenza a sé. Pesa l’individuazione dei dati in base alla complessità; dà più peso ai dati impliciti che alla semplice trascrizione. |
 | Routine e metodo imposto | ANA / SVI | Nei calcoli di routine dà più peso a SVI. Se il metodo è imposto, valuta in ANA la traduzione autonoma in formule o procedure, se effettivamente presente. Le procedure abituali prive di scelta autonoma non ricevono punti ANA. |
 | Condizioni e dominio | ANA / SVI / COM | Assegna ad ANA la scelta e l’impostazione di tutte le condizioni (comprese quelle ridondanti), a SVI la loro risoluzione e le intersezioni algebriche, a COM la rappresentazione sul piano cartesiano e (solo in quinta) la scrittura come unione di intervalli. |
 | Studio di funzione (tutte le classi) | ANA / SVI / COM | Quando si effettuano tutti o alcuni dei passi dello studio di funzione (es. dominio, segno e intersezioni con gli assi in terza e quarta; studio completo con derivate in quinta), valuta con priorità la coerenza interna tra risultati e grafici. Ripartizione: dominio (impostare TUTTE le condizioni, anche ridondanti, è ANA; calcoli SVI; rappresentazione sul piano cartesiano COM; unione di intervalli COM solo in quinta); segno e intersezioni assi (impostare equazioni, disequazioni e sistemi è ANA con peso ridotto/vale poco; calcoli SVI; rappresentazione cartesiana COM); punti stazionari (sapere di usare le derivate e porle $=0$ è ANA; calcoli SVI); monotonia (sapere di usare le derivate e studiarne il segno è ANA; calcoli SVI; rappresentazione grafica nello stesso grafico con $+/- /0$ dei segni della derivata prima, frecce e scritte $\max/\min/\text{flesso}$ è ANA); concavità e flessi analoghi a stazionari e monotonia (usare derivate seconde e porle $=0$ per candidati flessi è ANA, calcoli SVI; studio segno derivata seconda è ANA, calcoli SVI; grafico con $+/- /0$ per la derivata seconda, concavità e scritte flesso è ANA). |
@@ -60,6 +60,26 @@ Intervalli con parentesi e infiniti, limiti, derivate e integrali sono introdott
 - Dalla seconda, una legge vettoriale scomposta si scrive come sistema con una equazione o disequazione per componente.
 - Si parte dalle formule dirette, si ricava in lettere la grandezza richiesta e si sostituiscono i dati alla fine della derivazione pertinente; COM valuta sequenza, forma letterale e unità.
 - Unità nei risultati intermedi e finali, al termine dell’espressione, senza ripeterle su ogni fattore. Convenzione angolare dichiarata e gradi/radianti coerenti.
+
+## Livelli di difficoltà della richiesta
+
+Ogni evidenza ha un livello (colonna `Livello` del registro); è distinto dalla difficoltà del calcolo 0–4. Il livello si assegna già alle richieste della scaletta. Un’evidenza che mescola azioni di livelli diversi va separata.
+
+- **1, base:** richieste semplici che ogni studente che ha studiato sa svolgere, per esempio pura applicazione di formule. Discrimina chi ha studiato da chi no.
+- **2, intermedio:** richieste non sempre immediate, per esempio in fisica ricavare formule inverse in esercizi standard. Uno studente mediamente bravo le svolge per intero; almeno l’80% di chi ha studiato.
+- **3, avanzato:** richieste complesse, alla portata di circa il 30% di chi ha studiato. Discrimina i molto bravi dalla media.
+
+**Accesso (`2A`).** Sono evidenze di livello 2 svolgibili anche da chi non è portato: scelta e scrittura della formula, impostazione della strategia. Valgono almeno il **30% del totale di L2**, anche in evidenze «tutto o niente». La lettura dei dati (livello 1) e il primo passaggio guidato non contano come accesso. Ogni esercizio ha almeno un’evidenza `1` o `2A`, così nessuno studente deve lasciare un esercizio tutto in bianco.
+
+**Pesi per livello della classe** (il livello classe va sempre chiesto, mai presunto):
+
+| Classe | L1 | L2 | L3 |
+|---|---|---|---|
+| basso | 25% | 65% | 10% |
+| medio | 20% | 65% | 15% |
+| alto | 20% | 60% | 20% |
+
+Sono bersagli. Gli intervalli sono vincolanti: L1 tra 20% e 25%, L3 tra 10% e 20%, L2 il resto. `registro_xlsx.py` segnala come avviso uno scostamento dal bersaglio oltre 2,5 punti e blocca ogni violazione degli intervalli, dell’accesso e dell’esercizio in bianco. Recupero e quiz sono esclusi.
 
 ## Pesi orientativi
 
