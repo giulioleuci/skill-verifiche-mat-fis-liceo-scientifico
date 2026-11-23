@@ -1,25 +1,75 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Panoramica del Progetto
 
-This repository packages the `verifiche-mat-fis` educational skill in two forms. `verifiche-mat-fis/` is the source skill: its `SKILL.md` defines behavior, `references/` contains subject and class materials, `assets/` holds LaTeX templates, and `scripts/` contains Python utilities. `plugin-verifiche-mat-fis/` mirrors that content under the plugin layout and adds `plugin.json`. Root-level ZIP files are distributable archives; `installa-verifiche-mat-fis.sh` supports installation. Keep mirrored skill content aligned when editing either copy.
+Questo repository sviluppa e distribuisce la skill educativa **`verifiche-mat-fis`**, progettata per supportare docenti della scuola secondaria di secondo grado (in particolare del liceo scientifico) nella progettazione, stesura, compilazione e correzione di:
+- Verifiche scritte di matematica, fisica e laboratorio di fisica (classi 1ª–5ª);
+- Varianti ordinarie equivalenti (Fila A/B) e prove per assenti;
+- Prove di recupero mirate con griglia di recupero (NR/PR/R);
+- Prove adattate per studenti con BES/DSA e tempi ridotti (stessa difficoltà concettuale, supporti concordati);
+- Correttori per docenti con evidenze, punteggi su scala 1000 e indicatori ANA/SVI/ARG/COM;
+- Quiz a scelta multipla randomizzati con fogli di risposta e correttore statistico con openpyxl.
 
-## Build, Test, and Development Commands
+## Struttura della Directory
 
-There is no root build system or test suite. Install Python dependencies for the relevant skill with `python -m pip install -r verifiche-mat-fis/requirements.txt`. Run a utility directly with `python verifiche-mat-fis/scripts/progetto.py --help` or `python verifiche-mat-fis/scripts/registro_xlsx.py --help` (when supported). Check installer usage with `bash installa-verifiche-mat-fis.sh --help` if available. Rebuild ZIP distributions only when preparing a release, preserving their expected internal directory structure.
+- `verifiche-mat-fis/`: sorgente unica e modificabile della skill.
+  - `SKILL.md`: punto di ingresso della skill, vincoli operativi, flussi e tabella comandi per l'agente.
+  - `references/`: guide operative e criteri disciplinari:
+    - `criteri_disciplinari.md`: macro-aree, pesi per anno, livelli di difficoltà (1/2/3) e relative soglie.
+    - `griglia_valutazione.md`: indicatori ministeriali ANA/SVI/ARG/COM e conversione punteggi (su 1000).
+    - `generatore.md`: flusso di generazione prove, scaletta, varianti e recuperi.
+    - `correttore.md`: estrazione evidenze, validazione del registro e correttore LaTeX.
+    - `progetto.py` / `progetto.md`: ciclo di vita del progetto, tracciamento versioni e matrici di copertura.
+    - `quiz.md`: generazione e correzione dei quiz a scelta multipla con analisi dei distrattori.
+    - `latex.md`: preambolo canonico, convenzioni tipografiche e regole di compilazione.
+    - `supporti_prova.md`: formule, costanti e formulari ammessi.
+    - `schede/`: schede tematiche per materia e classe (`matematica_classe*.md`, `fisica_classe*.md`).
+  - `assets/`: template LaTeX canonici:
+    - `modello_verifica.tex`: layout della prova per lo studente (senza soluzioni né intestazioni di fila).
+    - `correttore_template.tex`: layout del correttore docente (a colori, con riquadri evidenze).
+    - `svolgimento_studenti_template.tex`: risoluzione per gli studenti (solo su richiesta esplicita).
+    - `quiz_template.tex`: foglio quiz anonimo con griglia risposte.
+  - `scripts/`: utility Python a supporto:
+    - `registro_xlsx.py`: generazione, formattazione dark `#1C1C1C`, validazione (`check`) e aggiornamento (`update`) del registro evidenze.
+    - `progetto.py`: gestione stati, log revisioni, approvazioni e matrice di copertura.
+    - `quiz.py`: creazione varianti (`genera`) e reportistica statistica (`correggi`).
+    - `test_quiz.py`, `test_livelli.py`: test di regressione delle utility.
+    - `requirements.txt`: dipendenze Python (`openpyxl`).
+- `installa-verifiche-mat-fis.sh`: script bash/python per installare o aggiornare la skill nei path utente standard (`~/.claude/skills`, `~/.codex/skills`, `~/.config/opencode/skills`, `~/.agents/skills`) o creare il pacchetto `--plugin`.
+- `README.md`: documentazione utente e panoramica della skill.
 
-## Coding Style & Naming Conventions
+## Ambiente e Comandi di Sviluppo
 
-Use UTF-8 text and keep Markdown headings, lists, and Italian terminology consistent with neighboring files. Python files use four-space indentation and descriptive `snake_case` names; preserve existing CLI behavior and document new options. Reference files use descriptive lowercase names, often including subject and class, such as `argomenti_fisica_classe3.md`. LaTeX templates should retain their current naming and compile-oriented formatting.
+- **Installazione dipendenze Python**:
+  ```bash
+  python3 -m pip install -r verifiche-mat-fis/requirements.txt
+  ```
+- **Esecuzione test**:
+  ```bash
+  python3 verifiche-mat-fis/scripts/test_livelli.py
+  python3 verifiche-mat-fis/scripts/test_quiz.py
+  ```
+- **Validazione registri Excel**:
+  ```bash
+  python3 verifiche-mat-fis/scripts/registro_xlsx.py check percorso/registro_evidenze.xlsx
+  ```
+- **Compilazione LaTeX**:
+  - Motore predefinito: `pdflatex` (due passate per riferimenti e paginazione).
+  - OpenDyslexic / font dedicati: `xelatex` o `lualatex` con `fontspec`.
+  - Pacchetti richiesti: `exam`, `newpxtext`, `newpxmath`, `siunitx`, `physics`, `tcolorbox`, `tikz`.
 
-## Testing Guidelines
+## Convenzioni di Codice e Contenuto
 
-No formal framework or coverage threshold is configured. For Python changes, run the affected script's `--help` command and exercise the changed behavior with a small representative input. For content or template changes, inspect the rendered or compiled output where practical. Validate archive contents after repackaging so paths match the plugin structure.
+- **Lingua**: la documentazione, i messaggi di commit, le guide e le interazioni con i docenti sono rigorosamente in lingua italiana, chiari, diretti e privi di riempitivi.
+- **Python**: conformità a PEP 8, rientri a 4 spazi, nomi in `snake_case`, commenti essenziali. Dipendenze minime: privilegiare la libreria standard e `openpyxl`.
+- **LaTeX**: seguire il layout definito nei template in `assets/`. Prove studenti rigorosamente anonime (nessuna indicazione di fila o soluzioni), monocromatiche; evidenze colorate e barre punteggio riservate esclusivamente al correttore docente.
+- **Evidenze e punteggi**:
+  - Tra 1 e 40 evidenze positive con somma totale esattamente uguale a 1000.
+  - Livelli di difficoltà obbligatori: 1 (base, 20–25%), 2 (intermedio, con accesso 2A ≥ 30% di L2), 3 (avanzato, 10–20%).
+- **Calcoli quantitativi**: ogni passaggio numerico o algebrico deve essere convalidato tramite script Python autonomo prima di essere integrato in tracce o correttori.
 
-## Commit & Pull Request Guidelines
+## Gestione Git e Privacy
 
-Git history is not available in this working directory, so no repository-specific commit convention can be confirmed. Use short imperative commit subjects, for example `Aggiorna guida alle varianti`. Pull requests should summarize the affected skill/plugin files, explain user-visible changes, link related issues when applicable, and include sample output or screenshots for document/template changes.
-
-## Security & Configuration
-
-Do not commit credentials, private student data, or generated records containing personal information. Keep dependencies declared in the relevant `requirements.txt`, and avoid changing installer behavior without documenting supported paths and options.
+- **Messaggi di commit**: in italiano, in forma imperativa breve (es. `Aggiungi supporto a ...`, `Correggi validazione ...`).
+- **Privacy e Dati Personali**: mai versionare né registrare dati sensibili o nomi reali di studenti.
+- **Sorgente unica**: modificare sempre i file all'interno di `verifiche-mat-fis/`. Eventuali pacchetti plugin o zip distributivi devono essere generati solo tramite `installa-verifiche-mat-fis.sh --plugin`.
