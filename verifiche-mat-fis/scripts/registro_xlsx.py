@@ -11,6 +11,11 @@ hanno corrispondenza univoca nella versione.
 Livello: 1, 2, 2A (livello 2 di accesso) o 3; --classe basso|medio|alto verifica
 L1 20-25%, L3 10-20%, accessi 2A >= 30% di L2, un 1 o 2A per esercizio.
 
+Griglie d'esame (solo su richiesta del docente), --griglia matematica|fisica|mista:
+indicatori e massimi per indicatore fissi, uguali in proporzione al quadro
+ministeriale (5/6/5/4 su 20, qui x50). Senza --griglia: IND => matematica,
+DAT => fisica/mista, altrimenti ordinaria (ANA/SVI/ARG/COM, massimi liberi).
+
 write crea senza sovrascrivere; update conserva note per ID e blocca eliminazioni
 di ID annotati o note in conflitto: archiviare e gestire esplicitamente le note
 nel registro prima di riprovare. Accorpamenti/separazioni richiedono nuovi ID e
@@ -41,6 +46,22 @@ COLS_OLD = [c for c in COLS if c != "Livello"]  # registri precedenti ai livelli
 LIVELLI = ("1", "2", "2A", "3")
 # Percentuali bersaglio L1-L2-L3 per livello classe. Intervalli duri: L1 20-25%, L3 10-20%.
 BERSAGLIO = {"basso": (25, 65, 10), "medio": (20, 65, 15), "alto": (20, 60, 20)}
+
+# Indicatori ammessi e massimo totale per indicatore (None = libero). Mista = fisica.
+GRIGLIE = {
+    "ordinaria": dict.fromkeys(("ANA", "SVI", "ARG", "COM")),
+    "matematica": {"ANA": 250, "IND": 300, "SVI": 250, "ARG": 200},
+    "fisica": {"ANA": 250, "SVI": 300, "DAT": 250, "ARG": 200},
+}
+GRIGLIE["mista"] = GRIGLIE["fisica"]
+
+
+def _griglia(rows, griglia):
+    if griglia:
+        return GRIGLIE[griglia]
+    ind = {r.get("Indicatore") for r in rows if isinstance(r, dict)}
+    return GRIGLIE["matematica" if "IND" in ind else "fisica" if "DAT" in ind else "ordinaria"]
+
 
 # Colonne calcolate inserite dopo Max nel foglio Excel (non fanno parte dello schema JSON).
 PCT_COLS = ["% esercizio", "% verifica"]
@@ -109,13 +130,14 @@ def _error(row, column, problem):
     raise ValueError(f"riga {row}, colonna '{column}': {problem}")
 
 
-def validate(rows, row_numbers=None, livelli=True):
+def validate(rows, row_numbers=None, livelli=True, griglia=None):
     """Valida il JSON o righe Excel; restituisce copie con Note utente presente."""
     if not isinstance(rows, list):
         _error(1, "registro", "attesa una lista di oggetti")
     if not 1 <= len(rows) <= 40:
         _error(1, "ID evidenza", "servono da 1 a 40 evidenze")
     ids, topics, names, result = set(), {}, {}, []
+    ammessi = _griglia(rows, griglia)
     for number, row in zip(row_numbers or range(2, len(rows) + 2), rows):
         if not isinstance(row, dict):
             _error(number, "registro", "atteso un oggetto con le colonne del registro")
@@ -140,8 +162,8 @@ def validate(rows, row_numbers=None, livelli=True):
                 _error(number, column, "testo non rappresentabile in una cella Excel")
             if column in ("ID evidenza", "Sigla argomento") and value != value.strip():
                 _error(number, column, "ID senza spazi iniziali o finali")
-        if row["Indicatore"] not in ("ANA", "SVI", "ARG", "COM"):
-            _error(number, "Indicatore", "ammessi ANA, SVI, ARG, COM")
+        if row["Indicatore"] not in ammessi:
+            _error(number, "Indicatore", f"ammessi {', '.join(ammessi)}")
         eid, tid, name = row["ID evidenza"], row["Sigla argomento"], row["Nome completo argomento"].strip()
         if eid in ids:
             _error(number, "ID evidenza", f"ID duplicato: {eid}")
@@ -154,15 +176,19 @@ def validate(rows, row_numbers=None, livelli=True):
         result.append({**row, "Note utente": row.get("Note utente", ""), "Livello": row.get("Livello")})
     if sum(row["Max"] for row in result) != 1000:
         _error(1, "Max", "la somma deve essere 1000")
+    for ind, massimo in ammessi.items():
+        punti = sum(row["Max"] for row in result if row["Indicatore"] == ind)
+        if massimo is not None and punti != massimo:
+            _error(1, "Max", f"griglia d'esame: {ind} deve sommare {massimo} (ora {punti})")
     return result
 
 
-def read(path):
+def read(path, griglia=None):
     """Legge e valida il registro; restituisce list[dict] senza stampare."""
-    return _read(path)[0]
+    return _read(path, griglia)[0]
 
 
-def _read(path):
+def _read(path, griglia=None):
     try:
         wb = load_workbook(path, data_only=False)
     except (BadZipFile, InvalidFileException, KeyError, SyntaxError) as error:
@@ -199,17 +225,17 @@ def _read(path):
         actual_merges = {str(merged_range) for merged_range in ws.merged_cells.ranges}
         if actual_merges != expected_merges:
             _error(1, "celle unite", "le celle unite non corrispondono al formato previsto")
-        return validate(rows, numbers, livelli=cols is COLS), numbers
+        return validate(rows, numbers, livelli=cols is COLS, griglia=griglia), numbers
     finally:
         wb.close()
 
 
-def _source(src):
+def _source(src, griglia=None):
     with open(src, encoding="utf-8") as source:
-        return validate(json.load(source))
+        return validate(json.load(source), griglia=griglia)
 
 
-def _save(rows, dst, previous=None, layout="merged"):
+def _save(rows, dst, previous=None, layout="merged", griglia=None):
     if layout not in ("merged", "flat"):
         raise ValueError(f"layout non supportato: {layout}")
     dst = Path(dst)
@@ -261,7 +287,7 @@ def _save(rows, dst, previous=None, layout="merged"):
     os.close(fd)
     try:
         wb.save(temporary)
-        read(temporary)
+        read(temporary, griglia)
         if previous is None:
             os.link(temporary, dst)  # Pubblicazione atomica senza sovrascrivere, anche in caso di concorrenza.
         else:
@@ -297,23 +323,23 @@ def livelli(rows, classe):
         raise ValueError("; ".join(errori))
 
 
-def write(src, dst, classe, layout="merged"):
+def write(src, dst, classe, layout="merged", griglia=None):
     """Crea un nuovo registro; una destinazione esistente è sempre rifiutata."""
     if os.path.lexists(dst):
         raise FileExistsError(f"destinazione già esistente: {dst}; usare update per aggiornarla")
-    rows = _source(src)
+    rows = _source(src, griglia)
     livelli(rows, classe)
-    _save(rows, dst, layout=layout)
+    _save(rows, dst, layout=layout, griglia=griglia)
 
 
-def update(src, dst, classe, layout="merged"):
+def update(src, dst, classe, layout="merged", griglia=None):
     """Aggiorna esplicitamente conservando tutte le note per ID evidenza."""
     dst = Path(dst)
     if dst.is_symlink():
         raise ValueError("update richiede un registro regolare, non un collegamento simbolico")
     previous = dst.read_bytes()
     old_rows, numbers = _read(BytesIO(previous))
-    rows = _source(src)
+    rows = _source(src, griglia)
     livelli(rows, classe)
     by_id = {row["ID evidenza"]: row for row in rows}
     for number, old in zip(numbers, old_rows):
@@ -325,11 +351,11 @@ def update(src, dst, classe, layout="merged"):
         if by_id[eid]["Note utente"] not in ("", note):
             _error(number, "Note utente", f"nota in conflitto per ID {eid}; conservare e gestire esplicitamente la nota esistente")
         by_id[eid]["Note utente"] = note
-    _save(rows, dst, previous, layout)
+    _save(rows, dst, previous, layout, griglia)
 
 
-def check(path, classe):
-    rows = read(path)
+def check(path, classe, griglia=None):
+    rows = read(path, griglia)
     print(f"evidenze={len(rows)} (1-40) somma Max=1000 (1000)")
     for field in ("Esercizio", "Indicatore", "Sigla argomento"):
         totals = Counter()
@@ -353,12 +379,14 @@ def main(argv=None):
     command = commands.add_parser("check", help="valida schema, campi, evidenze, totale e livelli; stampa i riepiloghi per esercizio, indicatore, argomento e livello")
     command.add_argument("path", help="registro .xlsx")
     command.add_argument("--classe", choices=sorted(BERSAGLIO), required=True, help="livello della classe")
+    for command in commands.choices.values():
+        command.add_argument("--griglia", choices=sorted(GRIGLIE), help="griglia d'esame o ordinaria (default: rilevata dagli indicatori)")
     args = parser.parse_args(argv)
     try:
         if args.command == "check":
-            check(args.path, args.classe)
+            check(args.path, args.classe, args.griglia)
         else:
-            {"write": write, "update": update}[args.command](args.src, args.dst, args.classe, args.layout)
+            {"write": write, "update": update}[args.command](args.src, args.dst, args.classe, args.layout, args.griglia)
     except (ValueError, OSError, BadZipFile, InvalidFileException, KeyError) as error:
         print(f"Errore: {error}", file=sys.stderr)
         return 1

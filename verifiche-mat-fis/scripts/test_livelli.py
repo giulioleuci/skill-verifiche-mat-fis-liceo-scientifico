@@ -25,4 +25,15 @@ with tempfile.TemporaryDirectory() as d:
     assert "L1 deve valere" in prova("l1", [ev(1, 1, 300, "1"), ev(2, 1, 250, "2A"), ev(3, 2, 350, "2"), ev(4, 2, 100, "3")]).stderr
     # accessi < 30% di L2: 100 su 650
     assert "accesso" in prova("acc", [ev(1, 1, 200, "1"), ev(2, 1, 100, "2A"), ev(3, 1, 550, "2"), ev(4, 2, 150, "3")]).stderr
+    # griglie d'esame: massimi per indicatore fissi (fisica 250/300/250/200)
+    def es(i, ind, mx, liv):
+        return {**ev(i, 1, mx, liv), "Indicatore": ind}
+    fis = [es(1, "ANA", 250, "1"), es(2, "SVI", 300, "2A"), es(3, "DAT", 250, "2"), es(4, "ARG", 200, "3")]
+    (d / "f.json").write_text(json.dumps(fis))
+    r = run("write", str(d / "f.json"), str(d / "f.xlsx"), "--classe", "medio", "--griglia", "fisica"); assert r.returncode == 0, r.stderr
+    assert run("check", str(d / "f.xlsx"), "--classe", "medio").returncode == 0  # rilevata da DAT
+    bad = [es(1, "ANA", 300, "1"), es(2, "SVI", 250, "2A"), es(3, "DAT", 250, "2"), es(4, "ARG", 200, "3")]
+    (d / "b.json").write_text(json.dumps(bad))
+    assert "ANA deve sommare 250" in run("write", str(d / "b.json"), str(d / "b.xlsx"), "--classe", "medio", "--griglia", "mista").stderr
+    assert "ammessi" in run("write", str(d / "f.json"), str(d / "g.xlsx"), "--classe", "medio", "--griglia", "matematica").stderr
 print("ok")

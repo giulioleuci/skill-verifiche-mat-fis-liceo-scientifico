@@ -1,6 +1,6 @@
-# Griglia di valutazione della prova scritta (riferimento ufficiale)
+# Griglie di valutazione
 
-La griglia valuta quattro competenze (indicatori). Per ciascuna si ottiene una percentuale rispetto al punteggio massimo di quell'indicatore, che corrisponde a un livello.
+La griglia ordinaria valuta quattro competenze (indicatori). Per ciascuna si ottiene una percentuale rispetto al punteggio massimo di quell'indicatore, che corrisponde a un livello.
 
 | Livello | Non acquisita | Iniziale | Base | Intermedia | Avanzata |
 |---|---|---|---|---|---|
@@ -60,46 +60,49 @@ La griglia valuta quattro competenze (indicatori). Per ciascuna si ottiene una p
 
 ---
 
-## Regole di calcolo del punteggio
-
-- Per ogni evidenza: **punti ottenuti = massimo × percentuale assegnata / 100**, con percentuale tra 0 e 100.
-- Il **punteggio totale è la somma dei punti delle evidenze**, equivalente alla somma per indicatori, arrotondata all’unità soltanto alla fine (0,5 verso l’alto). I riepiloghi conservano i decimali. La detrazione per bianchetto si applica dopo l’arrotondamento, con minimo 0.
-- Il punteggio totale è riportato **su 1000** e convertito in voto da 1 a 10 con la tabella sottostante.
-- **Prova non svolta = 1.**
-- Le parti scritte **a matita non sono valutate**.
-- L'uso di **bianchetto comporta la sottrazione di 50 punti** (si applica al totale, non ai singoli punti del correttore).
-- La prova è registrata con un **peso da 0% a 100%** e può concorrere o meno alla media pesata.
-
-### Conversione punteggio (su 1000) → voto
-
-| Punteggio | Voto | Punteggio | Voto | Punteggio | Voto |
-|---|---|---|---|---|---|
-| 0 – 212 | 2 | 513 – 537 | 5+ | 788 – 812 | 8 |
-| 213 – 262 | 2½ | 538 – 562 | 5½ | 813 – 837 | 8+ |
-| 263 – 312 | 3 | 563 – 587 | 6- | 838 – 862 | 8½ |
-| 313 – 362 | 3½ | 588 – 612 | 6 | 863 – 887 | 9- |
-| 363 – 387 | 4- | 613 – 637 | 6+ | 888 – 912 | 9 |
-| 388 – 412 | 4 | 638 – 662 | 6½ | 913 – 937 | 9+ |
-| 413 – 437 | 4+ | 663 – 687 | 7- | 938 – 962 | 9½ |
-| 438 – 462 | 4½ | 688 – 712 | 7 | 963 – 1000 | 10 |
-| 463 – 487 | 5- | 713 – 737 | 7+ | | |
-| 488 – 512 | 5 | 738 – 762 | 7½ | | |
-| | | 763 – 787 | 8- | | |
-
-### Giudizio per indicatore (restituito allo studente in forma semplificata)
-
-| Percentuale dell'indicatore | 0–47% | 48–58% | 59–68% | 69–78% | 79–86% | 87–100% |
-|---|---|---|---|---|---|---|
-| Giudizio | non sufficiente | quasi sufficiente | sufficiente | discreto | buono | ottimo |
-
----
-
 ## Applicazione per evidenze
 
-Ogni evidenza ha un solo indicatore, una sigla argomento e un massimo; le associazioni e la costruzione sono in [correttore](correttore.md#2-costruzione-delle-evidenze). Ogni versione ha da 1 a 40 evidenze e somma dei massimi 1000.
+Ogni evidenza ha un solo indicatore, una sigla argomento e un massimo; le associazioni e la costruzione sono in [correttore](correttore.md#2-costruzione-delle-evidenze). Ogni versione ha da 1 a 40 evidenze e somma dei massimi 1000. Punti ottenuti = massimo × percentuale assegnata / 100.
 
 Percentuale aggregata = 100 × somma punti ottenuti / somma massimi. Un indicatore o argomento con massimo 0 è non valutato. I riepiloghi sono viste alternative dello stesso totale e non si sommano fra loro.
 
-Per percentuali decimali le fasce contigue sono [0,40), [40,59), [59,69), [69,87), [87,100]. Non arrotondare prima di determinare il livello. Per i giudizi semplificati le soglie sono 48, 59, 69, 79, 87. Le etichette del correttore «non raggiunto», «intermedio» e «avanzato» corrispondono a Non acquisita, Intermedia e Avanzata della griglia.
+Per percentuali decimali le fasce contigue sono [0,40), [40,59), [59,69), [69,87), [87,100]. Non arrotondare prima di determinare il livello. Le etichette del correttore «non raggiunto», «intermedio» e «avanzato» corrispondono a Non acquisita, Intermedia e Avanzata.
 
-Questa è l'unica fonte delle conversioni ufficiali: non copiarle nei correttori generati. Per approvazioni e revisione usa il [correttore](correttore.md); per l'impaginazione [correttore](correttore.md#documenti-latex).
+---
+
+## Griglie dell'esame di Stato (solo su richiesta esplicita)
+
+Usale unicamente se il docente le chiede (prova modellata sulla seconda prova); altrimenti vale la griglia ordinaria. Fonte: quadri di riferimento ministeriali (liceo scientifico, LI02/LI15). Gli indicatori ministeriali valgono 5/6/5/4 su 20: qui sono riportati su 1000 (×50) e **i massimi per indicatore sono fissi**, quindi la proporzione ministeriale è identica. `registro_xlsx.py` con `--griglia matematica|fisica|mista` impone la somma esatta per indicatore. COM non esiste in queste griglie e non è ammessa; ogni evidenza ha un solo indicatore. Pesi, livelli di difficoltà e numero di evidenze (1–40, somma 1000) restano quelli del correttore; si distribuiscono i punti solo dentro ciascun indicatore. Per i livelli di prestazione si usano le cinque fasce della griglia ordinaria; il quadro ministeriale non ne ha.
+
+### Matematica
+
+| Sigla | Indicatore ministeriale | Max /20 | Max /1000 |
+|---|---|---|---|
+| ANA | **Comprendere**: analizzare la situazione problematica, identificare i dati e interpretarli, effettuare i collegamenti e adoperare i codici grafico-simbolici necessari. | 5 | 250 |
+| IND | **Individuare**: conoscere i concetti matematici utili alla soluzione, analizzare possibili strategie risolutive e individuare la più adatta. | 6 | 300 |
+| SVI | **Sviluppare il processo risolutivo**: risolvere la situazione problematica in maniera coerente, completa e corretta, applicando le regole ed eseguendo i calcoli necessari. | 5 | 250 |
+| ARG | **Argomentare**: commentare e giustificare la scelta della strategia, i passaggi fondamentali del processo esecutivo e la coerenza dei risultati al contesto del problema. | 4 | 200 |
+
+### Fisica
+
+| Sigla | Indicatore ministeriale | Max /20 | Max /1000 |
+|---|---|---|---|
+| ANA | **Analizzare**: esaminare la situazione fisica proposta formulando le ipotesi esplicative attraverso modelli o analogie o leggi. | 5 | 250 |
+| SVI | **Sviluppare il processo risolutivo**: formalizzare situazioni problematiche e applicare gli strumenti matematici e disciplinari rilevanti per la loro risoluzione. | 6 | 300 |
+| DAT | **Interpretare criticamente i dati**: interpretare e/o elaborare i dati proposti e/o ricavati, anche di natura sperimentale, verificandone la pertinenza al modello scelto. | 5 | 250 |
+| ARG | **Argomentare**: descrivere il processo risolutivo adottato e comunicare i risultati ottenuti valutandone la coerenza con la situazione problematica proposta. | 4 | 200 |
+
+### Prova mista (matematica e fisica, griglia integrata)
+
+Stessi massimi della fisica: ANA 250, SVI 300, DAT 250, ARG 200.
+
+| Sigla | Indicatore ministeriale | Max /20 | Max /1000 |
+|---|---|---|---|
+| ANA | **Analizzare**: esaminare la situazione fisica proposta formulando le ipotesi esplicative attraverso modelli o analogie o leggi. | 5 | 250 |
+| SVI | **Sviluppare il processo risolutivo**: formalizzare situazioni problematiche e applicare i concetti e i metodi matematici e gli strumenti disciplinari rilevanti per la loro risoluzione, eseguendo i calcoli necessari. | 6 | 300 |
+| DAT | **Interpretare, rappresentare, elaborare i dati**: interpretare e/o elaborare i dati proposti e/o ricavati, anche di natura sperimentale, verificandone la pertinenza al modello scelto; rappresentare e collegare i dati adoperando i necessari codici grafico-simbolici. | 5 | 250 |
+| ARG | **Argomentare**: descrivere il processo risolutivo adottato, la strategia risolutiva e i passaggi fondamentali; comunicare i risultati ottenuti valutandone la coerenza con la situazione problematica proposta. | 4 | 200 |
+
+Nella mista la rappresentazione grafico-simbolica dei dati rientra in DAT (non in COM). Nelle tre griglie ANA, SVI e ARG hanno gli stessi colori della griglia ordinaria; IND (arancio) e DAT (teal) sono propri delle griglie d'esame.
+
+Per approvazioni e revisione usa il [correttore](correttore.md); per l'impaginazione [correttore](correttore.md#documenti-latex).

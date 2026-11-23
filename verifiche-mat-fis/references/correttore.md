@@ -18,7 +18,7 @@ Risolvi ogni punto con metodi consentiti per quella classe. Riproduci tutti i pa
 
 ## 2. Costruzione delle evidenze
 
-Applica la griglia ufficiale alla soluzione concreta, con i confini degli indicatori dei criteri disciplinari. Non imporre i quattro indicatori in ogni punto. Prevedi ANA per scelte autonome osservabili; non assegnarla a formule o risultati intermedi già forniti, né a procedure abituali prive di scelta distinta: il loro uso successivo può essere valutato secondo ciò che lo studente deve effettivamente fare. Motiva l’assenza di ANA quando altrimenti attesa.
+Applica la griglia ordinaria alla soluzione concreta (le [griglie d'esame](griglia_valutazione.md#griglie-dellesame-di-stato-solo-su-richiesta-esplicita) solo se il docente le chiede: matematica, fisica o mista, con i loro indicatori ANA/IND/SVI/ARG o ANA/SVI/DAT/ARG e massimi fissi per indicatore, senza COM), con i confini degli indicatori dei criteri disciplinari. Non imporre i quattro indicatori in ogni punto. Prevedi ANA per scelte autonome osservabili; non assegnarla a formule o risultati intermedi già forniti, né a procedure abituali prive di scelta distinta: il loro uso successivo può essere valutato secondo ciò che lo studente deve effettivamente fare. Motiva l’assenza di ANA quando altrimenti attesa.
 
 Risolvi integralmente ogni richiesta con il programma confermato e i metodi del docente. Ricava passaggi osservabili specifici per ogni punto/gruppo, senza aggiungere richieste.
 
@@ -87,6 +87,7 @@ Dalla radice della skill (richiede `openpyxl`):
 |---|---|
 | `python scripts/registro_xlsx.py write evidenze.json percorso/registro_evidenze.xlsx --classe medio` | Crea il registro; rifiuta destinazioni esistenti. |
 | `python scripts/registro_xlsx.py check percorso/registro_evidenze.xlsx --classe medio` | Valida schema, campi, totale e livelli e stampa i riepiloghi per esercizio, indicatore, sigla argomento e livello. |
+| `python scripts/registro_xlsx.py write evidenze.json percorso/registro_evidenze.xlsx --classe medio --griglia fisica` | Solo per le griglie d'esame su richiesta (`matematica`, `fisica`, `mista`): impone i massimi per indicatore: matematica ANA 250, IND 300, SVI 250, ARG 200; fisica e mista ANA 250, SVI 300, DAT 250, ARG 200. `check` e `update` accettano la stessa opzione; senza, IND o DAT rilevano la griglia. |
 | `python scripts/registro_xlsx.py update evidenze.json percorso/registro_evidenze.xlsx --classe medio` | Solo per aggiornamenti espliciti: conserva le note per ID e rifiuta eliminazioni di evidenze annotate o note in conflitto. |
 
 Gli input sono validati prima della sostituzione atomica del file; i formati non riconosciuti sono rifiutati. Non aggirare gli errori riscrivendo il registro a mano. Se una rinumerazione cambia il significato di un ID annotato, non usare `update`: conserva il registro precedente, associa le note alle azioni tramite la mappa delle revisioni, crea un nuovo registro con `write` e controlla a mano note e riferimenti.
@@ -115,7 +116,7 @@ Applica la revisione linguistica di SKILL.md, esegui la checklist (§11), compil
 
 Apri con intestazione sintetica, contesto e legenda dei quattro indicatori, senza una sezione sui parametri di correzione. Riporta il testo della prova nei singoli esercizi. Il registro iniziale raggruppa esercizio e argomento comune, indicando ID evidenza, nome completo dell’azione, punto/gruppo, indicatore e massimo; per gruppi con argomenti diversi esplicita le associazioni. Il nome dell’azione è identico al titolo del suo svolgimento: questa ripetizione è ammessa.
 
-Inserisci soltanto riepiloghi per esercizio, indicatore e argomento, derivati dalle stesse evidenze. Nessun riepilogo per punto/gruppo e nessuna tabella di conversione voto o giudizio, la cui fonte resta la [griglia](griglia_valutazione.md).
+Inserisci soltanto riepiloghi per esercizio, indicatore e argomento, derivati dalle stesse evidenze. Nessun riepilogo per punto/gruppo e nessuna tabella di conversione in voto o giudizio.
 
 Gli esercizi iniziano su una nuova pagina. Ogni evidenza ha una sola intestazione compatta «ID · sigla colorata · azione», passaggi numerati e livelli (solo se richiesti); nel corpo non ripetere esercizio, argomento, massimo o nome completo dell’indicatore. Metadati completi nel sorgente e nel registro, nessun campo per percentuale o punti ottenuti. Alternative, errori e criteri specifici stanno in elenco puntato dopo i livelli dell’evidenza pertinente; ometti la sezione se vuota. Le note condivise stanno dove nasce la scelta o l’errore, con rimandi senza duplicazioni.
 
@@ -133,7 +134,9 @@ Gli esercizi iniziano su una nuova pagina. Ogni evidenza ha una sola intestazion
 | `\ANA{ID}{massimo}` e analoghe | Eventuali chip di riferimento, senza quote interne o detrazioni. |
 | `grafico` | Figura nel passaggio pertinente; conserva `figure[h!]` e `\centering`. `[h!]` non garantisce una posizione impossibile: controlla il PDF e adatta dimensioni o pagina. |
 
-I colori rosso/blu/giallo/verde (ANA/SVI/ARG/COM) sono riservati agli indicatori. Nelle figure del correttore usa nero, grigi, arancio o teal. Non introdurre un comando `\arg`, già riservato in LaTeX.
+Nelle griglie d'esame usa `\legendaesame`, `\tabpuntiesame`, `boxind`/`boxdat` e `\IND`/`\DAT`; adegua i nomi con `\renewcommand{\nomeANA}{Comprendere}` (matematica) e `\nomeSVI`/`\nomeDAT` come indicato nel template.
+
+I colori rosso/blu/giallo/verde (ANA/SVI/ARG/COM) e arancio/teal (IND/DAT) sono riservati agli indicatori. Nelle figure del correttore usa nero, grigi o viola. Non introdurre un comando `\arg`, già riservato in LaTeX.
 
 Nella scrittura tecnica parti dalle formule dirette e ricava letteralmente l’incognita, sostituendo i dati alla fine della derivazione pertinente. Una grandezza ormai espressa solo con dati noti si calcola subito con unità e il valore si riusa: vale il massimo. Usa formule composte solo quando più convenienti o richieste. Indica le unità nei risultati intermedi e finali e dichiara la convenzione angolare.
 

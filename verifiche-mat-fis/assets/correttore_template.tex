@@ -48,12 +48,19 @@
 \definecolor{svic}{HTML}{1A56DB}\definecolor{svibg}{HTML}{E8F0FE} % blu
 \definecolor{argc}{HTML}{A67C00}\definecolor{argbg}{HTML}{FFF6CC} % giallo
 \definecolor{comc}{HTML}{2E7D32}\definecolor{combg}{HTML}{E6F4EA} % verde
+% Solo griglie d'esame (su richiesta): IND arancio, DAT teal
+\definecolor{indc}{HTML}{E65100}\definecolor{indbg}{HTML}{FFF0E0}
+\definecolor{datc}{HTML}{00796B}\definecolor{datbg}{HTML}{E0F2F1}
 
 % Riferimenti agli indicatori: usare queste macro in tutto il documento.
 \newcommand{\coloreANA}{anac}\newcommand{\nomeANA}{Analizzare}
 \newcommand{\coloreSVI}{svic}\newcommand{\nomeSVI}{Sviluppare e calcolare}
 \newcommand{\coloreARG}{argc}\newcommand{\nomeARG}{Argomentare}
 \newcommand{\coloreCOM}{comc}\newcommand{\nomeCOM}{Comunicare}
+\newcommand{\coloreIND}{indc}\newcommand{\nomeIND}{Individuare}
+\newcommand{\coloreDAT}{datc}\newcommand{\nomeDAT}{Interpretare i dati}
+% Griglie d'esame: matematica \renewcommand{\nomeANA}{Comprendere}, \nomeSVI{Sviluppare il processo risolutivo};
+% fisica/mista: \nomeSVI{Sviluppare il processo risolutivo}, \nomeDAT{Interpretare criticamente i dati} (mista: ...rappresentare, elaborare).
 \newcommand{\sigla}[1]{\textcolor{\csname colore#1\endcsname}{\textbf{#1}}}
 \newcommand{\indicatore}[1]{\textcolor{\csname colore#1\endcsname}{\textbf{#1: \csname nome#1\endcsname}}}
 
@@ -71,6 +78,8 @@
 \defbox{svi}{svic}{svibg}{SVI}
 \defbox{arg}{argc}{argbg}{ARG}
 \defbox{com}{comc}{combg}{COM}
+\defbox{ind}{indc}{indbg}{IND}
+\defbox{dat}{datc}{datbg}{DAT}
 
 % Box enunciato
 \newtcolorbox{enun}{colback=black!3,colframe=black!25,boxrule=0.4pt,arc=2pt,
@@ -84,9 +93,13 @@
 \newcommand{\SVI}[2]{\chip{svic}{svibg}{\sigla{SVI}}{#1\, / massimo #2\,p}}
 \newcommand{\ARG}[2]{\chip{argc}{argbg}{\sigla{ARG}}{#1\, / massimo #2\,p}}
 \newcommand{\COM}[2]{\chip{comc}{combg}{\sigla{COM}}{#1\, / massimo #2\,p}}
+\newcommand{\IND}[2]{\chip{indc}{indbg}{\sigla{IND}}{#1\, / massimo #2\,p}}
+\newcommand{\DAT}[2]{\chip{datc}{datbg}{\sigla{DAT}}{#1\, / massimo #2\,p}}
 \newcommand{\ess}{\ensuremath{\bigstar}}
 \newcommand{\legenda}{\indicatore{ANA}\quad\indicatore{SVI}\par
   \indicatore{ARG}\quad\indicatore{COM}}
+% Griglie d'esame: \legendaesame{ANA}{IND}{SVI}{ARG} (matematica) o \legendaesame{ANA}{SVI}{DAT}{ARG} (fisica, mista)
+\newcommand{\legendaesame}[4]{\indicatore{#1}\quad\indicatore{#2}\par\indicatore{#3}\quad\indicatore{#4}}
 % Limite categorico sull'intera verifica; il registro non incrementa il conteggio.
 \newcounter{numeroevidenze}
 \newcommand{\controllaevidenze}{\stepcounter{numeroevidenze}%
@@ -120,6 +133,8 @@
 \newcommand{\hSVI}{\cellcolor{svibg}\sigla{SVI}}
 \newcommand{\hARG}{\cellcolor{argbg}\sigla{ARG}}
 \newcommand{\hCOM}{\cellcolor{combg}\sigla{COM}}
+\newcommand{\hIND}{\cellcolor{indbg}\sigla{IND}}
+\newcommand{\hDAT}{\cellcolor{datbg}\sigla{DAT}}
 
 % ---------- macro di struttura ----------
 % Sezione semplice
@@ -135,6 +150,11 @@
   \begin{tabular}{*{5}{|>{\centering\arraybackslash}p{1.4cm}}|}\hline
   \hANA & \hSVI & \hARG & \hCOM & \textbf{Tot}\\\hline
   #1 & #2 & #3 & #4 & \textbf{#5}\\\hline\end{tabular}\par\smallskip}
+% Griglie d'esame: \tabpuntiesame{ANA}{IND}{SVI}{ARG}{v1}{v2}{v3}{v4}{TOT} (sigle nell'ordine dei valori)
+\newcommand{\tabpuntiesame}[9]{\par\noindent\renewcommand{\arraystretch}{1.15}\small
+  \begin{tabular}{*{5}{|>{\centering\arraybackslash}p{1.4cm}}|}\hline
+  \csname h#1\endcsname & \csname h#2\endcsname & \csname h#3\endcsname & \csname h#4\endcsname & \textbf{Tot}\\\hline
+  #5 & #6 & #7 & #8 & \textbf{#9}\\\hline\end{tabular}\par\smallskip}
 % Nota (alternative, errori trascinati, criteri)
 \newcommand{\nota}[1]{\begin{itemize}[font=\footnotesize]\item {\footnotesize #1}\end{itemize}}
 \newcommand{\criteri}[1]{\par\nopagebreak[3]\smallskip\needspace{3\baselineskip}%

@@ -83,7 +83,7 @@ Sono bersagli. Gli intervalli sono vincolanti: L1 tra 20% e 25%, L3 tra 10% e 20
 
 ## Pesi orientativi
 
-Riferimento su 1000 per tutte le classi, salvo indicazioni diverse della scheda: **ANA 350, SVI 400, ARG 100, COM 150**. È un suggerimento generico, mai vincolante: i massimi derivano dalle evidenze effettive, sommano a 1000 e rispettano le priorità del singolo contenuto indicate nelle schede. Usa da 1 a 40 evidenze nell’intera verifica; il docente assegna a ciascuna una percentuale indipendente 0–100. Conserva fasce e conversioni della [griglia ufficiale](griglia_valutazione.md); le indicazioni di livello distinguono le prestazioni ma non fissano percentuali uniche.
+Riferimento su 1000 per tutte le classi, salvo indicazioni diverse della scheda: **ANA 350, SVI 400, ARG 100, COM 150**. È un suggerimento generico, mai vincolante: i massimi derivano dalle evidenze effettive, sommano a 1000 e rispettano le priorità del singolo contenuto indicate nelle schede. Usa da 1 a 40 evidenze nell’intera verifica; il docente assegna a ciascuna una percentuale indipendente 0–100. Conserva le fasce della [griglia](griglia_valutazione.md); le indicazioni di livello distinguono le prestazioni ma non fissano percentuali uniche.
 
 Ritara sempre sulla verifica: se grafici (e, in fisica, tabelle) sono pochi o assenti riduci molto COM; quando sono presenti attribuisci ai grafici in COM un peso nettamente maggiore di notazione, unità e altri aspetti. Se le argomentazioni richieste sono poche o assenti riduci ARG, anche fino a zero. Le regole di dettaglio sono nel [correttore](correttore.md#3-pesi).
 

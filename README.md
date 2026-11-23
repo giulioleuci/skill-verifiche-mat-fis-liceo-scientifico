@@ -53,7 +53,7 @@ I comandi seguenti vanno indicati nelle richieste all'assistente (non sono coman
 ## Struttura del repository
 
 - `verifiche-mat-fis/SKILL.md`: definizione delle regole, dei vincoli e dei flussi della skill.
-- `verifiche-mat-fis/scripts/registro_xlsx.py`: utility per la creazione e validazione del registro evidenze Excel (foglio .xlsx con sfondo scuro `#1C1C1C`, indicatori ANA/SVI/ARG/COM, punteggio totale 1000 e colonne con percentuali per esercizio e complessive).
+- `verifiche-mat-fis/scripts/registro_xlsx.py`: utility per la creazione e validazione del registro evidenze Excel (foglio .xlsx con sfondo scuro `#1C1C1C`, indicatori ANA/SVI/ARG/COM (o, su richiesta, le griglie d'esame con `--griglia`), punteggio totale 1000 e colonne con percentuali per esercizio e complessive).
 - `verifiche-mat-fis/scripts/progetto.py`: utility per il tracciamento del ciclo di vita del progetto, delle approvazioni e delle revisioni.
 - `verifiche-mat-fis/scripts/quiz.py`: generazione (`genera`) e correzione con statistiche (`correggi`) dei quiz a scelta multipla; `test_quiz.py` ne verifica il flusso. Adattato da [multiple-choice-randomizer-latex](https://github.com/giulioleuci/multiple-choice-randomizer-latex) (GPL-3.0).
 - `verifiche-mat-fis/assets/`: modelli LaTeX per le prove, i correttori docenti e gli svolgimenti studenti.
