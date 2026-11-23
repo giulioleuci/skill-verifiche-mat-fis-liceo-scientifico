@@ -16,7 +16,7 @@ Questo repository sviluppa e distribuisce la skill educativa **`verifiche-mat-fi
   - `SKILL.md`: punto di ingresso della skill, vincoli operativi, flussi e tabella comandi per l'agente.
   - `references/`: guide operative e criteri disciplinari:
     - `criteri_disciplinari.md`: macro-aree, pesi per anno, livelli di difficoltà (1/2/3) e relative soglie.
-    - `griglia_valutazione.md`: indicatori ministeriali ANA/SVI/ARG/COM e conversione punteggi (su 1000).
+    - `griglia_valutazione.md`: indicatori ANA/SVI/ARG/COM con fasce di livello e, solo su richiesta, griglie d'esame di matematica, fisica e prova mista (ANA/IND/SVI/ARG, ANA/SVI/DAT/ARG) su 1000.
     - `generatore.md`: flusso di generazione prove, scaletta, varianti e recuperi.
     - `correttore.md`: estrazione evidenze, validazione del registro e correttore LaTeX.
     - `progetto.py` / `progetto.md`: ciclo di vita del progetto, tracciamento versioni e matrici di copertura.
