@@ -1,0 +1,1665 @@
+{
+ "base": [
+  4,
+  1,
+  -1.0
+ ],
+ "annullata": 0.0,
+ "minimo": 0.0,
+ "soglia": 0.58,
+ "pesi": null,
+ "varianti": [
+  {
+   "codice": "PTAX",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Quale retta è parallela a $y=3x-1$?",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=-\\frac13x$",
+      "$6x-2y+5=0$",
+      "$x+3y=0$",
+      "$3x+y-1=0$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "La retta $2x-3y+6=0$ interseca l'asse $y$ nel punto:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(3,0)$",
+      "$(-3,0)$",
+      "$(0,2)$",
+      "$(0,-2)$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D10",
+     "riga": 2,
+     "testo": "L'asse del segmento di estremi $(0,0)$ e $(4,0)$ è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$x=2$",
+      "$x=4$",
+      "$y=0$",
+      "$y=2$"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "La distanza del punto $(0,0)$ dalla retta $3x+4y-10=0$ è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      6.0,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$2$",
+      "$\\frac{10}{7}$",
+      "$\\frac{7}{5}$",
+      "$10$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "Qual è il coefficiente angolare della retta per $A(0,1)$ e $B(3,7)$?",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$-2$",
+      "$\\frac12$",
+      "$2$",
+      "$3$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Due rette di coefficienti angolari $m_1$ e $m_2$ sono perpendicolari se:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$m_1m_2=1$",
+      "$m_1=m_2$",
+      "$m_1m_2=-1$",
+      "nessuna delle precedenti"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Il punto medio del segmento di estremi $(2,-4)$ e $(6,2)$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(2,3)$",
+      "$(4,-1)$",
+      "$(4,-3)$",
+      "$(8,-2)$"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Quale equazione rappresenta la retta per $P(0,3)$ con coefficiente angolare $-2$?",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=2x+3$",
+      "$y=-2x+3$",
+      "$y=-2x-3$",
+      "$y=3x-2$"
+     ]
+    },
+    {
+     "n": 9,
+     "foglio": "D09",
+     "riga": 2,
+     "testo": "Il centro del fascio $k(x+y)+(x-y-2)=0$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(2,0)$",
+      "$(1,-1)$",
+      "$(0,-2)$",
+      "$(-1,1)$"
+     ]
+    },
+    {
+     "n": 10,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "La distanza fra $A(-1,2)$ e $B(2,6)$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$25$",
+      "$7$",
+      "$\\sqrt{7}$",
+      "$5$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 4,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       30,
+       108
+      ],
+      [
+       38,
+       108
+      ],
+      [
+       46,
+       108
+      ],
+      [
+       54,
+       108
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       108
+      ],
+      [
+       90,
+       108
+      ],
+      [
+       98,
+       108
+      ],
+      [
+       106,
+       108
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "7292",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Quale equazione rappresenta la retta per $P(0,3)$ con coefficiente angolare $-2$?",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=-2x-3$",
+      "$y=2x+3$",
+      "$y=3x-2$",
+      "$y=-2x+3$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D05",
+     "riga": 3,
+     "testo": "La retta $3x-2y+8=0$ interseca l'asse $y$ nel punto:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(\\frac83,0)$",
+      "$(\\!-\\frac83,0)$",
+      "$(0,-4)$",
+      "$(0,4)$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "La distanza fra $A(-1,2)$ e $B(2,6)$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$7$",
+      "$5$",
+      "$25$",
+      "$\\sqrt{7}$"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D09",
+     "riga": 2,
+     "testo": "Il centro del fascio $k(x+y)+(x-y-2)=0$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(0,-2)$",
+      "$(-1,1)$",
+      "$(2,0)$",
+      "$(1,-1)$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D01",
+     "riga": 2,
+     "testo": "Qual è il coefficiente angolare della retta per $A(1,2)$ e $B(5,4)$?",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$\\frac32$",
+      "$2$",
+      "$\\frac12$",
+      "$-\\frac12$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Quale retta è parallela a $y=3x-1$?",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$3x+y-1=0$",
+      "$6x-2y+5=0$",
+      "$y=-\\frac13x$",
+      "$x+3y=0$"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Due rette di coefficienti angolari $m_1$ e $m_2$ sono perpendicolari se:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$m_1=m_2$",
+      "$m_1m_2=1$",
+      "$m_1m_2=-1$",
+      "nessuna delle precedenti"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "La distanza del punto $(0,0)$ dalla retta $3x+4y-10=0$ è:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      6.0,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$\\frac{7}{5}$",
+      "$10$",
+      "$2$",
+      "$\\frac{10}{7}$"
+     ]
+    },
+    {
+     "n": 9,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Il punto medio del segmento di estremi $(2,-4)$ e $(6,2)$ è:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(4,-3)$",
+      "$(2,3)$",
+      "$(4,-1)$",
+      "$(8,-2)$"
+     ]
+    },
+    {
+     "n": 10,
+     "foglio": "D10",
+     "riga": 2,
+     "testo": "L'asse del segmento di estremi $(0,0)$ e $(4,0)$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=0$",
+      "$x=2$",
+      "$x=4$",
+      "$y=2$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 4,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       30,
+       108
+      ],
+      [
+       38,
+       108
+      ],
+      [
+       46,
+       108
+      ],
+      [
+       54,
+       108
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       108
+      ],
+      [
+       90,
+       108
+      ],
+      [
+       98,
+       108
+      ],
+      [
+       106,
+       108
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "6WE8",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Il punto medio del segmento di estremi $(2,-4)$ e $(6,2)$ è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(4,-1)$",
+      "$(4,-3)$",
+      "$(8,-2)$",
+      "$(2,3)$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "La distanza fra $A(-1,2)$ e $B(2,6)$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$25$",
+      "$\\sqrt{7}$",
+      "$7$",
+      "$5$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D09",
+     "riga": 2,
+     "testo": "Il centro del fascio $k(x+y)+(x-y-2)=0$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(0,-2)$",
+      "$(-1,1)$",
+      "$(2,0)$",
+      "$(1,-1)$"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "La distanza del punto $(0,0)$ dalla retta $3x+4y-10=0$ è:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      6.0,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$\\frac{10}{7}$",
+      "$10$",
+      "$2$",
+      "$\\frac{7}{5}$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D10",
+     "riga": 2,
+     "testo": "L'asse del segmento di estremi $(0,0)$ e $(4,0)$ è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$x=2$",
+      "$y=0$",
+      "$x=4$",
+      "$y=2$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Due rette di coefficienti angolari $m_1$ e $m_2$ sono perpendicolari se:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$m_1m_2=1$",
+      "$m_1=m_2$",
+      "$m_1m_2=-1$",
+      "nessuna delle precedenti"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Quale equazione rappresenta la retta per $P(0,3)$ con coefficiente angolare $-2$?",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=3x-2$",
+      "$y=2x+3$",
+      "$y=-2x-3$",
+      "$y=-2x+3$"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D05",
+     "riga": 3,
+     "testo": "La retta $3x-2y+8=0$ interseca l'asse $y$ nel punto:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(0,4)$",
+      "$(\\!-\\frac83,0)$",
+      "$(\\frac83,0)$",
+      "$(0,-4)$"
+     ]
+    },
+    {
+     "n": 9,
+     "foglio": "D01",
+     "riga": 2,
+     "testo": "Qual è il coefficiente angolare della retta per $A(1,2)$ e $B(5,4)$?",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$-\\frac12$",
+      "$\\frac12$",
+      "$\\frac32$",
+      "$2$"
+     ]
+    },
+    {
+     "n": 10,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Quale retta è parallela a $y=3x-1$?",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=-\\frac13x$",
+      "$6x-2y+5=0$",
+      "$x+3y=0$",
+      "$3x+y-1=0$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 4,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       30,
+       108
+      ],
+      [
+       38,
+       108
+      ],
+      [
+       46,
+       108
+      ],
+      [
+       54,
+       108
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       108
+      ],
+      [
+       90,
+       108
+      ],
+      [
+       98,
+       108
+      ],
+      [
+       106,
+       108
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "FCKF",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "La distanza del punto $(0,0)$ dalla retta $3x+4y-10=0$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      6.0,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$10$",
+      "$\\frac{10}{7}$",
+      "$\\frac{7}{5}$",
+      "$2$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Due rette di coefficienti angolari $m_1$ e $m_2$ sono perpendicolari se:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$m_1m_2=-1$",
+      "$m_1=m_2$",
+      "$m_1m_2=1$",
+      "nessuna delle precedenti"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "La retta $2x-3y+6=0$ interseca l'asse $y$ nel punto:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(3,0)$",
+      "$(0,-2)$",
+      "$(-3,0)$",
+      "$(0,2)$"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "La distanza fra $A(-1,2)$ e $B(2,6)$ è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$5$",
+      "$25$",
+      "$7$",
+      "$\\sqrt{7}$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D10",
+     "riga": 2,
+     "testo": "L'asse del segmento di estremi $(0,0)$ e $(4,0)$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=0$",
+      "$x=4$",
+      "$y=2$",
+      "$x=2$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "Qual è il coefficiente angolare della retta per $A(0,1)$ e $B(3,7)$?",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$2$",
+      "$3$",
+      "$\\frac12$",
+      "$-2$"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Quale retta è parallela a $y=3x-1$?",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$3x+y-1=0$",
+      "$y=-\\frac13x$",
+      "$x+3y=0$",
+      "$6x-2y+5=0$"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Quale equazione rappresenta la retta per $P(0,3)$ con coefficiente angolare $-2$?",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$y=2x+3$",
+      "$y=3x-2$",
+      "$y=-2x+3$",
+      "$y=-2x-3$"
+     ]
+    },
+    {
+     "n": 9,
+     "foglio": "D09",
+     "riga": 2,
+     "testo": "Il centro del fascio $k(x+y)+(x-y-2)=0$ è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(-1,1)$",
+      "$(0,-2)$",
+      "$(2,0)$",
+      "$(1,-1)$"
+     ]
+    },
+    {
+     "n": 10,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Il punto medio del segmento di estremi $(2,-4)$ e $(6,2)$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      -1.0
+     ],
+     "ind": null,
+     "arg": "",
+     "alternative": [
+      "$(4,-3)$",
+      "$(4,-1)$",
+      "$(8,-2)$",
+      "$(2,3)$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 4,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       30,
+       108
+      ],
+      [
+       38,
+       108
+      ],
+      [
+       46,
+       108
+      ],
+      [
+       54,
+       108
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       108
+      ],
+      [
+       90,
+       108
+      ],
+      [
+       98,
+       108
+      ],
+      [
+       106,
+       108
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  }
+ ]
+}

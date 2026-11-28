@@ -1,0 +1,145 @@
+[
+ {
+  "ID evidenza": "E01",
+  "Esercizio": 1,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "URT",
+  "Max": 40,
+  "Descrizione evidenza": "Riconosce che nell'urto completamente anelastico si conserva la quantità di moto",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E02",
+  "Esercizio": 1,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "URT",
+  "Max": 100,
+  "Descrizione evidenza": "Ricava in lettere la velocità finale e la calcola con l'unità",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E03",
+  "Esercizio": 1,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "URT",
+  "Max": 80,
+  "Descrizione evidenza": "Calcola l'energia cinetica dissipata",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E04",
+  "Esercizio": 1,
+  "Punto/gruppo": "intero",
+  "Indicatore": "COM",
+  "Sigla argomento": "URT",
+  "Max": 40,
+  "Descrizione evidenza": "Scrive formule, risultati e unità in modo corretto",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E05",
+  "Esercizio": 2,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "URT",
+  "Max": 50,
+  "Descrizione evidenza": "Sceglie conservazione della quantità di moto e dell'energia cinetica per l'urto elastico",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E06",
+  "Esercizio": 2,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "URT",
+  "Max": 120,
+  "Descrizione evidenza": "Ricava le velocità finali dal sistema delle due leggi",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E07",
+  "Esercizio": 2,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "URT",
+  "Max": 60,
+  "Descrizione evidenza": "Commenta il segno della velocità e verifica la conservazione dell'energia cinetica",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E08",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "ENE",
+  "Max": 70,
+  "Descrizione evidenza": "Separa il fenomeno in urto (quantità di moto) e risalita (energia meccanica)",
+  "Nome completo argomento": "Conservazione dell'energia meccanica",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E09",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "ENE",
+  "Max": 110,
+  "Descrizione evidenza": "Ricava dalla risalita la velocità del sistema subito dopo l'urto",
+  "Nome completo argomento": "Conservazione dell'energia meccanica",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E10",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "URT",
+  "Max": 110,
+  "Descrizione evidenza": "Ricava dalla quantità di moto la velocità del proiettile",
+  "Nome completo argomento": "Urti e conservazione della quantità di moto",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E11",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "ENE",
+  "Max": 70,
+  "Descrizione evidenza": "Spiega che nell'urto anelastico l'energia meccanica non si conserva",
+  "Nome completo argomento": "Conservazione dell'energia meccanica",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E12",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "COM",
+  "Sigla argomento": "ENE",
+  "Max": 80,
+  "Descrizione evidenza": "Organizza il percorso con formule in lettere, sostituzione finale e unità",
+  "Nome completo argomento": "Conservazione dell'energia meccanica",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E13",
+  "Esercizio": "Intero elaborato",
+  "Punto/gruppo": "Intero elaborato",
+  "Indicatore": "COM",
+  "Sigla argomento": "TRASVERSALE",
+  "Max": 70,
+  "Descrizione evidenza": "Usa notazione, unità di misura e cifre significative corrette",
+  "Nome completo argomento": "Competenze trasversali",
+  "Livello": "1"
+ }
+]

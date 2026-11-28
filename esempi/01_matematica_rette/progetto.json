@@ -1,0 +1,107 @@
+{
+  "preferenze": {
+    "materia": "matematica",
+    "classe": "3ª liceo scientifico",
+    "livello_classe": "medio",
+    "argomenti": [
+      "retta_analitica",
+      "fasci_rette"
+    ],
+    "formato": "un problema in 3 punti e 3 quesiti singoli",
+    "risultati_intermedi": "nessuno",
+    "supporti": "nessuno sullo standard; formulario solo per la prova adattata"
+  },
+  "versioni": {
+    "A": {
+      "durata_minuti": 100,
+      "font": "Palatino",
+      "fase": "correttore approvato",
+      "scaletta": "scalette/scaletta_A.md",
+      "registro": "registri/registro_A.xlsx",
+      "revisioni": [
+        {
+          "rev": 2,
+          "motivo": "E07 da 40 a 30 e E18 da 50 a 60 su richiesta del docente; nota su E05",
+          "id_precedenti": "invariati"
+        }
+      ],
+      "approvazioni": {
+        "scaletta": {
+          "revisione": {
+            "sha256": "d6d11388cf734dad7fc3f249e6c578126ac594fb3e88a04dc02b3a0aa97807e4",
+            "contesto": "e8976604d73ffddd07cc58d3ba35761b4afe6f57f75d630e8eeeaa78b68ad26f"
+          }
+        },
+        "registro": {
+          "revisione": {
+            "sha256": "6cb1d89842e70aefa77f57cd202a1175ca47b4fb88ba86c472181b31b3fa8ac5",
+            "contesto": "472a9632a5dd00e797385884eb75cbb9b3991307b76a7262c56000508353c7af"
+          }
+        }
+      }
+    },
+    "B": {
+      "standard": "A",
+      "durata_minuti": 100,
+      "font": "Palatino",
+      "fase": "correttore approvato",
+      "scaletta": "scalette/scaletta_B.md",
+      "registro": "registri/registro_B.xlsx",
+      "approvazioni": {
+        "scaletta": {
+          "revisione": {
+            "sha256": "0b1d392b9d185af1cef94b218b07f53446585eb24e6835d13333c778fd3becd1",
+            "contesto": "9dc6d568862759e2ab0ca698c4a1b066fa8824860e7121648af364daaec10cb4"
+          },
+          "standard": {
+            "sha256": "d6d11388cf734dad7fc3f249e6c578126ac594fb3e88a04dc02b3a0aa97807e4",
+            "contesto": "e8976604d73ffddd07cc58d3ba35761b4afe6f57f75d630e8eeeaa78b68ad26f"
+          }
+        },
+        "registro": {
+          "revisione": {
+            "sha256": "64ab3020fe8cc3e74226eedab662b002980ef789a52784c77dc36ca924ecc83b",
+            "contesto": "966f36347fd6a561b2a7ed3dff9f4b84e6393cbc8ec263255775376692837ca4"
+          },
+          "standard": {
+            "sha256": "6cb1d89842e70aefa77f57cd202a1175ca47b4fb88ba86c472181b31b3fa8ac5",
+            "contesto": "472a9632a5dd00e797385884eb75cbb9b3991307b76a7262c56000508353c7af"
+          }
+        }
+      }
+    },
+    "R": {
+      "standard": "A",
+      "durata_minuti": 85,
+      "font": "Palatino",
+      "fase": "registro approvato",
+      "scaletta": "scalette/scaletta_adattata.md",
+      "registro": "registri/registro_adattata.xlsx",
+      "supporti": {
+        "formulario": "distanza fra due punti, punto medio, distanza punto-retta, parallelismo e perpendicolarità, fascio di rette"
+      },
+      "approvazioni": {
+        "scaletta": {
+          "revisione": {
+            "sha256": "959ff8e322768242fb5e36d923eb29510c3f0515de40a79a628a10c5017b9826",
+            "contesto": "f6d802a206f0ffce5987c76252587b2811f67ff25f16252f7e253e013061b31b"
+          },
+          "standard": {
+            "sha256": "d6d11388cf734dad7fc3f249e6c578126ac594fb3e88a04dc02b3a0aa97807e4",
+            "contesto": "e8976604d73ffddd07cc58d3ba35761b4afe6f57f75d630e8eeeaa78b68ad26f"
+          }
+        },
+        "registro": {
+          "revisione": {
+            "sha256": "864a3ecb836b1e6ed0b9cb8d286891ebaa8e95f8303d219ab183e2d16068188a",
+            "contesto": "db853369ba01675097ec0d08f96a35de4af72bcb48da3c20424454767b0da48b"
+          },
+          "standard": {
+            "sha256": "6cb1d89842e70aefa77f57cd202a1175ca47b4fb88ba86c472181b31b3fa8ac5",
+            "contesto": "472a9632a5dd00e797385884eb75cbb9b3991307b76a7262c56000508353c7af"
+          }
+        }
+      }
+    }
+  }
+}

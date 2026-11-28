@@ -103,6 +103,11 @@ def stato_versione(path, data, name, kind):
 
 
 def stato(path):
+    grezzo = leggi_json(path)
+    if grezzo.get('tipo', 'prova') != 'prova' or not grezzo.get('versioni'):  # quiz, prove importate, cartella appena creata
+        risultati = Path(path).parent / 'risultati'
+        return {'tipo': grezzo.get('tipo', 'prova'), 'fase': grezzo.get('fase', 'nuova'),
+                'risultati': sorted(f.name for f in risultati.glob('*') if f.is_file()) if risultati.is_dir() else []}
     data = carica(path)
     return {name: {'standard': version.get('standard'), 'durata_minuti': version['durata_minuti'],
                    'font': version['font'], 'fase': version['fase'],

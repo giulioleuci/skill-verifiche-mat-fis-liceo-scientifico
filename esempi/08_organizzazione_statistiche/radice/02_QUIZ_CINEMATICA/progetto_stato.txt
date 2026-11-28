@@ -1,0 +1,5 @@
+{
+  "tipo": "quiz",
+  "fase": "nuova",
+  "risultati": []
+}

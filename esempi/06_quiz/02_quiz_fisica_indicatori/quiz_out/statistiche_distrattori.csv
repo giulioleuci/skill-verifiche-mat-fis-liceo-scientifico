@@ -1,0 +1,51 @@
+Foglio,Riga Excel,Alternativa,Corretta,Scelte,% sugli studenti,Nota,Indicatore
+D02,2,$\um{1}{m/s}$,,0,0.0,mai scelto: poco plausibile,SVI
+D02,2,$\um{1.5}{m/s}$,,0,0.0,mai scelto: poco plausibile,SVI
+D02,2,$\um{2}{m/s}$,sì,2,100.0,,SVI
+D02,2,$\um{3}{m/s}$,,0,0.0,mai scelto: poco plausibile,SVI
+D02,2,(non data),,0,0.0,,
+D06,2,mai,,0,0.0,mai scelto: poco plausibile,ANA
+D06,2,prima dell'urto soltanto,,0,0.0,mai scelto: poco plausibile,ANA
+D06,2,solo dopo l'urto,sì,5,83.33,,ANA
+D06,2,durante l'urto,,0,0.0,mai scelto: poco plausibile,ANA
+D06,2,(non data),,1,16.67,,
+D05,2,il primo rimbalza con la stessa velocità,,1,16.67,,ARG
+D05,2,entrambi si fermano,,1,16.67,,ARG
+D05,2,il primo si ferma e il secondo prende la sua velocità,sì,2,33.33,,ARG
+D05,2,i due procedono uniti,,1,16.67,,ARG
+D05,2,(non data),,1,16.67,,
+D04,2,$\um{10}{m/s}$,,1,16.67,,SVI
+D04,2,$\um{1}{m/s}$,sì,4,66.67,,SVI
+D04,2,$\um{300}{m/s}$,,0,0.0,mai scelto: poco plausibile,SVI
+D04,2,$\um{0.1}{m/s}$,,1,16.67,,SVI
+D04,2,(non data),,0,0.0,,
+D03,2,positiva o nulla,sì,5,83.33,,ANA
+D03,2,uguale all'energia finale,,0,0.0,mai scelto: poco plausibile,ANA
+D03,2,sempre nulla,,0,0.0,mai scelto: poco plausibile,ANA
+D03,2,negativa,,0,0.0,mai scelto: poco plausibile,ANA
+D03,2,(non data),,1,16.67,,
+D07,2,l'energia,,0,0.0,mai scelto: poco plausibile,COM
+D07,2,la potenza,,0,0.0,mai scelto: poco plausibile,COM
+D07,2,la forza,,1,16.67,,COM
+D07,2,l'impulso,sì,5,83.33,,COM
+D07,2,(non data),,0,0.0,,
+D01,2,l'energia cinetica totale,,0,0.0,mai scelto: poco plausibile,ANA
+D01,2,la quantità di moto totale,sì,2,100.0,,ANA
+D01,2,la velocità di ciascun corpo,,0,0.0,mai scelto: poco plausibile,ANA
+D01,2,la quantità di moto di ciascun corpo,,0,0.0,mai scelto: poco plausibile,ANA
+D01,2,(non data),,0,0.0,,
+D08,2,cambia segno e mantiene il modulo,sì,4,66.67,,ARG
+D08,2,si dimezza,,2,33.33,,ARG
+D08,2,resta uguale,,0,0.0,mai scelto: poco plausibile,ARG
+D08,2,si annulla,,0,0.0,mai scelto: poco plausibile,ARG
+D08,2,(non data),,0,0.0,,
+D02,3,$\um{1}{m/s}$,,2,50.0,,ANA
+D02,3,$\um{4}{m/s}$,,0,0.0,mai scelto: poco plausibile,ANA
+D02,3,$\um{2}{m/s}$,,0,0.0,mai scelto: poco plausibile,ANA
+D02,3,$\um{3}{m/s}$,sì,2,50.0,,ANA
+D02,3,(non data),,0,0.0,,
+D01,3,la velocità del centro di massa e basta,,0,0.0,mai scelto: poco plausibile,SVI
+D01,3,l'energia cinetica totale,sì,3,75.0,,SVI
+D01,3,nulla,,0,0.0,mai scelto: poco plausibile,SVI
+D01,3,la massa di ciascun corpo,,1,25.0,,SVI
+D01,3,(non data),,0,0.0,,

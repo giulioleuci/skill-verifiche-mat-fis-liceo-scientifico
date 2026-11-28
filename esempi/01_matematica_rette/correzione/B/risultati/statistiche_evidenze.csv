@@ -1,0 +1,19 @@
+ID,Esercizio,Indicatore,Livello,Argomento,Max,Media %,% alunni ≥50% del max,Difficoltà (1-media),Discriminazione,Nota
+E01,1,ANA,1,RET,40,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E02,1,SVI,1,RET,60,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E03,1,SVI,1,DIS,40,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E04,1,ANA,2A,DIS,50,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E05,1,SVI,2A,DIS,70,65.0,50.0,0.35,0.7,
+E06,1,SVI,2,DIS,40,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E07,1,ARG,3,DIS,30,55.0,50.0,0.45,0.9,
+E08,1,ANA,2,PAR,40,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E09,1,SVI,2,PAR,60,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E10,2,ANA,1,PAR,50,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E11,2,SVI,2,PAR,70,60.0,50.0,0.4,0.8,
+E12,3,ANA,2A,PAR,50,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E13,3,SVI,2A,PAR,100,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E14,3,ARG,3,PAR,50,55.0,50.0,0.45,0.9,
+E15,4,ANA,2A,FAS,60,100.0,100.0,0.0,0.0,raggiunta da oltre il 95%: poco informativa
+E16,4,SVI,2,FAS,80,60.0,50.0,0.4,0.8,
+E17,4,ARG,3,FAS,50,10.0,0.0,0.9,0.0,rivedere: raggiunta da meno del 10%
+E18,Intero elaborato,COM,1,TRASVERSALE,60,70.0,100.0,0.3,0.4,raggiunta da oltre il 95%: poco informativa

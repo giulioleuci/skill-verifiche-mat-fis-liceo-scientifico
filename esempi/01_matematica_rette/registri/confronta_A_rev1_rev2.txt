@@ -1,0 +1,117 @@
+{
+  "mantenuti": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E06",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17"
+  ],
+  "modificati": {
+    "E05": {
+      "Note utente": {
+        "prima": "",
+        "dopo": "Ammesso anche il risultato approssimato 5,06 se compare la forma esatta."
+      }
+    },
+    "E07": {
+      "Max": {
+        "prima": 40,
+        "dopo": 30
+      }
+    },
+    "E18": {
+      "Max": {
+        "prima": 50,
+        "dopo": 60
+      }
+    }
+  },
+  "eliminati": [],
+  "aggiunti": [],
+  "derivazioni": {},
+  "pesi_argomenti": {
+    "DIS": {
+      "prima": 240,
+      "dopo": 230
+    },
+    "FAS": {
+      "prima": 190,
+      "dopo": 190
+    },
+    "PAR": {
+      "prima": 420,
+      "dopo": 420
+    },
+    "RET": {
+      "prima": 100,
+      "dopo": 100
+    },
+    "TRASVERSALE": {
+      "prima": 50,
+      "dopo": 60
+    }
+  },
+  "pesi_indicatori": {
+    "ANA": {
+      "prima": 290,
+      "dopo": 290
+    },
+    "ARG": {
+      "prima": 140,
+      "dopo": 130
+    },
+    "COM": {
+      "prima": 50,
+      "dopo": 60
+    },
+    "SVI": {
+      "prima": 520,
+      "dopo": 520
+    }
+  },
+  "pesi_livelli": {
+    "1": {
+      "prima": 240,
+      "dopo": 250
+    },
+    "2": {
+      "prima": 290,
+      "dopo": 290
+    },
+    "2A": {
+      "prima": 330,
+      "dopo": 330
+    },
+    "3": {
+      "prima": 140,
+      "dopo": 130
+    }
+  },
+  "obiettivi": {
+    "prima": {
+      "RET": "Equazione della retta",
+      "DIS": "Distanze nel piano cartesiano",
+      "PAR": "Parallelismo, perpendicolarità e luoghi",
+      "FAS": "Fasci di rette",
+      "TRASVERSALE": "Competenze trasversali"
+    },
+    "dopo": {
+      "RET": "Equazione della retta",
+      "DIS": "Distanze nel piano cartesiano",
+      "PAR": "Parallelismo, perpendicolarità e luoghi",
+      "FAS": "Fasci di rette",
+      "TRASVERSALE": "Competenze trasversali"
+    }
+  },
+  "valutazione": "Il confronto non certifica l’equivalenza didattica: motivarla con il docente."
+}

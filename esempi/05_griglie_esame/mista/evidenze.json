@@ -1,0 +1,123 @@
+[
+ {
+  "ID evidenza": "E01",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "VEL",
+  "Max": 60,
+  "Descrizione evidenza": "Riconosce la condizione di velocità limite",
+  "Nome completo argomento": "Velocità limite e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E02",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "VEL",
+  "Max": 60,
+  "Descrizione evidenza": "Calcola la velocità limite",
+  "Nome completo argomento": "Velocità limite e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E03",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "VEL",
+  "Max": 80,
+  "Descrizione evidenza": "Rappresenta i dati e individua la saturazione",
+  "Nome completo argomento": "Velocità limite e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E04",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "VEL",
+  "Max": 100,
+  "Descrizione evidenza": "Confronta i dati con il modello e stima $\\tau$",
+  "Nome completo argomento": "Velocità limite e dati sperimentali",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E05",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "VEL",
+  "Max": 100,
+  "Descrizione evidenza": "Valuta la compatibilità fra dati e modello",
+  "Nome completo argomento": "Velocità limite e dati sperimentali",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E06",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "SPA",
+  "Max": 90,
+  "Descrizione evidenza": "Collega accelerazione e derivata di $v$",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E07",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "SPA",
+  "Max": 120,
+  "Descrizione evidenza": "Calcola $a(t)$ e $a(0)$",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E08",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "SPA",
+  "Max": 120,
+  "Descrizione evidenza": "Integra $v(t)$ per lo spazio",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E09",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "SPA",
+  "Max": 70,
+  "Descrizione evidenza": "Rappresenta $s(t)$ e confronta con la caduta libera",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E10",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "SPA",
+  "Max": 100,
+  "Descrizione evidenza": "Giustifica il limite e la coerenza fisica",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E11",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "SPA",
+  "Max": 100,
+  "Descrizione evidenza": "Imposta lo spazio come integrale",
+  "Nome completo argomento": "Spazio percorso",
+  "Livello": "2"
+ }
+]

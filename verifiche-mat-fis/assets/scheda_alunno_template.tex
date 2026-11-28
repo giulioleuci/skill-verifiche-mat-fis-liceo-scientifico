@@ -1,0 +1,47 @@
+\documentclass[9pt,a4paper]{article}
+% Scheda di correzione per l'alunno: una sola pagina A4. Nessun indicatore ANA/SVI/ARG/COM, nessun ID evidenza.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{mathpazo,microtype,amsmath}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},per-mode=symbol,group-digits=false}
+\usepackage{pifont,xcolor,booktabs,array,tabularx,enumitem}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=1pt,parsep=0pt}
+
+% Rosso e verde accesi riservati ai simboli di esito (solo in questa scheda, mai in prove e correttore).
+\definecolor{okverde}{HTML}{00B050}\definecolor{kosso}{HTML}{E60000}
+\newcommand{\ok}{\item[{\color{okverde}\ding{51}}]}
+\newcommand{\ko}{\item[{\color{kosso}\ding{55}}]}
+\newcommand{\esito}[2]{% #1 = elenco \ok, #2 = elenco \ko
+  \begin{tabularx}{\linewidth}{@{}X@{\hspace{6pt}}X@{}}
+    \begin{minipage}[t]{\linewidth}\textbf{\color{okverde}Corretto}\begin{itemize}[label={}] #1\end{itemize}\end{minipage} &
+    \begin{minipage}[t]{\linewidth}\textbf{\color{kosso}Errori e mancanze}\begin{itemize}[label={}] #2\end{itemize}\end{minipage}
+  \end{tabularx}}
+\newcommand{\esercizio}[2]{\par\medskip\textbf{Esercizio #1}\hfill #2\par}
+
+\begin{document}
+{\Large\bfseries Verifica \textsc{ARGOMENTO} --- COGNOME NOME}\\
+Classe CLASSE \quad Data DATA \quad Punteggio massimo 1000
+
+\medskip
+\begin{tabular}{@{}lrr@{}}\toprule
+ & Punti & Massimo\\\midrule
+ % una riga per esercizio: Esercizio 1 & 180 & 250 \\
+ \midrule \textbf{Totale} & \textbf{TOT} & 1000\\\bottomrule
+\end{tabular}
+\hfill {\Large\bfseries Voto: VOTO}
+
+% \esercizio{1}{180 / 250}
+% \esito{\ok formula giusta \ok unità corrette}{\ko manca la verifica del dominio}
+
+\medskip\textbf{Aree di miglioramento}
+\begin{itemize}[label=$\rightarrow$]
+ \item PUNTO 1
+ \item PUNTO 2
+\end{itemize}
+
+{\small Calcolo: punti TOT, dopo la divisione per 100, arrotondati a 0,25 \(\Rightarrow\) VOTO.}
+\end{document}

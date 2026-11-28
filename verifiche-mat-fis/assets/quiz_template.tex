@@ -18,6 +18,7 @@
 \usepackage[table]{xcolor}
 \usepackage{tcolorbox}
 \usepackage{tikz}
+\usepackage{qrcode}
 
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
 \newcommand{\um}[2]{\SI[output-decimal-marker={,}]{#1}{#2}}
@@ -52,7 +53,7 @@
 \begin{tcolorbox}[istruzionibox]
 È consentito l'uso di penne nere o blu (non è consentito l'uso del lapis e del bianchetto).
 È consentito l'uso della calcolatrice scientifica non grafica.
-Per ogni domanda una sola risposta è corretta: segnare la risposta scelta con una croce nella griglia.
+Per ogni domanda una sola risposta è corretta. Le risposte si danno sul foglio risposte (ultima pagina): annerire completamente il cerchio scelto; per annullare una risposta annerire due o più cerchi. Le correzioni non sono ammesse e valgono come risposta non data.
 \end{tcolorbox}
 
 \vspace{2mm}
@@ -61,10 +62,10 @@ Per ogni domanda una sola risposta è corretta: segnare la risposta scelta con u
 \textbf{Classe:}\enspace\makebox[2.5cm]{\hrulefill}\hspace{1cm}%
 \textbf{Data:}\enspace\makebox[2.5cm]{\hrulefill}
 
-%%GRIGLIA%%
-
 \vspace{2mm}
 \begin{questions}
 %%DOMANDE%%
 \end{questions}
+
+%%FOGLIO%%
 \end{document}

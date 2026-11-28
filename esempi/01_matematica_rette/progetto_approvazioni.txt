@@ -1,0 +1,6 @@
+{
+  "revisione": {
+    "sha256": "d6d11388cf734dad7fc3f249e6c578126ac594fb3e88a04dc02b3a0aa97807e4",
+    "contesto": "e8976604d73ffddd07cc58d3ba35761b4afe6f57f75d630e8eeeaa78b68ad26f"
+  }
+}

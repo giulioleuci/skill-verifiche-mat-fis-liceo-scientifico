@@ -1,0 +1,21 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[italian]{babel}
+\usepackage{mathpazo,microtype,enumitem}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\setlength{\parindent}{0pt}\pagestyle{empty}
+\begin{document}
+{\Large\bfseries Flusso di una verifica: sintesi da stampare}
+
+\medskip
+\begin{enumerate}[itemsep=3pt]
+\item \textbf{Contesto e parametri}: materia, anno, argomenti (proposta della scheda da confermare), durata, livello della classe (basso, medio, alto), struttura, strumenti, griglia in calce.
+\item \textbf{Standard e formato}: in matematica dalla terza, almeno 100 minuti, un problema in 3 o 4 punti e 3 o 4 quesiti singoli; risultati intermedi solo se scelti.
+\item \textbf{Supporti}: costanti e formule in un elenco numerato; inserisci solo le voci confermate dal docente.
+\item \textbf{Scaletta e approvazione}: livelli 1/2/3 e accessi 2A per ogni richiesta, tempi, quota per livello; approvazione esplicita registrata con \texttt{progetto.py approva}.
+\item \textbf{Generazione monocromatica} dal modello canonico, senza soluzioni, titolo, materia o fila; compilazione \texttt{pdflatex} in due passate.
+\item \textbf{Varianti e prove adattate}: prima standard e varianti ordinarie; le prove adattate (tempo, BES, DSA) con approvazione distinta.
+\item \textbf{Registro e correttore}: da 1 a 40 evidenze, somma 1000, livelli nei limiti; approvazione del registro, poi correttore; svolgimento studenti solo su richiesta.
+\item \textbf{Calcoli, revisione e rigenerazione}: script Python per ogni passaggio quantitativo, revisione linguistica, \texttt{stato}, \texttt{confronta} e \texttt{copertura} dopo ogni modifica.
+\item \textbf{Correzione}: taratura sul primo alunno, schede per alunno, voto in decimi, riepilogo Excel e fascicolo stampabile.
+\end{enumerate}
+\end{document}

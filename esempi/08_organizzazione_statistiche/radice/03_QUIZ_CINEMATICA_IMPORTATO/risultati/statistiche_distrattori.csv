@@ -1,0 +1,36 @@
+Foglio,Riga Excel,Alternativa,Corretta,Scelte,% sugli studenti,Nota,Indicatore
+D06,2,circolare,,1,4.17,,COM
+D06,2,uniforme,sì,16,66.67,,COM
+D06,2,uniformemente accelerato,,3,12.5,,COM
+D06,2,fermo,,4,16.67,,COM
+D06,2,(non data),,0,0.0,,
+D01,2,$\SI{122}{km/h}$,,0,0.0,mai scelto: poco plausibile,ANA
+D01,2,$\SI{60}{km/h}$,sì,4,50.0,,ANA
+D01,2,$\SI{240}{km/h}$,,0,0.0,mai scelto: poco plausibile,ANA
+D01,2,$\SI{30}{km/h}$,,4,50.0,,ANA
+D01,2,(non data),,0,0.0,,
+D04,2,una retta orizzontale,,3,12.5,,ARG
+D04,2,una parabola,,1,4.17,,ARG
+D04,2,un'iperbole,,4,16.67,,ARG
+D04,2,una retta inclinata,sì,16,66.67,,ARG
+D04,2,(non data),,0,0.0,,
+D03,2,$\SI{12.5}{m}$,,3,12.5,,SVI
+D03,2,$\SI{50}{m}$,,0,0.0,mai scelto: poco plausibile,SVI
+D03,2,$\SI{25}{m}$,sì,17,70.83,,SVI
+D03,2,$\SI{10}{m}$,,4,16.67,,SVI
+D03,2,(non data),,0,0.0,,
+D05,2,l'accelerazione,sì,16,66.67,,ANA
+D05,2,lo spostamento,,0,0.0,mai scelto: poco plausibile,ANA
+D05,2,la potenza,,4,16.67,,ANA
+D05,2,la velocità,,3,12.5,,ANA
+D05,2,(non data),,1,4.17,,
+D02,2,$\SI{2.5}{m/s}$,,3,12.5,,SVI
+D02,2,$\SI{25}{m/s}$,,3,12.5,,SVI
+D02,2,$\SI{7}{m/s}$,,4,16.67,,SVI
+D02,2,$\SI{10}{m/s}$,sì,13,54.17,,SVI
+D02,2,(non data),,1,4.17,,
+D01,3,$\SI{450}{km/h}$,,3,18.75,,ANA
+D01,3,$\SI{30}{km/h}$,,0,0.0,mai scelto: poco plausibile,ANA
+D01,3,$\SI{153}{km/h}$,,2,12.5,,ANA
+D01,3,$\SI{50}{km/h}$,sì,11,68.75,,ANA
+D01,3,(non data),,0,0.0,,

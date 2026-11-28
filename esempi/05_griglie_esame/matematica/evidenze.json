@@ -1,0 +1,145 @@
+[
+ {
+  "ID evidenza": "E01",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "FUN",
+  "Max": 50,
+  "Descrizione evidenza": "Individua dominio e limiti da calcolare",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E02",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "FUN",
+  "Max": 50,
+  "Descrizione evidenza": "Calcola limiti e asintoto",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E03",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "IND",
+  "Sigla argomento": "FUN",
+  "Max": 80,
+  "Descrizione evidenza": "Sceglie il segno della derivata prima",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E04",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "FUN",
+  "Max": 80,
+  "Descrizione evidenza": "Calcola $f'$ e individua il massimo",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E05",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "IND",
+  "Sigla argomento": "FUN",
+  "Max": 70,
+  "Descrizione evidenza": "Sceglie la derivata seconda",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E06",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "FUN",
+  "Max": 50,
+  "Descrizione evidenza": "Calcola $f''$ e il flesso",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E07",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "INT",
+  "Max": 100,
+  "Descrizione evidenza": "Traduce l'area in un integrale",
+  "Nome completo argomento": "Integrali",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E08",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "IND",
+  "Sigla argomento": "INT",
+  "Max": 70,
+  "Descrizione evidenza": "Sceglie l'integrazione per parti",
+  "Nome completo argomento": "Integrali",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E09",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "INT",
+  "Max": 70,
+  "Descrizione evidenza": "Calcola l'integrale",
+  "Nome completo argomento": "Integrali",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E10",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "FUN",
+  "Max": 100,
+  "Descrizione evidenza": "Commenta la coerenza con il grafico",
+  "Nome completo argomento": "Studio di funzione",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E11",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "TEO",
+  "Max": 100,
+  "Descrizione evidenza": "Individua le proprietà utili",
+  "Nome completo argomento": "Teoremi sulle funzioni continue",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E12",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "IND",
+  "Sigla argomento": "TEO",
+  "Max": 80,
+  "Descrizione evidenza": "Sceglie valori intermedi e monotonia",
+  "Nome completo argomento": "Teoremi sulle funzioni continue",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E13",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "TEO",
+  "Max": 100,
+  "Descrizione evidenza": "Motiva e localizza le due soluzioni",
+  "Nome completo argomento": "Teoremi sulle funzioni continue",
+  "Livello": "3"
+ }
+]

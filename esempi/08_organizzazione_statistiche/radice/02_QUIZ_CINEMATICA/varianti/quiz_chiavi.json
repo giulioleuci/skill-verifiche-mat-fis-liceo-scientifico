@@ -1,0 +1,789 @@
+{
+ "base": [
+  4,
+  1,
+  0
+ ],
+ "annullata": null,
+ "minimo": null,
+ "soglia": 0.58,
+ "pesi": {
+  "ANA": 333.3333,
+  "SVI": 333.3333,
+  "ARG": 166.6667,
+  "COM": 166.6667
+ },
+ "varianti": [
+  {
+   "codice": "EG98",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Un grafico velocità-tempo è una retta orizzontale: il moto è:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "COM",
+     "arg": "cin",
+     "alternative": [
+      "circolare",
+      "uniforme",
+      "uniformemente accelerato",
+      "fermo"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D01",
+     "riga": 2,
+     "testo": "Un'auto percorre $\\SI{120}{km}$ in $\\SI{2}{h}$. La velocità media è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{122}{km/h}$",
+      "$\\SI{60}{km/h}$",
+      "$\\SI{240}{km/h}$",
+      "$\\SI{30}{km/h}$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Nel moto rettilineo uniforme il grafico spazio-tempo è:",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ARG",
+     "arg": "cin",
+     "alternative": [
+      "una retta orizzontale",
+      "una parabola",
+      "un'iperbole",
+      "una retta inclinata"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "Con la stessa accelerazione $\\SI{2}{m/s^2}$ da fermo, lo spazio percorso in $\\SI{5}{s}$ è:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{12.5}{m}$",
+      "$\\SI{50}{m}$",
+      "$\\SI{25}{m}$",
+      "$\\SI{10}{m}$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Quale grandezza si misura in $\\si{m/s^2}$?",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "l'accelerazione",
+      "lo spostamento",
+      "la potenza",
+      "la velocità"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Un corpo parte da fermo con accelerazione $\\SI{2}{m/s^2}$. Dopo $\\SI{5}{s}$ la velocità è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{2.5}{m/s}$",
+      "$\\SI{25}{m/s}$",
+      "$\\SI{7}{m/s}$",
+      "$\\SI{10}{m/s}$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 2,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "ZU8U",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Un corpo parte da fermo con accelerazione $\\SI{2}{m/s^2}$. Dopo $\\SI{5}{s}$ la velocità è:",
+     "corretta": "A",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{10}{m/s}$",
+      "$\\SI{7}{m/s}$",
+      "$\\SI{2.5}{m/s}$",
+      "$\\SI{25}{m/s}$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "Un treno percorre $\\SI{150}{km}$ in $\\SI{3}{h}$. La velocità media è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{450}{km/h}$",
+      "$\\SI{30}{km/h}$",
+      "$\\SI{153}{km/h}$",
+      "$\\SI{50}{km/h}$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Quale grandezza si misura in $\\si{m/s^2}$?",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "lo spostamento",
+      "la potenza",
+      "l'accelerazione",
+      "la velocità"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "Con la stessa accelerazione $\\SI{2}{m/s^2}$ da fermo, lo spazio percorso in $\\SI{5}{s}$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{12.5}{m}$",
+      "$\\SI{25}{m}$",
+      "$\\SI{10}{m}$",
+      "$\\SI{50}{m}$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Nel moto rettilineo uniforme il grafico spazio-tempo è:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ARG",
+     "arg": "cin",
+     "alternative": [
+      "una parabola",
+      "una retta inclinata",
+      "un'iperbole",
+      "una retta orizzontale"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Un grafico velocità-tempo è una retta orizzontale: il moto è:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "COM",
+     "arg": "cin",
+     "alternative": [
+      "fermo",
+      "uniforme",
+      "uniformemente accelerato",
+      "circolare"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 2,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "2MUH",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Un grafico velocità-tempo è una retta orizzontale: il moto è:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "COM",
+     "arg": "cin",
+     "alternative": [
+      "uniforme",
+      "fermo",
+      "uniformemente accelerato",
+      "circolare"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Un corpo parte da fermo con accelerazione $\\SI{2}{m/s^2}$. Dopo $\\SI{5}{s}$ la velocità è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{2.5}{m/s}$",
+      "$\\SI{25}{m/s}$",
+      "$\\SI{7}{m/s}$",
+      "$\\SI{10}{m/s}$"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Nel moto rettilineo uniforme il grafico spazio-tempo è:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ARG",
+     "arg": "cin",
+     "alternative": [
+      "una parabola",
+      "un'iperbole",
+      "una retta inclinata",
+      "una retta orizzontale"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Quale grandezza si misura in $\\si{m/s^2}$?",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "l'accelerazione",
+      "lo spostamento",
+      "la potenza",
+      "la velocità"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "Con la stessa accelerazione $\\SI{2}{m/s^2}$ da fermo, lo spazio percorso in $\\SI{5}{s}$ è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "SVI",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{12.5}{m}$",
+      "$\\SI{25}{m}$",
+      "$\\SI{10}{m}$",
+      "$\\SI{50}{m}$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "Un treno percorre $\\SI{150}{km}$ in $\\SI{3}{h}$. La velocità media è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4,
+      1,
+      0
+     ],
+     "ind": "ANA",
+     "arg": "cin",
+     "alternative": [
+      "$\\SI{30}{km/h}$",
+      "$\\SI{50}{km/h}$",
+      "$\\SI{450}{km/h}$",
+      "$\\SI{153}{km/h}$"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 2,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  }
+ ]
+}

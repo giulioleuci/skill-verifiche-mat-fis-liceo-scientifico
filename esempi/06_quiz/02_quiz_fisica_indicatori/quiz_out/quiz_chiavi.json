@@ -1,0 +1,1023 @@
+{
+ "base": [
+  4.0,
+  1.0,
+  0.0
+ ],
+ "annullata": null,
+ "minimo": null,
+ "soglia": 0.58,
+ "pesi": {
+  "ANA": 375.0,
+  "SVI": 250.0,
+  "ARG": 250.0,
+  "COM": 125.0
+ },
+ "varianti": [
+  {
+   "codice": "YWA6",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D02",
+     "riga": 2,
+     "testo": "Un carrello di $\\um{2}{kg}$ a $\\um{3}{m/s}$ si aggancia a uno fermo di $\\um{1}{kg}$. La velocità finale è:",
+     "corretta": "C",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "$\\um{1}{m/s}$",
+      "$\\um{1.5}{m/s}$",
+      "$\\um{2}{m/s}$",
+      "$\\um{3}{m/s}$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Nel pendolo balistico l'energia meccanica si conserva:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "mai",
+      "prima dell'urto soltanto",
+      "solo dopo l'urto",
+      "durante l'urto"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Un corpo $m$ urta elasticamente un corpo fermo di massa uguale. Dopo l'urto:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "il primo rimbalza con la stessa velocità",
+      "entrambi si fermano",
+      "il primo si ferma e il secondo prende la sua velocità",
+      "i due procedono uniti"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Un proiettile di $\\um{10}{g}$ a $\\um{300}{m/s}$ si conficca in un blocco fermo di $\\um{2.99}{kg}$. La velocità subito dopo è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "$\\um{10}{m/s}$",
+      "$\\um{1}{m/s}$",
+      "$\\um{300}{m/s}$",
+      "$\\um{0.1}{m/s}$"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "L'energia cinetica dissipata nell'urto completamente anelastico precedente è sempre:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "positiva o nulla",
+      "uguale all'energia finale",
+      "sempre nulla",
+      "negativa"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "Quale grandezza ha le stesse dimensioni della quantità di moto?",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "COM",
+     "arg": "",
+     "alternative": [
+      "l'energia",
+      "la potenza",
+      "la forza",
+      "l'impulso"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D01",
+     "riga": 2,
+     "testo": "In un urto completamente anelastico fra due corpi su un piano liscio si conserva:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "l'energia cinetica totale",
+      "la quantità di moto totale",
+      "la velocità di ciascun corpo",
+      "la quantità di moto di ciascun corpo"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Dopo un urto elastico in una dimensione fra masse diverse, la velocità relativa dei due corpi:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "cambia segno e mantiene il modulo",
+      "si dimezza",
+      "resta uguale",
+      "si annulla"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 3,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "5ZAN",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D02",
+     "riga": 3,
+     "testo": "Un carrello di $\\um{3}{kg}$ a $\\um{4}{m/s}$ si aggancia a uno fermo di $\\um{1}{kg}$. La velocità finale è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "$\\um{1}{m/s}$",
+      "$\\um{4}{m/s}$",
+      "$\\um{2}{m/s}$",
+      "$\\um{3}{m/s}$"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Nel pendolo balistico l'energia meccanica si conserva:",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "mai",
+      "durante l'urto",
+      "prima dell'urto soltanto",
+      "solo dopo l'urto"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "L'energia cinetica dissipata nell'urto completamente anelastico precedente è sempre:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "uguale all'energia finale",
+      "sempre nulla",
+      "positiva o nulla",
+      "negativa"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Un corpo $m$ urta elasticamente un corpo fermo di massa uguale. Dopo l'urto:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "entrambi si fermano",
+      "il primo si ferma e il secondo prende la sua velocità",
+      "il primo rimbalza con la stessa velocità",
+      "i due procedono uniti"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Un proiettile di $\\um{10}{g}$ a $\\um{300}{m/s}$ si conficca in un blocco fermo di $\\um{2.99}{kg}$. La velocità subito dopo è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "$\\um{0.1}{m/s}$",
+      "$\\um{1}{m/s}$",
+      "$\\um{300}{m/s}$",
+      "$\\um{10}{m/s}$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "In un urto elastico si conserva, oltre alla quantità di moto:",
+     "corretta": "B",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "la velocità del centro di massa e basta",
+      "l'energia cinetica totale",
+      "nulla",
+      "la massa di ciascun corpo"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Dopo un urto elastico in una dimensione fra masse diverse, la velocità relativa dei due corpi:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "cambia segno e mantiene il modulo",
+      "si dimezza",
+      "resta uguale",
+      "si annulla"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "Quale grandezza ha le stesse dimensioni della quantità di moto?",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "COM",
+     "arg": "",
+     "alternative": [
+      "la forza",
+      "la potenza",
+      "l'impulso",
+      "l'energia"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 3,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  },
+  {
+   "codice": "UY95",
+   "domande": [
+    {
+     "n": 1,
+     "foglio": "D01",
+     "riga": 3,
+     "testo": "In un urto elastico si conserva, oltre alla quantità di moto:",
+     "corretta": "D",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "la massa di ciascun corpo",
+      "la velocità del centro di massa e basta",
+      "nulla",
+      "l'energia cinetica totale"
+     ]
+    },
+    {
+     "n": 2,
+     "foglio": "D03",
+     "riga": 2,
+     "testo": "L'energia cinetica dissipata nell'urto completamente anelastico precedente è sempre:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "sempre nulla",
+      "negativa",
+      "positiva o nulla",
+      "uguale all'energia finale"
+     ]
+    },
+    {
+     "n": 3,
+     "foglio": "D04",
+     "riga": 2,
+     "testo": "Un proiettile di $\\um{10}{g}$ a $\\um{300}{m/s}$ si conficca in un blocco fermo di $\\um{2.99}{kg}$. La velocità subito dopo è:",
+     "corretta": "D",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "SVI",
+     "arg": "",
+     "alternative": [
+      "$\\um{300}{m/s}$",
+      "$\\um{10}{m/s}$",
+      "$\\um{0.1}{m/s}$",
+      "$\\um{1}{m/s}$"
+     ]
+    },
+    {
+     "n": 4,
+     "foglio": "D08",
+     "riga": 2,
+     "testo": "Dopo un urto elastico in una dimensione fra masse diverse, la velocità relativa dei due corpi:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "si annulla",
+      "resta uguale",
+      "cambia segno e mantiene il modulo",
+      "si dimezza"
+     ]
+    },
+    {
+     "n": 5,
+     "foglio": "D02",
+     "riga": 3,
+     "testo": "Un carrello di $\\um{3}{kg}$ a $\\um{4}{m/s}$ si aggancia a uno fermo di $\\um{1}{kg}$. La velocità finale è:",
+     "corretta": "B",
+     "colonne": 2,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "$\\um{1}{m/s}$",
+      "$\\um{3}{m/s}$",
+      "$\\um{4}{m/s}$",
+      "$\\um{2}{m/s}$"
+     ]
+    },
+    {
+     "n": 6,
+     "foglio": "D06",
+     "riga": 2,
+     "testo": "Nel pendolo balistico l'energia meccanica si conserva:",
+     "corretta": "A",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ANA",
+     "arg": "",
+     "alternative": [
+      "solo dopo l'urto",
+      "prima dell'urto soltanto",
+      "durante l'urto",
+      "mai"
+     ]
+    },
+    {
+     "n": 7,
+     "foglio": "D05",
+     "riga": 2,
+     "testo": "Un corpo $m$ urta elasticamente un corpo fermo di massa uguale. Dopo l'urto:",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "ARG",
+     "arg": "",
+     "alternative": [
+      "i due procedono uniti",
+      "il primo rimbalza con la stessa velocità",
+      "il primo si ferma e il secondo prende la sua velocità",
+      "entrambi si fermano"
+     ]
+    },
+    {
+     "n": 8,
+     "foglio": "D07",
+     "riga": 2,
+     "testo": "Quale grandezza ha le stesse dimensioni della quantità di moto?",
+     "corretta": "C",
+     "colonne": 1,
+     "punti": [
+      4.0,
+      1.0,
+      0.0
+     ],
+     "ind": "COM",
+     "arg": "",
+     "alternative": [
+      "la forza",
+      "la potenza",
+      "l'impulso",
+      "l'energia"
+     ]
+    }
+   ],
+   "foglio": {
+    "righe": 3,
+    "larg": 46,
+    "bolle": [
+     [
+      [
+       30,
+       84
+      ],
+      [
+       38,
+       84
+      ],
+      [
+       46,
+       84
+      ],
+      [
+       54,
+       84
+      ]
+     ],
+     [
+      [
+       30,
+       92
+      ],
+      [
+       38,
+       92
+      ],
+      [
+       46,
+       92
+      ],
+      [
+       54,
+       92
+      ]
+     ],
+     [
+      [
+       30,
+       100
+      ],
+      [
+       38,
+       100
+      ],
+      [
+       46,
+       100
+      ],
+      [
+       54,
+       100
+      ]
+     ],
+     [
+      [
+       82,
+       84
+      ],
+      [
+       90,
+       84
+      ],
+      [
+       98,
+       84
+      ],
+      [
+       106,
+       84
+      ]
+     ],
+     [
+      [
+       82,
+       92
+      ],
+      [
+       90,
+       92
+      ],
+      [
+       98,
+       92
+      ],
+      [
+       106,
+       92
+      ]
+     ],
+     [
+      [
+       82,
+       100
+      ],
+      [
+       90,
+       100
+      ],
+      [
+       98,
+       100
+      ],
+      [
+       106,
+       100
+      ]
+     ],
+     [
+      [
+       134,
+       84
+      ],
+      [
+       142,
+       84
+      ],
+      [
+       150,
+       84
+      ],
+      [
+       158,
+       84
+      ]
+     ],
+     [
+      [
+       134,
+       92
+      ],
+      [
+       142,
+       92
+      ],
+      [
+       150,
+       92
+      ],
+      [
+       158,
+       92
+      ]
+     ]
+    ],
+    "nome": [
+     20,
+     33,
+     138,
+     45
+    ],
+    "qr": [
+     150,
+     18,
+     190,
+     58
+    ]
+   }
+  }
+ ]
+}

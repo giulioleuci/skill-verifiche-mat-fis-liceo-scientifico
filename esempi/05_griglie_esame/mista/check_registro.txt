@@ -1,0 +1,6 @@
+evidenze=11 (1-40) somma Max=1000 (1000)
+Esercizio: 1=400, 2=600
+Indicatore: ANA=250, SVI=300, DAT=250, ARG=200
+Sigla argomento: VEL=400, SPA=600
+classe medio: L1=20% (bersaglio 20%), L2=60% (bersaglio 65%) AVVISO scostamento > 2,5 punti, L3=20% (bersaglio 15%) AVVISO scostamento > 2,5 punti
+accesso L2: 31% del totale = 52% di L2

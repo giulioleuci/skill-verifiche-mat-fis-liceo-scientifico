@@ -1,0 +1,38 @@
+[
+  {
+    "cartella": "01_VERIFICA_RETTE",
+    "tipo": "prova",
+    "fase": "chiusa",
+    "risultati": 11
+  },
+  {
+    "cartella": "02_QUIZ_CINEMATICA",
+    "tipo": "quiz",
+    "fase": "nuova",
+    "risultati": 0
+  },
+  {
+    "cartella": "03_QUIZ_CINEMATICA_IMPORTATO",
+    "tipo": "importata",
+    "fase": "chiusa",
+    "risultati": 10
+  },
+  {
+    "cartella": "04_QUIZ_ESITI",
+    "tipo": "importata",
+    "fase": "nuova",
+    "risultati": 6
+  },
+  {
+    "cartella": "05_VERIFICA_RETTE_IMPORTATA",
+    "tipo": "importata",
+    "fase": "chiusa",
+    "risultati": 10
+  },
+  {
+    "cartella": "06_QUIZ_DALLA_BANCA",
+    "tipo": "quiz",
+    "fase": "nuova",
+    "risultati": 0
+  }
+]

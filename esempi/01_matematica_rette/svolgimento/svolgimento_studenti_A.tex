@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- lingua, codifica, font (testo + matematica) ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{mathpazo}                 % Palatino per testo e matematica
+\usepackage{microtype}
+
+% ---------- matematica ----------
+\usepackage{amsmath,amssymb,amsfonts,mathtools,bm,cancel,mathrsfs,nicefrac}
+\DeclareMathOperator{\sen}{sen}       % seno all'italiana
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{cotg}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arctg}{arctg}
+\newcommand{\dd}{\mathrm{d}}                       % differenziale
+\newcommand{\vv}[1]{\vec{#1}}                      % vettore con freccia
+\newcommand{\norma}[1]{\left\lvert#1\right\rvert} % modulo di vettore
+\newcommand{\pedice}[1]{_{\text{#1}}}              % pedice testuale: E\pedice{in}
+
+% ---------- unità di misura e numeri (virgola decimale) ----------
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},per-mode=symbol,
+         inter-unit-product=\ensuremath{{}\cdot{}},group-digits=false}
+
+% ---------- grafici e figure ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{graphicx}
+% Grafici collocati nel punto pertinente dello svolgimento.
+\newenvironment{grafico}{\begin{figure}[h!]\centering}{\end{figure}}
+
+% ---------- impaginazione ----------
+\usepackage[a4paper,left=1.8cm,right=1.8cm,top=2.3cm,bottom=2.2cm]{geometry}
+\usepackage{fancyhdr,lastpage,needspace,enumitem,booktabs,array,colortbl,tabularx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\headheight}{14pt}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=2pt,topsep=2pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2pt,topsep=2pt,parsep=0pt}
+
+% ---------- struttura dello svolgimento ----------
+\newcommand{\materia}{}
+\newcommand{\classe}{}
+\newcommand{\esercizio}[1]{\needspace{10\baselineskip}\par\vspace{1em}{\large\bfseries Esercizio #1}\par}
+\newcommand{\punto}[1]{\needspace{5\baselineskip}\par\medskip\textbf{#1}\par}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.3pt}
+\lhead{\small Svolgimento\ \materia}
+\cfoot{\small Pag.\ \thepage\ di \pageref{LastPage}}
+
+\renewcommand{\materia}{Matematica}
+\renewcommand{\classe}{Classe terza, liceo scientifico \textperiodcentered\ Rette e fasci}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Svolgimento\ \materia}\\[3pt]
+\classe
+\end{center}
+
+\esercizio{1}
+\punto{a)}
+\begin{enumerate}
+\item I punti hanno ascisse diverse: la retta $AB$ non è verticale e ha coefficiente angolare $m=\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{3-1}{4+2}=\dfrac13$.
+\item Dalla forma $y-y_A=m(x-x_A)$: $y-1=\dfrac13(x+2)$, cioè $x-3y+5=0$.
+\item $|AB|=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}=\sqrt{36+4}=2\sqrt{10}$.
+\end{enumerate}
+\punto{b)}
+\begin{enumerate}
+\item L'altezza relativa ad $AB$ è la distanza di $C$ dalla retta $AB$: $h=\dfrac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}=\dfrac{|2+9+5|}{\sqrt{10}}=\dfrac{16}{\sqrt{10}}$.
+\item $\mathcal{A}=\dfrac12\,|AB|\,h=\dfrac12\cdot2\sqrt{10}\cdot\dfrac{16}{\sqrt{10}}=16$.
+\item Secondo metodo: $\mathcal{A}=\dfrac12\bigl|x_A(y_B-y_C)+x_B(y_C-y_A)+x_C(y_A-y_B)\bigr|=\dfrac12\,|-12-16-4|=16$. I due risultati coincidono.
+\end{enumerate}
+\punto{c)}
+\begin{enumerate}
+\item La parallela ha lo stesso coefficiente angolare, $m=\dfrac13$, e passa per $C$: $y+3=\dfrac13(x-2)$, cioè $x-3y-11=0$.
+\item Con $y=0$: $x=11$. L'intersezione con l'asse $x$ è $(11,0)$.
+\end{enumerate}
+
+\esercizio{2}
+\begin{enumerate}
+\item $m_r=3$; per $s\perp r$ non verticale deve essere $m_s=-\dfrac13$, con $m_s=-\dfrac{k}{k+1}$ e $k\neq-1$.
+\item $3k=k+1$, quindi $k=\dfrac12$.
+\item Se $k=-1$, $s$ è $x=-5$, verticale: non è perpendicolare a $r$. Resta solo $k=\dfrac12$.
+\end{enumerate}
+
+\esercizio{3}
+\begin{enumerate}
+\item L'asse è la perpendicolare a $PQ$ per il punto medio $M=(2,2)$.
+\item $m_{PQ}=\dfrac{0-4}{5+1}=-\dfrac23$, quindi $m_{\text{asse}}=\dfrac32$ e $y-2=\dfrac32(x-2)$, cioè $3x-2y-2=0$.
+\item Il punto $X(0,-1)$ sta sull'asse e $|XP|^2=1+25=26=25+1=|XQ|^2$: è equidistante da $P$ e da $Q$.
+\end{enumerate}
+
+\esercizio{4}
+\begin{enumerate}
+\item Il fascio è $k\,r_1+r_2=0$ con $r_1:\ 2x+y+1=0$ e $r_2:\ -x+2y-3=0$; il centro è la loro intersezione: $y=-2x-1$ e $-5x-5=0$, quindi $(-1,1)$.
+\item Per $(3,0)$: $7k-6=0$, $k=\dfrac67$, e la retta è $x+4y-3=0$.
+\item La retta è parallela all'asse $x$ se il coefficiente di $x$ è nullo, $2k-1=0$, $k=\dfrac12$: la retta è $y=1$.
+\item $r_1$ non si ottiene per alcun $k$: richiederebbe $r_2$ proporzionale a $r_1$, ma le due rette sono incidenti.
+\end{enumerate}
+\end{document}

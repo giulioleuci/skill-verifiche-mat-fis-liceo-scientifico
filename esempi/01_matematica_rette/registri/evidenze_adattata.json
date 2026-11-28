@@ -1,0 +1,167 @@
+[
+ {
+  "ID evidenza": "E01",
+  "Esercizio": 1,
+  "Punto/gruppo": "a",
+  "Indicatore": "ANA",
+  "Sigla argomento": "RET",
+  "Max": 40,
+  "Descrizione evidenza": "Riconosce che la retta per due punti si imposta con il coefficiente angolare dai dati",
+  "Nome completo argomento": "Equazione della retta",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E02",
+  "Esercizio": 1,
+  "Punto/gruppo": "a",
+  "Indicatore": "SVI",
+  "Sigla argomento": "RET",
+  "Max": 70,
+  "Descrizione evidenza": "Ricava l'equazione della retta AB",
+  "Nome completo argomento": "Equazione della retta",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E03",
+  "Esercizio": 1,
+  "Punto/gruppo": "a",
+  "Indicatore": "SVI",
+  "Sigla argomento": "DIS",
+  "Max": 50,
+  "Descrizione evidenza": "Calcola la lunghezza di AB con la formula della distanza",
+  "Nome completo argomento": "Distanze nel piano cartesiano",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E04",
+  "Esercizio": 1,
+  "Punto/gruppo": "b",
+  "Indicatore": "ANA",
+  "Sigla argomento": "DIS",
+  "Max": 60,
+  "Descrizione evidenza": "Riconosce l'altezza relativa ad AB come distanza di C dalla retta AB",
+  "Nome completo argomento": "Distanze nel piano cartesiano",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E05",
+  "Esercizio": 1,
+  "Punto/gruppo": "b",
+  "Indicatore": "SVI",
+  "Sigla argomento": "DIS",
+  "Max": 100,
+  "Descrizione evidenza": "Calcola distanza di C da AB e area del triangolo ABC",
+  "Nome completo argomento": "Distanze nel piano cartesiano",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E06",
+  "Esercizio": 1,
+  "Punto/gruppo": "c",
+  "Indicatore": "ANA",
+  "Sigla argomento": "PAR",
+  "Max": 50,
+  "Descrizione evidenza": "Imposta la parallela ad AB per C con lo stesso coefficiente angolare",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E07",
+  "Esercizio": 1,
+  "Punto/gruppo": "c",
+  "Indicatore": "SVI",
+  "Sigla argomento": "PAR",
+  "Max": 70,
+  "Descrizione evidenza": "Scrive la parallela e ne calcola l'intersezione con l'asse x",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E08",
+  "Esercizio": 2,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "PAR",
+  "Max": 50,
+  "Descrizione evidenza": "Traduce la perpendicolarità nella condizione sui coefficienti angolari",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E09",
+  "Esercizio": 2,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "PAR",
+  "Max": 60,
+  "Descrizione evidenza": "Risolve per k ed esamina il caso della retta verticale",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E10",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "PAR",
+  "Max": 60,
+  "Descrizione evidenza": "Individua punto medio e coefficiente angolare perpendicolare per l'asse",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E11",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "PAR",
+  "Max": 100,
+  "Descrizione evidenza": "Scrive l'equazione dell'asse del segmento",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E12",
+  "Esercizio": 3,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "PAR",
+  "Max": 100,
+  "Descrizione evidenza": "Verifica con un punto dell'asse l'equidistanza dagli estremi",
+  "Nome completo argomento": "Parallelismo, perpendicolarità e luoghi",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E13",
+  "Esercizio": 4,
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "FAS",
+  "Max": 70,
+  "Descrizione evidenza": "Riconosce nel fascio due rette generatrici e il suo centro come loro intersezione",
+  "Nome completo argomento": "Fasci di rette",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E14",
+  "Esercizio": 4,
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "FAS",
+  "Max": 80,
+  "Descrizione evidenza": "Determina centro, retta per il punto dato e parallela all'asse x",
+  "Nome completo argomento": "Fasci di rette",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E15",
+  "Esercizio": "Intero elaborato",
+  "Punto/gruppo": "Intero elaborato",
+  "Indicatore": "COM",
+  "Sigla argomento": "TRASVERSALE",
+  "Max": 40,
+  "Descrizione evidenza": "Usa notazione, unità di misura e passaggi ordinati e leggibili",
+  "Nome completo argomento": "Competenze trasversali",
+  "Livello": "1"
+ }
+]

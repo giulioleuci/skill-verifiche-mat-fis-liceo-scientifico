@@ -1,0 +1,15 @@
+[
+ {"argomento": "cin", "indicatore": "ANA", "versioni": [
+  {"testo": "Un'auto percorre $\\SI{120}{km}$ in $\\SI{2}{h}$. La velocità media è:", "corretta": "$\\SI{60}{km/h}$", "errate": ["$\\SI{240}{km/h}$", "$\\SI{30}{km/h}$", "$\\SI{122}{km/h}$"], "colonne": 2},
+  {"testo": "Un treno percorre $\\SI{150}{km}$ in $\\SI{3}{h}$. La velocità media è:", "corretta": "$\\SI{50}{km/h}$", "errate": ["$\\SI{450}{km/h}$", "$\\SI{30}{km/h}$", "$\\SI{153}{km/h}$"], "colonne": 2}]},
+ {"argomento": "cin", "indicatore": "SVI", "versioni": [
+  {"testo": "Un corpo parte da fermo con accelerazione $\\SI{2}{m/s^2}$. Dopo $\\SI{5}{s}$ la velocità è:", "corretta": "$\\SI{10}{m/s}$", "errate": ["$\\SI{25}{m/s}$", "$\\SI{2.5}{m/s}$", "$\\SI{7}{m/s}$"], "colonne": 2}]},
+ {"argomento": "cin", "indicatore": "SVI", "versioni": [
+  {"testo": "Con la stessa accelerazione $\\SI{2}{m/s^2}$ da fermo, lo spazio percorso in $\\SI{5}{s}$ è:", "corretta": "$\\SI{25}{m}$", "errate": ["$\\SI{50}{m}$", "$\\SI{10}{m}$", "$\\SI{12.5}{m}$"], "colonne": 2}]},
+ {"argomento": "cin", "indicatore": "ARG", "versioni": [
+  {"testo": "Nel moto rettilineo uniforme il grafico spazio-tempo è:", "corretta": "una retta inclinata", "errate": ["una parabola", "una retta orizzontale", "un'iperbole"]}]},
+ {"argomento": "cin", "indicatore": "ANA", "versioni": [
+  {"testo": "Quale grandezza si misura in $\\si{m/s^2}$?", "corretta": "l'accelerazione", "errate": ["la velocità", "lo spostamento", "la potenza"]}]},
+ {"argomento": "cin", "indicatore": "COM", "versioni": [
+  {"testo": "Un grafico velocità-tempo è una retta orizzontale: il moto è:", "corretta": "uniforme", "errate": ["uniformemente accelerato", "fermo", "circolare"]}]}
+]

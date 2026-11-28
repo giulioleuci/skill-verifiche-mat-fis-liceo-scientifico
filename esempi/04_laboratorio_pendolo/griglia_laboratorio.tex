@@ -1,0 +1,37 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[italian]{babel}
+\usepackage{mathpazo,microtype,amsmath,booktabs,array,tabularx,enumitem,fancyhdr,lastpage}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.3pt}
+\lhead{\small\textsc{Griglia di laboratorio}}\cfoot{\small Pag.\ \thepage\ di \pageref{LastPage}}
+\renewcommand{\arraystretch}{1.25}
+\begin{document}
+{\Large\bfseries Griglia di valutazione: laboratorio di fisica}\\
+Classe terza \textperiodcentered\ Pendolo semplice e misura di $g$ \textperiodcentered\ punteggio su 1000
+
+\medskip
+Griglia autonoma a cinque voci (non convertita nei quattro indicatori dello scritto). Pesi concordati con il docente. La percentuale per voce segue le fasce ordinarie: non raggiunto $<40$, iniziale $[40,59)$, base $[59,69)$, intermedio $[69,87)$, avanzato $\ge87$.
+
+\medskip
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{3.5cm}rX@{}}\toprule
+Voce & Max & Che cosa si osserva nella relazione\\\midrule
+Documentare le fasi preliminari all'analisi & 200 & Inquadra il legame $T=2\pi\sqrt{L/g}$, formula l'obiettivo, descrive pendolo, cronometro e asta graduata, documenta la presa dati con il numero di oscillazioni misurate.\\
+Analizzare i dati & 300 & Ricava i periodi, propaga l'errore su $T$ e su $T^2$ con il software, esegue la regressione lineare $T^2=aL+b$ e ricava $g=4\pi^2/a$ con la sua incertezza.\\
+Rappresentare i dati e le analisi & 200 & Tabella dei dati con unità, grafico $T^2$--$L$ con barre di errore, assi con scala e grandezze, retta di regressione.\\
+Argomentare & 200 & Confronta $g$ con il valore noto in unità di incertezza, interpreta l'intercetta, propone cause di errore sistematico (ampiezza, lunghezza del filo, tempo di reazione) e un miglioramento.\\
+Comunicare & 100 & Organizza la relazione in sezioni, usa linguaggio scientifico, sceglie autonomamente il numero di cifre significative.\\\midrule
+Totale & 1000 & \\\bottomrule
+\end{tabularx}
+
+\bigskip\textbf{Soluzione di riferimento} (da \texttt{analisi\_pendolo.py}): $T^2=(4{,}056\pm0{,}027)\,\mathrm{s^2/m}\cdot L+(-0{,}012\pm0{,}018)\,\mathrm{s^2}$; $g=(9{,}73\pm0{,}06)\,\mathrm{m/s^2}$, compatibile con $9{,}81\,\mathrm{m/s^2}$ entro 1,3 incertezze. L'intercetta è compatibile con zero.
+
+\textbf{Descrittori per le voci principali}
+\begin{description}[leftmargin=3.2cm,style=nextline,font=\small\bfseries]
+\item[Analizzare i dati] \textit{Non raggiunto:} non calcola periodi o regressione. \textit{Base:} calcola $g$ dalla regressione senza incertezza o con una propagazione parziale. \textit{Avanzato:} propaga gli errori, esegue la regressione e riporta $g$ con incertezza e cifre significative coerenti.
+\item[Rappresentare] \textit{Non raggiunto:} nessuna tabella o grafico. \textit{Base:} grafico con assi e punti, senza barre di errore. \textit{Avanzato:} grafico $T^2$--$L$ con barre di errore, scala adeguata e retta di regressione.
+\item[Argomentare] \textit{Non raggiunto:} nessun confronto con il valore noto. \textit{Base:} dichiara compatibilità o no senza usare l'incertezza. \textit{Avanzato:} confronta in unità di incertezza, spiega l'intercetta e propone miglioramenti motivati.
+\end{description}
+
+\textbf{Note.} Nessun metodo manuale di propagazione richiesto: si valuta l'uso corretto del software. Non si valuta la grafia.
+\end{document}

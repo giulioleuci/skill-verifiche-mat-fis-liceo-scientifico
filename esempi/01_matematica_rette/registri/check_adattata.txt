@@ -1,0 +1,6 @@
+evidenze=15 (1-40) somma Max=1000 (1000)
+Esercizio: 1=440, 2=110, 3=260, 4=150, Intero elaborato=40
+Indicatore: ANA=330, SVI=530, ARG=100, COM=40
+Sigla argomento: RET=110, DIS=210, PAR=490, FAS=150, TRASVERSALE=40
+classe medio: L1=25% (bersaglio 20%) AVVISO scostamento > 2,5 punti, L2=65% (bersaglio 65%), L3=10% (bersaglio 15%) AVVISO scostamento > 2,5 punti
+accesso L2: 39% del totale = 60% di L2

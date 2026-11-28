@@ -46,7 +46,12 @@ I comandi seguenti vanno indicati nelle richieste all'assistente (non sono coman
 | `stato`, `confronta`, `copertura` | Gestisce lo stato delle revisioni e la matrice di copertura | [references/progetto.md](verifiche-mat-fis/references/progetto.md) |
 | `verifica-calcoli` | Genera ed esegue script Python per verificare tutti i passaggi numerici | - |
 | `quiz` | Quiz a scelta multipla da Excel: varianti randomizzate, griglia sul foglio, chiavi | [references/quiz.md](verifiche-mat-fis/references/quiz.md) |
-| `correggi-quiz` | Corregge i quiz e produce statistiche (studenti, domande, classe) | [references/quiz.md](verifiche-mat-fis/references/quiz.md) |
+| `correggi-quiz` | Corregge i quiz e produce statistiche (studenti, domande, distrattori, classe, affidabilità) | [references/quiz.md](verifiche-mat-fis/references/quiz.md) |
+| `quiz-domande` | Intervista al docente e `domande.xlsx` validato per i quiz | [references/quiz_domande.md](verifiche-mat-fis/references/quiz_domande.md) |
+| `cartelle` | Cartella numerata `NN_NOME` per ogni prova o quiz, scelta dal docente | [references/cartelle.md](verifiche-mat-fis/references/cartelle.md) |
+| `statistiche`, `importa-punteggi` | Statistiche oggettive per evidenza, domanda, indicatore, argomento; import di punteggi anonimi (una colonna per alunno) | [references/statistiche.md](verifiche-mat-fis/references/statistiche.md) |
+| `chiudi-prova`, `report-classe` | Storico delle prove e sintesi anonima di classe | [references/statistiche.md](verifiche-mat-fis/references/statistiche.md#3-chiudi-prova-e-report-classe) |
+| `banca-domande` | Banca delle domande con difficoltà misurata | [references/quiz_domande.md](verifiche-mat-fis/references/quiz_domande.md#5-banca-delle-domande) |
 | `compila` | Compila i file LaTeX verificando pacchetti e testo estratto | [references/latex.md](verifiche-mat-fis/references/latex.md) |
 | `aiuto` | Mostra i comandi pertinenti al contesto | [SKILL.md](verifiche-mat-fis/SKILL.md) |
 
@@ -55,9 +60,10 @@ I comandi seguenti vanno indicati nelle richieste all'assistente (non sono coman
 - `verifiche-mat-fis/SKILL.md`: definizione delle regole, dei vincoli e dei flussi della skill.
 - `verifiche-mat-fis/scripts/registro_xlsx.py`: utility per la creazione e validazione del registro evidenze Excel (foglio .xlsx con sfondo scuro `#1C1C1C`, indicatori ANA/SVI/ARG/COM (o, su richiesta, le griglie d'esame con `--griglia`), punteggio totale 1000 e colonne con percentuali per esercizio e complessive).
 - `verifiche-mat-fis/scripts/progetto.py`: utility per il tracciamento del ciclo di vita del progetto, delle approvazioni e delle revisioni.
-- `verifiche-mat-fis/scripts/quiz.py`: generazione (`genera`) e correzione con statistiche (`correggi`) dei quiz a scelta multipla; `test_quiz.py` ne verifica il flusso. Adattato da [multiple-choice-randomizer-latex](https://github.com/giulioleuci/multiple-choice-randomizer-latex) (GPL-3.0).
+- `verifiche-mat-fis/scripts/quiz.py`: generazione (`genera`), lettura dei fogli scansionati (`leggi`), revisione nel browser delle letture (`rivedi`) e correzione con statistiche (`correggi`) dei quiz a scelta multipla; `test_quiz.py` ne verifica il flusso. Adattato da [multiple-choice-randomizer-latex](https://github.com/giulioleuci/multiple-choice-randomizer-latex) (GPL-3.0).
 - `verifiche-mat-fis/assets/`: modelli LaTeX per le prove, i correttori docenti e gli svolgimenti studenti.
 - `verifiche-mat-fis/references/`: criteri disciplinari, schede argomenti per classe (1ª–5ª) e guide operative.
+- `esempi/`: flussi completi di esempio per ogni comando (prove, registri, correttori, quiz, scansioni di alunni fittizi scritte a mano e correzioni); si rigenerano con `python3 esempi/genera_esempi.py`, mappa in `esempi/README.md`.
 
 ## Regole principali di progettazione
 

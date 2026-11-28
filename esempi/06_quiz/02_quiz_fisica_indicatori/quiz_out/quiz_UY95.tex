@@ -1,0 +1,216 @@
+\documentclass[a4paper,10pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% --- TIPOGRAFIA: stessa del modello canonico ---
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+\usepackage{microtype}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage[table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{qrcode}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\newcommand{\um}[2]{\SI[output-decimal-marker={,}]{#1}{#2}}
+
+\geometry{top=1.6cm,bottom=1.0cm,left=0.8cm,right=0.8cm,headsep=0.3cm}
+
+% INTESTAZIONE: solo punteggi e codice variante (deroga al divieto di fila, solo per i quiz).
+\pagestyle{headandfoot}
+\firstpageheader{}{\small Punti per risposta corretta: 4 $\cdot$ non data: 1 $\cdot$ errata: 0}{\scriptsize Codice: \textbf{UY95}}
+\runningheader{}{\small Punti per risposta corretta: 4 $\cdot$ non data: 1 $\cdot$ errata: 0}{\scriptsize Codice: \textbf{UY95}}
+\firstpagefooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+\runningfooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+
+% --- STILE MONOCROMATICO ---
+\newcommand{\badgeQ}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape=rectangle, rounded corners=2pt, fill=gray!15, draw=gray!40, line width=0.4pt, inner sep=2.5pt, minimum width=1.6em] (char) {\small\textbf{#1}};%
+  }%
+}
+\renewcommand{\questionlabel}{\badgeQ{\thequestion}\enspace}
+\renewcommand{\choicelabel}{\textbf{\Alph{choice}}\enspace}
+\newcommand{\cbox}{\ensuremath{\vcenter{\hbox{\tikz{\draw[black!75, line width=0.5pt, rounded corners=1.2pt] (0,0) rectangle (3.0mm, 3.0mm);}}}}}
+
+\tcbset{
+  istruzionibox/.style={
+    colback=gray!6, colframe=gray!30, arc=2pt, boxrule=0.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt, fontupper=\small
+  }
+}
+
+\begin{document}
+\begin{tcolorbox}[istruzionibox]
+È consentito l'uso di penne nere o blu (non è consentito l'uso del lapis e del bianchetto).
+È consentito l'uso della calcolatrice scientifica non grafica.
+Per ogni domanda una sola risposta è corretta. Le risposte si danno sul foglio risposte (ultima pagina): annerire completamente il cerchio scelto; per annullare una risposta annerire due o più cerchi. Le correzioni non sono ammesse e valgono come risposta non data.
+\end{tcolorbox}
+
+\vspace{2mm}
+\noindent
+\textbf{Cognome e Nome:}\enspace\hrulefill\hspace{1cm}%
+\textbf{Classe:}\enspace\makebox[2.5cm]{\hrulefill}\hspace{1cm}%
+\textbf{Data:}\enspace\makebox[2.5cm]{\hrulefill}
+
+\vspace{2mm}
+\begin{questions}
+\question In un urto elastico si conserva, oltre alla quantità di moto:
+\vspace{0.2em}
+\begin{choices}
+\choice la massa di ciascun corpo
+\choice la velocità del centro di massa e basta
+\choice nulla
+\choice l'energia cinetica totale
+\end{choices}
+
+\question L'energia cinetica dissipata nell'urto completamente anelastico precedente è sempre:
+\vspace{0.2em}
+\begin{choices}
+\choice sempre nulla
+\choice negativa
+\choice positiva o nulla
+\choice uguale all'energia finale
+\end{choices}
+
+\question Un proiettile di $\um{10}{g}$ a $\um{300}{m/s}$ si conficca in un blocco fermo di $\um{2.99}{kg}$. La velocità subito dopo è:
+\vspace{0.2em}
+\begin{multicols}{2}
+\begin{choices}
+\choice $\um{300}{m/s}$
+\choice $\um{10}{m/s}$
+\choice $\um{0.1}{m/s}$
+\choice $\um{1}{m/s}$
+\end{choices}
+\end{multicols}
+
+\question Dopo un urto elastico in una dimensione fra masse diverse, la velocità relativa dei due corpi:
+\vspace{0.2em}
+\begin{choices}
+\choice si annulla
+\choice resta uguale
+\choice cambia segno e mantiene il modulo
+\choice si dimezza
+\end{choices}
+
+\question Un carrello di $\um{3}{kg}$ a $\um{4}{m/s}$ si aggancia a uno fermo di $\um{1}{kg}$. La velocità finale è:
+\vspace{0.2em}
+\begin{multicols}{2}
+\begin{choices}
+\choice $\um{1}{m/s}$
+\choice $\um{3}{m/s}$
+\choice $\um{4}{m/s}$
+\choice $\um{2}{m/s}$
+\end{choices}
+\end{multicols}
+
+\question Nel pendolo balistico l'energia meccanica si conserva:
+\vspace{0.2em}
+\begin{choices}
+\choice solo dopo l'urto
+\choice prima dell'urto soltanto
+\choice durante l'urto
+\choice mai
+\end{choices}
+
+\question Un corpo $m$ urta elasticamente un corpo fermo di massa uguale. Dopo l'urto:
+\vspace{0.2em}
+\begin{choices}
+\choice i due procedono uniti
+\choice il primo rimbalza con la stessa velocità
+\choice il primo si ferma e il secondo prende la sua velocità
+\choice entrambi si fermano
+\end{choices}
+
+\question Quale grandezza ha le stesse dimensioni della quantità di moto?
+\vspace{0.2em}
+\begin{choices}
+\choice la forza
+\choice la potenza
+\choice l'impulso
+\choice l'energia
+\end{choices}
+
+\end{questions}
+
+\clearpage\ifodd\value{page}\thispagestyle{empty}\null\clearpage\fi
+\thispagestyle{empty}\null
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.north west)},x=1mm,y=-1mm]
+\fill (7.0,7.0) rectangle (17.0,17.0);
+\fill (195.0,9.0) rectangle (201.0,15.0);
+\fill (195.0,282.0) rectangle (201.0,288.0);
+\fill (9.0,282.0) rectangle (15.0,288.0);
+\node[anchor=west] at (24,20) {\large\textbf{Foglio risposte}};
+\node[anchor=west] at (24,25) {\small Codice: \textbf{UY95}};
+\node[anchor=west] at (20,31) {\scriptsize Cognome e Nome (stampatello)};
+\draw[line width=0.5pt] (20,33) rectangle (138,45);
+\node[anchor=north west,inner sep=0] at (150,18) {\qrcode[height=36mm,level=M]{QZ-UY95}};
+\node[anchor=north west,text width=125mm,align=justify] at (20,49) {\scriptsize Annerisci completamente il cerchio della risposta scelta con penna nera o blu. Per annullare una risposta annerisci due o più cerchi della domanda. Le correzioni non sono ammesse: cerchi cancellati, coperti o anneriti in parte possono rendere la domanda non data. Non fare segni fuori dai cerchi.};
+\node at (30,77) {\small\textbf{A}};
+\node at (38,77) {\small\textbf{B}};
+\node at (46,77) {\small\textbf{C}};
+\node at (54,77) {\small\textbf{D}};
+\node at (82,77) {\small\textbf{A}};
+\node at (90,77) {\small\textbf{B}};
+\node at (98,77) {\small\textbf{C}};
+\node at (106,77) {\small\textbf{D}};
+\node at (134,77) {\small\textbf{A}};
+\node at (142,77) {\small\textbf{B}};
+\node at (150,77) {\small\textbf{C}};
+\node at (158,77) {\small\textbf{D}};
+\fill[black!7] (14,80.0) rectangle (59,88.0);
+\node[anchor=east] at (24,84) {\small\textbf{1}};
+\draw[line width=0.5pt] (30,84) circle (2.3mm);
+\draw[line width=0.5pt] (38,84) circle (2.3mm);
+\draw[line width=0.5pt] (46,84) circle (2.3mm);
+\draw[line width=0.5pt] (54,84) circle (2.3mm);
+\node[anchor=east] at (24,92) {\small\textbf{2}};
+\draw[line width=0.5pt] (30,92) circle (2.3mm);
+\draw[line width=0.5pt] (38,92) circle (2.3mm);
+\draw[line width=0.5pt] (46,92) circle (2.3mm);
+\draw[line width=0.5pt] (54,92) circle (2.3mm);
+\fill[black!7] (14,96.0) rectangle (59,104.0);
+\node[anchor=east] at (24,100) {\small\textbf{3}};
+\draw[line width=0.5pt] (30,100) circle (2.3mm);
+\draw[line width=0.5pt] (38,100) circle (2.3mm);
+\draw[line width=0.5pt] (46,100) circle (2.3mm);
+\draw[line width=0.5pt] (54,100) circle (2.3mm);
+\fill[black!7] (66,80.0) rectangle (111,88.0);
+\node[anchor=east] at (76,84) {\small\textbf{4}};
+\draw[line width=0.5pt] (82,84) circle (2.3mm);
+\draw[line width=0.5pt] (90,84) circle (2.3mm);
+\draw[line width=0.5pt] (98,84) circle (2.3mm);
+\draw[line width=0.5pt] (106,84) circle (2.3mm);
+\node[anchor=east] at (76,92) {\small\textbf{5}};
+\draw[line width=0.5pt] (82,92) circle (2.3mm);
+\draw[line width=0.5pt] (90,92) circle (2.3mm);
+\draw[line width=0.5pt] (98,92) circle (2.3mm);
+\draw[line width=0.5pt] (106,92) circle (2.3mm);
+\fill[black!7] (66,96.0) rectangle (111,104.0);
+\node[anchor=east] at (76,100) {\small\textbf{6}};
+\draw[line width=0.5pt] (82,100) circle (2.3mm);
+\draw[line width=0.5pt] (90,100) circle (2.3mm);
+\draw[line width=0.5pt] (98,100) circle (2.3mm);
+\draw[line width=0.5pt] (106,100) circle (2.3mm);
+\fill[black!7] (118,80.0) rectangle (163,88.0);
+\node[anchor=east] at (128,84) {\small\textbf{7}};
+\draw[line width=0.5pt] (134,84) circle (2.3mm);
+\draw[line width=0.5pt] (142,84) circle (2.3mm);
+\draw[line width=0.5pt] (150,84) circle (2.3mm);
+\draw[line width=0.5pt] (158,84) circle (2.3mm);
+\node[anchor=east] at (128,92) {\small\textbf{8}};
+\draw[line width=0.5pt] (134,92) circle (2.3mm);
+\draw[line width=0.5pt] (142,92) circle (2.3mm);
+\draw[line width=0.5pt] (150,92) circle (2.3mm);
+\draw[line width=0.5pt] (158,92) circle (2.3mm);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,21 @@
+{
+ "registro": "../registri/registro_A.xlsx",
+ "richieste": [
+  {"id": "1a", "esercizio": 1, "punto": "a", "evidenze": ["E01", "E02", "E03"]},
+  {"id": "1b", "esercizio": 1, "punto": "b", "evidenze": ["E04", "E05", "E06", "E07"]},
+  {"id": "1c", "esercizio": 1, "punto": "c", "evidenze": ["E08", "E09"]},
+  {"id": "2", "esercizio": 2, "punto": "intero", "evidenze": ["E10", "E11"]},
+  {"id": "3", "esercizio": 3, "punto": "intero", "evidenze": ["E12", "E13", "E14"]},
+  {"id": "4", "esercizio": 4, "punto": "intero", "evidenze": ["E15", "E16", "E17"]}
+ ],
+ "passaggi": ["S1a1", "S1a2", "S1a3", "S1b1", "S1b2", "S1b3", "S1c1", "S1c2", "S2.1", "S2.2", "S2.3", "S3.1", "S3.2", "S3.3", "S4.1", "S4.2", "S4.3", "S4.4"],
+ "copertura_evidenze": {
+  "E01": ["S1a1"], "E02": ["S1a2"], "E03": ["S1a3"],
+  "E04": ["S1b1"], "E05": ["S1b1"], "E06": ["S1b2"], "E07": ["S1b3"],
+  "E08": ["S1c1"], "E09": ["S1c1", "S1c2"],
+  "E10": ["S2.1"], "E11": ["S2.2", "S2.3"],
+  "E12": ["S3.1"], "E13": ["S3.2"], "E14": ["S3.3"],
+  "E15": ["S4.1"], "E16": ["S4.2", "S4.3"], "E17": ["S4.4"],
+  "E18": ["S1a2", "S3.2"]
+ }
+}

@@ -1,0 +1,184 @@
+\documentclass[a4paper,10pt]{exam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% --- TIPOGRAFIA ELEGANTE: PALATINO E MATEMATICA ARMONIZZATA ---
+\usepackage{newpxtext}
+\usepackage{newpxmath}
+\usepackage{microtype}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{tikz}
+
+% Risoluzione compatibilità siunitx e physics
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\newcommand{\um}[2]{\SI[output-decimal-marker={,}]{#1}{#2}}
+
+\bracketedpoints
+\pointpoints{punto}{punti}
+\marginpointname{ punti}
+\boxedpoints
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% GEOMETRIA PAGINA %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{
+   top=1.0cm,
+   bottom=1.0cm,
+   left=0.8cm,
+   right=0.8cm
+}
+
+\pagestyle{headandfoot}
+% INTESTAZIONE VUOTA: Divieto assoluto di titolo, materia, indicazione fila
+\firstpageheader{}{}{}
+\firstpagefooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+\runningheader{}{}{}
+\runningfooter{}{\scriptsize Pagina \thepage\ di \numpages}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% STILE MONOCROMATICO %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REGOLA: Solo toni di bianco, nero e sfumature di grigio (gray!*, black!*)
+
+% Badge compatto per numerazione degli esercizi
+\newcommand{\badgeQ}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape=rectangle, rounded corners=2pt, fill=gray!15, draw=gray!40, line width=0.4pt, inner sep=2.5pt, minimum width=1.6em] (char) {\small\textbf{#1}};%
+  }%
+}
+\renewcommand{\questionlabel}{\badgeQ{\thequestion}\enspace}
+\renewcommand{\partlabel}{\textbf{\alph{partno})}}
+
+% Caselle di spunta (checkbox) per griglie e quesiti
+\newcommand{\cbox}{\ensuremath{\vcenter{\hbox{\tikz{\draw[black!75, line width=0.5pt, rounded corners=1.2pt] (0,0) rectangle (3.0mm, 3.0mm);}}}}}
+
+% Box consegne/istruzioni con sfondo tenue senza intestazione "Istruzioni"
+\tcbset{
+  istruzionibox/.style={
+    colback=gray!6,
+    colframe=gray!30,
+    arc=2pt,
+    boxrule=0.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt,
+    fontupper=\small
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% GRIGLIE DI VALUTAZIONE %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- OPZIONE 1: Griglia Competenze con Legenda a Destra ---
+\newcommand{\grigliacompetenze}{
+\vspace{1mm}
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+\footnotesize
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l cc >{\columncolor{gray!20}}c ccc c}
+\toprule
+\rowcolor{gray!10}
+\textbf{Indicatori} & \textbf{N} & \textbf{Q} & \cellcolor{gray!20}\textbf{S} & \textbf{D} & \textbf{B} & \textbf{O} & \textbf{Voto} \\
+\midrule
+Analizzare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \multirow{4}{*}{\rule{1.4cm}{0pt}} \\
+Sviluppare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+Argomentare   & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+Comunicare    & \cbox & \cbox & \cbox & \cbox & \cbox & \cbox & \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+\scriptsize \color{black!75}
+\textbf{Legenda giudizi:}\par\vspace{1mm}
+\begin{tabular}{@{}ll@{}}
+\textbf{N}: Non sufficiente & \textbf{D}: Discreto \\
+\textbf{Q}: Quasi sufficiente & \textbf{B}: Buono \\
+\textbf{S}: Sufficiente & \textbf{O}: Ottimo \\
+\end{tabular}
+\end{minipage}
+}
+
+% --- OPZIONE 2: Griglia Recupero per Argomenti (senza legenda) ---
+\newcommand{\linearecupero}[1]{#1 & \cbox & \cbox & \cbox & \\}
+
+\newcommand{\grigliarecupero}[1]{
+\vspace{1mm}
+\noindent
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{0.54\textwidth} ccc p{0.24\textwidth}}
+\toprule
+\rowcolor{gray!12}
+\textbf{Nucleo tematico / Obiettivo} & \textbf{NR} & \textbf{PR} & \textbf{R} & \textbf{Note / Esito} \\
+\midrule
+#1
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+% Contenuto facoltativo: soltanto costanti, formule o supporti approvati.
+\newcommand{\supportiprova}[1]{%
+  \par\noindent\begin{minipage}{\linewidth}\small
+  #1
+  \end{minipage}\par\vspace{3mm}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% intestazione sempre presente e non modificabile salvo esplicita richiesta dell'utente
+\begin{tcolorbox}[istruzionibox]
+È consentito l'uso di penne nere o blu (non è consentito l'uso del lapis e del bianchetto).
+È consentito l'uso della calcolatrice scientifica non grafica.
+Scrivere i passaggi in modo chiaro e leggibile, esplicitando formule, passaggi fondamentali e motivando le scelte principali.
+\end{tcolorbox}
+
+\vspace{1.5mm}
+
+
+\begin{questions}
+\question Nel piano cartesiano sono dati i punti $A(-2,1)$, $B(4,3)$ e $C(2,-3)$.
+\begin{parts}
+\part Scrivi l'equazione della retta $AB$ e calcola la lunghezza del segmento $AB$.
+\part Calcola la distanza di $C$ dalla retta $AB$ e l'area del triangolo $ABC$.
+\part Scrivi l'equazione della retta per $C$ parallela ad $AB$ e determina in quale punto interseca l'asse $x$.
+\end{parts}
+\question Date le rette $r:\ y=3x+2$ e $s:\ kx+(k+1)y-5=0$, determina il valore di $k$ per cui $s$ è perpendicolare a $r$. Discuti il caso in cui $s$ non ha coefficiente angolare.
+\question Scrivi l'equazione dell'asse del segmento di estremi $P(-1,4)$ e $Q(5,0)$ e verifica che un suo punto, a tua scelta, è equidistante da $P$ e da $Q$.
+\question Dato il fascio di rette $k\,(2x+y+1)+(-x+2y-3)=0$, determina il centro del fascio, la retta del fascio che passa per il punto $(3,0)$ e quella parallela all'asse $x$.
+\end{questions}
+\null
+\vfill
+
+\supportiprova{\textbf{Formulario}\\[1mm]
+\begin{tabular}{@{}ll@{}}
+Distanza fra due punti & $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ \\
+Punto medio & $\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$ \\
+Distanza punto-retta & $\dfrac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$ con $ax+by+c=0$ \\
+Rette parallele e perpendicolari & $m_1=m_2$\quad $m_1\,m_2=-1$ \\
+Fascio di rette & $k\,(a_1x+b_1y+c_1)+(a_2x+b_2y+c_2)=0$ \\
+\end{tabular}}
+\noindent
+\textbf{Cognome e Nome:}\enspace\hrulefill\hspace{1cm}%
+\textbf{Classe:}\enspace\makebox[2.5cm]{\hrulefill}\hspace{1cm}%
+\textbf{Data:}\enspace\makebox[2.5cm]{\hrulefill}
+
+\vspace{3mm}
+\grigliacompetenze
+\end{document}

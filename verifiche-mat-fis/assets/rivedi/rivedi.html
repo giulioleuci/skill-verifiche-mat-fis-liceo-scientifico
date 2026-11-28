@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<meta name="token" content="%%TOKEN%%">
+<title>Revisione delle letture del quiz</title>
+<style>
+:root {
+  --sfondo: #eef0f3; --pannello: #fff; --testo: #1f2328; --tenue: #5b6169; --linea: #d3d8df;
+  --accento: #1f5fbf; --ok: #1a7f4b; --prop: #9a5b00; --ann: #b3261e;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font: 14px/1.4 var(--sans); color: var(--testo); background: var(--sfondo); display: grid; grid-template-rows: auto 1fr; font-variant-numeric: tabular-nums; }
+::selection { background: rgb(31 95 191 / .22); }
+:focus-visible { outline: 2px solid var(--accento); outline-offset: 2px; }
+* { scrollbar-width: thin; scrollbar-color: var(--linea) transparent; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+header { display: flex; gap: 1.5rem; align-items: baseline; padding: .6rem 1rem; background: var(--pannello); border-bottom: 1px solid var(--linea); }
+h1 { font-size: 1rem; margin: 0; font-weight: 650; }
+header .tenue, #avviso { color: var(--tenue); }
+#stato { margin-left: auto; color: var(--tenue); }
+#stato.errore { color: var(--ann); font-weight: 600; }
+main { display: grid; grid-template-columns: 11rem minmax(0, 1fr) 22rem; min-height: 0; }
+aside, section { overflow: auto; min-height: 0; }
+#coda { background: var(--pannello); border-right: 1px solid var(--linea); padding: .5rem; display: flex; flex-direction: column; gap: 2px; }
+#coda button { padding: .4rem .5rem; border-radius: 6px; display: flex; justify-content: space-between; gap: .5rem; }
+#coda button:hover { background: var(--sfondo); }
+#coda button.attivo { background: rgb(31 95 191 / .12); font-weight: 600; }
+.badge { background: var(--prop); color: #fff; border-radius: 99px; padding: 0 .45rem; font-size: .8rem; font-weight: 600; }
+#centro { padding: 1rem; display: grid; justify-items: center; align-content: start; }
+#foglio { position: relative; width: min(100%, 52rem); background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 6px 20px rgb(0 0 0 / .06); }
+#foglio img, #foglio svg { display: block; width: 100%; }
+#foglio svg { position: absolute; inset: 0; height: 100%; }
+.banda { fill: rgb(31 95 191 / .09); }
+.c { fill: transparent; stroke: transparent; stroke-width: .35; cursor: pointer; }
+.c:hover { stroke: var(--accento); stroke-width: .5; }
+.c.segno { stroke: #77776f; stroke-dasharray: 1 .7; }
+.c.ann { stroke: var(--ann); }
+.c.ok { fill: rgb(26 127 75 / .38); stroke: var(--ok); stroke-width: .6; stroke-dasharray: none; }
+.c.prop { fill: rgb(154 91 0 / .38); stroke: var(--prop); stroke-width: .6; }
+#dettaglio { background: var(--pannello); border-left: 1px solid var(--linea); padding: .75rem; display: flex; flex-direction: column; gap: .75rem; }
+#nome-img { display: block; width: 100%; border: 1px solid var(--linea); border-radius: 4px; }
+label { display: grid; gap: .25rem; color: var(--tenue); }
+input { font: inherit; color: var(--testo); padding: .4rem .5rem; border: 1px solid var(--linea); border-radius: 6px; }
+#filtri { display: flex; gap: .25rem; }
+#filtri button { padding: .3rem .7rem; border: 1px solid var(--linea); border-radius: 6px; }
+#filtri button[aria-pressed=true] { background: var(--testo); color: #fff; border-color: var(--testo); }
+#righe { display: flex; flex-direction: column; gap: 2px; }
+.riga { display: grid; grid-template-columns: 2rem 2.2rem 1fr auto; align-items: center; gap: .5rem; padding: .35rem .5rem; border-radius: 6px; }
+.riga:hover { background: var(--sfondo); }
+.riga.attiva { background: rgb(31 95 191 / .12); }
+.chip { font-weight: 700; text-align: center; border: 1px solid var(--linea); border-radius: 4px; }
+.riga .s { color: var(--tenue); }
+.riga .s.proposta { color: var(--prop); font-weight: 600; }
+.riga .s.annullata { color: var(--ann); font-weight: 600; }
+.barre { display: flex; align-items: flex-end; gap: 1px; height: 1rem; }
+.barre i { width: 4px; background: #77776f; min-height: 1px; }
+.vuoto { color: var(--tenue); padding: .5rem; }
+#aiuto { color: var(--tenue); font-size: .85rem; margin-top: auto; }
+kbd { font: inherit; font-weight: 600; border: 1px solid var(--linea); border-radius: 3px; padding: 0 .25rem; background: var(--sfondo); }
+@media (max-width: 980px) { main { grid-template-columns: 1fr; } #coda { flex-direction: row; overflow-x: auto; border-right: 0; } aside { max-height: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Revisione delle letture</h1>
+  <span class="tenue">Da rivedere: <strong id="conta">0</strong></span>
+  <span id="avviso"></span>
+  <span id="stato" role="status" aria-live="polite"></span>
+</header>
+<main>
+  <aside id="coda" aria-label="Fogli"></aside>
+  <section id="centro" aria-label="Scansione">
+    <div id="foglio"><img id="scan" alt="Foglio risposte raddrizzato"><svg id="ov" viewBox="0 0 210 297"></svg></div>
+  </section>
+  <aside id="dettaglio">
+    <img id="nome-img" alt="Ritaglio del nome scritto dall'alunno">
+    <label>Cognome e nome <input id="nome" autocomplete="off"></label>
+    <div id="filtri"></div>
+    <div id="righe"></div>
+    <p id="aiuto"><kbd>A</kbd>–<kbd>J</kbd> risposta · <kbd>0</kbd> vuota · <kbd>*</kbd> annullata · <kbd>Invio</kbd> conferma · <kbd>↑</kbd><kbd>↓</kbd> domanda · <kbd>[</kbd><kbd>]</kbd> foglio</p>
+  </aside>
+</main>
+<script src="/rivedi.js"></script>
+</body>
+</html>

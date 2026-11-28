@@ -1,0 +1,6 @@
+evidenze=13 (1-40) somma Max=1000 (1000)
+Esercizio: 1=720, 2=280
+Indicatore: ANA=250, SVI=250, IND=300, ARG=200
+Sigla argomento: FUN=480, INT=240, TEO=280
+classe medio: L1=23% (bersaglio 20%) AVVISO scostamento > 2,5 punti, L2=57% (bersaglio 65%) AVVISO scostamento > 2,5 punti, L3=20% (bersaglio 15%) AVVISO scostamento > 2,5 punti
+accesso L2: 28% del totale = 49% di L2

@@ -1,0 +1,404 @@
+{
+  "mantenuti": [
+    "E01"
+  ],
+  "modificati": {
+    "E02": {
+      "Max": {
+        "prima": 60,
+        "dopo": 70
+      }
+    },
+    "E03": {
+      "Max": {
+        "prima": 40,
+        "dopo": 50
+      }
+    },
+    "E04": {
+      "Max": {
+        "prima": 50,
+        "dopo": 60
+      }
+    },
+    "E05": {
+      "Max": {
+        "prima": 70,
+        "dopo": 100
+      },
+      "Descrizione evidenza": {
+        "prima": "Calcola la distanza di C dalla retta AB",
+        "dopo": "Calcola distanza di C da AB e area del triangolo ABC"
+      },
+      "Note utente": {
+        "prima": "Ammesso anche il risultato approssimato 5,06 se compare la forma esatta.",
+        "dopo": ""
+      }
+    },
+    "E06": {
+      "Punto/gruppo": {
+        "prima": "b",
+        "dopo": "c"
+      },
+      "Indicatore": {
+        "prima": "SVI",
+        "dopo": "ANA"
+      },
+      "Sigla argomento": {
+        "prima": "DIS",
+        "dopo": "PAR"
+      },
+      "Max": {
+        "prima": 40,
+        "dopo": 50
+      },
+      "Descrizione evidenza": {
+        "prima": "Calcola l'area del triangolo ABC",
+        "dopo": "Imposta la parallela ad AB per C con lo stesso coefficiente angolare"
+      },
+      "Nome completo argomento": {
+        "prima": "Distanze nel piano cartesiano",
+        "dopo": "Parallelismo, perpendicolarità e luoghi"
+      }
+    },
+    "E07": {
+      "Punto/gruppo": {
+        "prima": "b",
+        "dopo": "c"
+      },
+      "Indicatore": {
+        "prima": "ARG",
+        "dopo": "SVI"
+      },
+      "Sigla argomento": {
+        "prima": "DIS",
+        "dopo": "PAR"
+      },
+      "Max": {
+        "prima": 30,
+        "dopo": 70
+      },
+      "Descrizione evidenza": {
+        "prima": "Conferma l'area con un secondo metodo e confronta i risultati",
+        "dopo": "Scrive la parallela e ne calcola l'intersezione con l'asse x"
+      },
+      "Nome completo argomento": {
+        "prima": "Distanze nel piano cartesiano",
+        "dopo": "Parallelismo, perpendicolarità e luoghi"
+      },
+      "Livello": {
+        "prima": "3",
+        "dopo": "2"
+      }
+    },
+    "E08": {
+      "Esercizio": {
+        "prima": 1,
+        "dopo": 2
+      },
+      "Punto/gruppo": {
+        "prima": "c",
+        "dopo": "intero"
+      },
+      "Max": {
+        "prima": 40,
+        "dopo": 50
+      },
+      "Descrizione evidenza": {
+        "prima": "Imposta la parallela ad AB per C con lo stesso coefficiente angolare",
+        "dopo": "Traduce la perpendicolarità nella condizione sui coefficienti angolari"
+      },
+      "Livello": {
+        "prima": "2",
+        "dopo": "1"
+      }
+    },
+    "E09": {
+      "Esercizio": {
+        "prima": 1,
+        "dopo": 2
+      },
+      "Punto/gruppo": {
+        "prima": "c",
+        "dopo": "intero"
+      },
+      "Descrizione evidenza": {
+        "prima": "Scrive la parallela e ne calcola l'intersezione con l'asse x",
+        "dopo": "Risolve per k ed esamina il caso della retta verticale"
+      }
+    },
+    "E10": {
+      "Esercizio": {
+        "prima": 2,
+        "dopo": 3
+      },
+      "Max": {
+        "prima": 50,
+        "dopo": 60
+      },
+      "Descrizione evidenza": {
+        "prima": "Traduce la perpendicolarità nella condizione sui coefficienti angolari",
+        "dopo": "Individua punto medio e coefficiente angolare perpendicolare per l'asse"
+      },
+      "Livello": {
+        "prima": "1",
+        "dopo": "2A"
+      }
+    },
+    "E11": {
+      "Esercizio": {
+        "prima": 2,
+        "dopo": 3
+      },
+      "Max": {
+        "prima": 70,
+        "dopo": 100
+      },
+      "Descrizione evidenza": {
+        "prima": "Risolve per k ed esamina il caso della retta verticale",
+        "dopo": "Scrive l'equazione dell'asse del segmento"
+      },
+      "Livello": {
+        "prima": "2",
+        "dopo": "2A"
+      }
+    },
+    "E12": {
+      "Indicatore": {
+        "prima": "ANA",
+        "dopo": "ARG"
+      },
+      "Max": {
+        "prima": 50,
+        "dopo": 100
+      },
+      "Descrizione evidenza": {
+        "prima": "Individua punto medio e coefficiente angolare perpendicolare per l'asse",
+        "dopo": "Verifica con un punto dell'asse l'equidistanza dagli estremi"
+      },
+      "Livello": {
+        "prima": "2A",
+        "dopo": "3"
+      }
+    },
+    "E13": {
+      "Esercizio": {
+        "prima": 3,
+        "dopo": 4
+      },
+      "Indicatore": {
+        "prima": "SVI",
+        "dopo": "ANA"
+      },
+      "Sigla argomento": {
+        "prima": "PAR",
+        "dopo": "FAS"
+      },
+      "Max": {
+        "prima": 100,
+        "dopo": 70
+      },
+      "Descrizione evidenza": {
+        "prima": "Scrive l'equazione dell'asse del segmento",
+        "dopo": "Riconosce nel fascio due rette generatrici e il suo centro come loro intersezione"
+      },
+      "Nome completo argomento": {
+        "prima": "Parallelismo, perpendicolarità e luoghi",
+        "dopo": "Fasci di rette"
+      }
+    },
+    "E14": {
+      "Esercizio": {
+        "prima": 3,
+        "dopo": 4
+      },
+      "Indicatore": {
+        "prima": "ARG",
+        "dopo": "SVI"
+      },
+      "Sigla argomento": {
+        "prima": "PAR",
+        "dopo": "FAS"
+      },
+      "Max": {
+        "prima": 50,
+        "dopo": 80
+      },
+      "Descrizione evidenza": {
+        "prima": "Verifica con un punto dell'asse l'equidistanza dagli estremi",
+        "dopo": "Determina centro, retta per il punto dato e parallela all'asse x"
+      },
+      "Nome completo argomento": {
+        "prima": "Parallelismo, perpendicolarità e luoghi",
+        "dopo": "Fasci di rette"
+      },
+      "Livello": {
+        "prima": "3",
+        "dopo": "2"
+      }
+    },
+    "E15": {
+      "Esercizio": {
+        "prima": 4,
+        "dopo": "Intero elaborato"
+      },
+      "Punto/gruppo": {
+        "prima": "intero",
+        "dopo": "Intero elaborato"
+      },
+      "Indicatore": {
+        "prima": "ANA",
+        "dopo": "COM"
+      },
+      "Sigla argomento": {
+        "prima": "FAS",
+        "dopo": "TRASVERSALE"
+      },
+      "Max": {
+        "prima": 60,
+        "dopo": 40
+      },
+      "Descrizione evidenza": {
+        "prima": "Riconosce nel fascio due rette generatrici e il suo centro come loro intersezione",
+        "dopo": "Usa notazione, unità di misura e passaggi ordinati e leggibili"
+      },
+      "Nome completo argomento": {
+        "prima": "Fasci di rette",
+        "dopo": "Competenze trasversali"
+      },
+      "Livello": {
+        "prima": "2A",
+        "dopo": "1"
+      }
+    }
+  },
+  "eliminati": [
+    "E16",
+    "E17",
+    "E18"
+  ],
+  "aggiunti": [],
+  "derivazioni": {
+    "E01": [
+      "E01"
+    ],
+    "E02": [
+      "E02"
+    ],
+    "E03": [
+      "E03"
+    ],
+    "E04": [
+      "E04"
+    ],
+    "E05": [
+      "E05",
+      "E06"
+    ],
+    "E06": [
+      "E08"
+    ],
+    "E07": [
+      "E09"
+    ],
+    "E08": [
+      "E10"
+    ],
+    "E09": [
+      "E11"
+    ],
+    "E10": [
+      "E12"
+    ],
+    "E11": [
+      "E13"
+    ],
+    "E12": [
+      "E14"
+    ],
+    "E13": [
+      "E15"
+    ],
+    "E14": [
+      "E16"
+    ],
+    "E15": [
+      "E18"
+    ]
+  },
+  "pesi_argomenti": {
+    "DIS": {
+      "prima": 230,
+      "dopo": 210
+    },
+    "FAS": {
+      "prima": 190,
+      "dopo": 150
+    },
+    "PAR": {
+      "prima": 420,
+      "dopo": 490
+    },
+    "RET": {
+      "prima": 100,
+      "dopo": 110
+    },
+    "TRASVERSALE": {
+      "prima": 60,
+      "dopo": 40
+    }
+  },
+  "pesi_indicatori": {
+    "ANA": {
+      "prima": 290,
+      "dopo": 330
+    },
+    "ARG": {
+      "prima": 130,
+      "dopo": 100
+    },
+    "COM": {
+      "prima": 60,
+      "dopo": 40
+    },
+    "SVI": {
+      "prima": 520,
+      "dopo": 530
+    }
+  },
+  "pesi_livelli": {
+    "1": {
+      "prima": 250,
+      "dopo": 250
+    },
+    "2": {
+      "prima": 290,
+      "dopo": 260
+    },
+    "2A": {
+      "prima": 330,
+      "dopo": 390
+    },
+    "3": {
+      "prima": 130,
+      "dopo": 100
+    }
+  },
+  "obiettivi": {
+    "prima": {
+      "RET": "Equazione della retta",
+      "DIS": "Distanze nel piano cartesiano",
+      "PAR": "Parallelismo, perpendicolarità e luoghi",
+      "FAS": "Fasci di rette",
+      "TRASVERSALE": "Competenze trasversali"
+    },
+    "dopo": {
+      "RET": "Equazione della retta",
+      "DIS": "Distanze nel piano cartesiano",
+      "PAR": "Parallelismo, perpendicolarità e luoghi",
+      "FAS": "Fasci di rette",
+      "TRASVERSALE": "Competenze trasversali"
+    }
+  },
+  "valutazione": "Il confronto non certifica l’equivalenza didattica: motivarla con il docente."
+}

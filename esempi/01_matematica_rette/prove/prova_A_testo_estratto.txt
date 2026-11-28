@@ -1,0 +1,30 @@
+     È consentito l’uso di penne nere o blu (non è consentito l’uso del lapis e del bianchetto). È consentito l’uso della calcolatrice scientifica
+     non grafica. Scrivere i passaggi in modo chiaro e leggibile, esplicitando formule, passaggi fondamentali e motivando le scelte principali.
+
+
+
+ 1      Nel piano cartesiano sono dati i punti 𝐴(−2, 1), 𝐵(4, 3) e 𝐶(2, −3).
+        a) Scrivi l’equazione della retta 𝐴𝐵 e calcola la lunghezza del segmento 𝐴𝐵.
+        b) Calcola la distanza di 𝐶 dalla retta 𝐴𝐵 e l’area del triangolo 𝐴𝐵𝐶. Verifica l’area con un secondo metodo.
+        c) Scrivi l’equazione della retta per 𝐶 parallela ad 𝐴𝐵 e determina in quale punto interseca l’asse 𝑥.
+
+ 2      Date le rette 𝑟 : 𝑦 = 3𝑥 + 2 e 𝑠 : 𝑘𝑥 + (𝑘 + 1)𝑦 − 5 = 0, determina il valore di 𝑘 per cui 𝑠 è perpendicolare a 𝑟. Discuti il
+      caso in cui 𝑠 non ha coefficiente angolare.
+ 3      Scrivi l’equazione dell’asse del segmento di estremi 𝑃(−1, 4) e 𝑄(5, 0) e verifica che un suo punto, a tua scelta, è equidistante
+      da 𝑃 e da 𝑄.
+ 4      Dato il fascio di rette 𝑘 (2𝑥 + 𝑦 + 1) + (−𝑥 + 2𝑦 − 3) = 0, determina il centro del fascio, la retta del fascio che passa per il
+      punto (3, 0) e quella parallela all’asse 𝑥. Spiega perché la retta 2𝑥 + 𝑦 + 1 = 0 non si ottiene per nessun valore di 𝑘.
+
+
+
+
+Cognome e Nome:                                                                      Classe:                                  Data:
+
+ Indicatori        N     Q     S    D     B    O       Voto
+ Analizzare                                                                                      Legenda giudizi:
+                                                                                                 N: Non sufficiente     D: Discreto
+ Sviluppare
+                                                                                                 Q: Quasi sufficiente   B: Buono
+ Argomentare                                                                                     S: Sufficiente         O: Ottimo
+ Comunicare
+

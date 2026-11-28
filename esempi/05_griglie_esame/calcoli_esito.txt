@@ -1,0 +1,3 @@
+matematica: area = 0.2642; soluzioni di f = 1/4: 0.3574 e 2.1533
+fisica: k = 24.9 ± 0.3 N/m, T = 0.891 s, w = 7.05 rad/s, vmax = 0.353 m/s, E = 0.0311 J
+mista: vt = 2.4525 m/s, tau = 0.25 s, s(1 s) = 1.8506 m (caduta libera 4.905 m)

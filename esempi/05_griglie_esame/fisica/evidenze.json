@@ -1,0 +1,123 @@
+[
+ {
+  "ID evidenza": "E01",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "MOL",
+  "Max": 60,
+  "Descrizione evidenza": "Riconosce la legge di Hooke come modello",
+  "Nome completo argomento": "Legge di Hooke e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E02",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "MOL",
+  "Max": 80,
+  "Descrizione evidenza": "Rappresenta i dati con barre di errore",
+  "Nome completo argomento": "Legge di Hooke e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E03",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "MOL",
+  "Max": 100,
+  "Descrizione evidenza": "Esegue la regressione e ricava $k$ con incertezza",
+  "Nome completo argomento": "Legge di Hooke e dati sperimentali",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E04",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "MOL",
+  "Max": 60,
+  "Descrizione evidenza": "Riporta $k$ con unità e cifre corrette",
+  "Nome completo argomento": "Legge di Hooke e dati sperimentali",
+  "Livello": "1"
+ },
+ {
+  "ID evidenza": "E05",
+  "Esercizio": "1",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "MOL",
+  "Max": 100,
+  "Descrizione evidenza": "Valuta la pertinenza del modello",
+  "Nome completo argomento": "Legge di Hooke e dati sperimentali",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E06",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "OSC",
+  "Max": 90,
+  "Descrizione evidenza": "Riconosce il moto armonico",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E07",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "OSC",
+  "Max": 120,
+  "Descrizione evidenza": "Calcola pulsazione e periodo",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "2A"
+ },
+ {
+  "ID evidenza": "E08",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "SVI",
+  "Sigla argomento": "OSC",
+  "Max": 120,
+  "Descrizione evidenza": "Calcola velocità massima ed energia",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E09",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "DAT",
+  "Sigla argomento": "OSC",
+  "Max": 70,
+  "Descrizione evidenza": "Confronta energia e lavoro",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "2"
+ },
+ {
+  "ID evidenza": "E10",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ARG",
+  "Sigla argomento": "OSC",
+  "Max": 100,
+  "Descrizione evidenza": "Giustifica la coerenza dei risultati",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "3"
+ },
+ {
+  "ID evidenza": "E11",
+  "Esercizio": "2",
+  "Punto/gruppo": "intero",
+  "Indicatore": "ANA",
+  "Sigla argomento": "OSC",
+  "Max": 100,
+  "Descrizione evidenza": "Imposta la legge oraria",
+  "Nome completo argomento": "Oscillatore armonico",
+  "Livello": "2"
+ }
+]

@@ -1,0 +1,5 @@
+('S06', 'Gamma_Chiara.pdf', 3, 'annullata', 'A=1.0 B=1.0 C=0.0 D=0.0')
+('S06', 'Gamma_Chiara.pdf', 6, 'proposta', 'A=0.35 B=0.0 C=1.0 D=0.0')
+('S06', 'Gamma_Chiara.pdf', 7, 'proposta', 'A=0.35 B=0.0 C=0.0 D=0.0')
+('S07', 'Theta_Hugo.pdf', 8, 'annullata', 'A=0.0 B=1.0 C=1.0 D=0.0')
+(None, 'Iota_Ilaria.jpg', None, 'nessun foglio risposte riconosciuto (4 quadrati agli angoli)', None)

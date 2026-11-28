@@ -1,0 +1,346 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- lingua, codifica, font (testo + matematica) ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{mathpazo}                 % Palatino per testo e matematica
+\usepackage{microtype}
+
+% ---------- matematica ----------
+\usepackage{amsmath,amssymb,amsfonts,mathtools,bm,cancel,mathrsfs,nicefrac}
+\DeclareMathOperator{\sen}{sen}       % seno all'italiana
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{cotg}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arctg}{arctg}
+\newcommand{\dd}{\mathrm{d}}                       % differenziale
+\newcommand{\vv}[1]{\vec{#1}}                      % vettore con freccia
+\newcommand{\norma}[1]{\left\lvert#1\right\rvert} % modulo di vettore
+\newcommand{\pedice}[1]{_{\text{#1}}}              % pedice testuale: E\pedice{in}
+
+% ---------- unità di misura e numeri (virgola decimale) ----------
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,},per-mode=symbol,
+         inter-unit-product=\ensuremath{{}\cdot{}},group-digits=false}
+
+% ---------- grafici e figure ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathmorphing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{graphicx}
+% Grafici collocati nel punto pertinente dello svolgimento.
+\newenvironment{grafico}{\begin{figure}[h!]\centering}{\end{figure}}
+
+% ---------- impaginazione ----------
+\usepackage[a4paper,left=1.8cm,right=1.8cm,top=2.3cm,bottom=2.2cm]{geometry}
+\usepackage{fancyhdr,lastpage,needspace,enumitem,booktabs,array,colortbl,tabularx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\headheight}{14pt}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=2pt,topsep=2pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2pt,topsep=2pt,parsep=0pt}
+
+% ---------- colori degli indicatori ----------
+\usepackage[table,dvipsnames]{xcolor}
+\definecolor{anac}{HTML}{C62828}\definecolor{anabg}{HTML}{FDECEA} % rosso
+\definecolor{svic}{HTML}{1A56DB}\definecolor{svibg}{HTML}{E8F0FE} % blu
+\definecolor{argc}{HTML}{A67C00}\definecolor{argbg}{HTML}{FFF6CC} % giallo
+\definecolor{comc}{HTML}{2E7D32}\definecolor{combg}{HTML}{E6F4EA} % verde
+% Solo griglie d'esame (su richiesta): IND arancio, DAT teal
+\definecolor{indc}{HTML}{E65100}\definecolor{indbg}{HTML}{FFF0E0}
+\definecolor{datc}{HTML}{00796B}\definecolor{datbg}{HTML}{E0F2F1}
+
+% Riferimenti agli indicatori: usare queste macro in tutto il documento.
+\newcommand{\coloreANA}{anac}\newcommand{\nomeANA}{Analizzare}
+\newcommand{\coloreSVI}{svic}\newcommand{\nomeSVI}{Sviluppare e calcolare}
+\newcommand{\coloreARG}{argc}\newcommand{\nomeARG}{Argomentare}
+\newcommand{\coloreCOM}{comc}\newcommand{\nomeCOM}{Comunicare}
+\newcommand{\coloreIND}{indc}\newcommand{\nomeIND}{Individuare}
+\newcommand{\coloreDAT}{datc}\newcommand{\nomeDAT}{Interpretare i dati}
+% Griglie d'esame: matematica \renewcommand{\nomeANA}{Comprendere}, \nomeSVI{Sviluppare il processo risolutivo};
+% fisica/mista: \nomeSVI{Sviluppare il processo risolutivo}, \nomeDAT{Interpretare criticamente i dati} (mista: ...rappresentare, elaborare).
+\newcommand{\sigla}[1]{\textcolor{\csname colore#1\endcsname}{\textbf{#1}}}
+\newcommand{\indicatore}[1]{\textcolor{\csname colore#1\endcsname}{\textbf{#1: \csname nome#1\endcsname}}}
+
+% ---------- box colorati e chip ----------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Box passaggio chiave: \begin{boxana}[Titolo] ... \end{boxana}  (ana|svi|arg|com)
+\newcommand{\defbox}[4]{%
+  \newtcolorbox{box#1}[1][Passaggio chiave]{enhanced,breakable,frame hidden,
+    borderline west={2.5pt}{0pt}{#2},colback=#3,boxrule=0pt,arc=1.5pt,
+    left=7pt,right=5pt,top=2pt,bottom=2pt,before skip=4pt,after skip=4pt,
+    fontupper=\small,before upper={\textbf{\idevidenza}\enspace\sigla{#4}\enspace\textbf{##1}\par}}}
+\defbox{ana}{anac}{anabg}{ANA}
+\defbox{svi}{svic}{svibg}{SVI}
+\defbox{arg}{argc}{argbg}{ARG}
+\defbox{com}{comc}{combg}{COM}
+\defbox{ind}{indc}{indbg}{IND}
+\defbox{dat}{datc}{datbg}{DAT}
+
+% Box enunciato
+\newtcolorbox{enun}{colback=black!3,colframe=black!25,boxrule=0.4pt,arc=2pt,
+  left=6pt,right=6pt,top=3pt,bottom=3pt,fontupper=\small,
+  before skip=5pt,after skip=5pt}
+
+% Chip identificativo e massimo in punti; i dati sono forniti dal registro approvato.
+\newcommand{\chip}[4]{\tcbox[on line,boxsep=0pt,left=3pt,right=3pt,top=1pt,bottom=1pt,
+  arc=4pt,boxrule=0.4pt,colframe=#1,colback=#2,fontupper=\scriptsize\bfseries\color{#1}]{#3\ #4}}
+\newcommand{\ANA}[2]{\chip{anac}{anabg}{\sigla{ANA}}{#1\, / massimo #2\,p}}
+\newcommand{\SVI}[2]{\chip{svic}{svibg}{\sigla{SVI}}{#1\, / massimo #2\,p}}
+\newcommand{\ARG}[2]{\chip{argc}{argbg}{\sigla{ARG}}{#1\, / massimo #2\,p}}
+\newcommand{\COM}[2]{\chip{comc}{combg}{\sigla{COM}}{#1\, / massimo #2\,p}}
+\newcommand{\IND}[2]{\chip{indc}{indbg}{\sigla{IND}}{#1\, / massimo #2\,p}}
+\newcommand{\DAT}[2]{\chip{datc}{datbg}{\sigla{DAT}}{#1\, / massimo #2\,p}}
+\newcommand{\ess}{\ensuremath{\bigstar}}
+\newcommand{\legenda}{\indicatore{ANA}\quad\indicatore{SVI}\par
+  \indicatore{ARG}\quad\indicatore{COM}}
+% Griglie d'esame: \legendaesame{ANA}{IND}{SVI}{ARG} (matematica) o \legendaesame{ANA}{SVI}{DAT}{ARG} (fisica, mista)
+\newcommand{\legendaesame}[4]{\indicatore{#1}\quad\indicatore{#2}\par\indicatore{#3}\quad\indicatore{#4}}
+% Limite categorico sull'intera verifica; il registro non incrementa il conteggio.
+\newcounter{numeroevidenze}
+\newcommand{\controllaevidenze}{\stepcounter{numeroevidenze}%
+  \ifnum\value{numeroevidenze}>40\relax
+    \PackageError{correttore}{Superato il limite categorico di 40 evidenze}{Accorpare le evidenze prima di generare il correttore.}%
+  \fi}
+% Metadati mantenuti nel sorgente; nel corpo il titolo viene emesso solo dal box.
+\newcommand{\idevidenza}{}
+\newcommand{\evidenza}[5]{\controllaevidenze\def\idevidenza{#1}\needspace{8\baselineskip}}
+% Registro raggruppato: esercizio, argomento comune, righe ID/nome/punto/indicatore/massimo.
+\newcommand{\registrogruppo}[3]{\needspace{6\baselineskip}\par\smallskip{\small
+  \textbf{Esercizio #1}\enspace #2\par
+  \begin{tabularx}{\linewidth}{@{}lXllr@{}}\toprule
+  ID & Evidenza & Punto & Ind. & Max\\\midrule
+  #3\bottomrule\end{tabularx}\par}}
+\newcommand{\inizioesercizi}{\clearpage}
+\newcommand{\riepiloghi}[2]{\sez{Riepiloghi}
+  \noindent\begin{minipage}[t]{0.58\linewidth}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.39\linewidth}#2\end{minipage}\par}
+
+\newcommand{\livelli}[5]{\begin{description}[leftmargin=2.7cm,style=nextline,font=\small\bfseries]
+\item[Non raggiunto] #1
+\if\relax\detokenize{#2}\relax\else\item[Iniziale] #2\fi
+\item[Base] #3
+\if\relax\detokenize{#4}\relax\else\item[Intermedio] #4\fi
+\item[Avanzato] #5
+\end{description}}
+
+% Intestazioni di colonna colorate
+\newcommand{\hANA}{\cellcolor{anabg}\sigla{ANA}}
+\newcommand{\hSVI}{\cellcolor{svibg}\sigla{SVI}}
+\newcommand{\hARG}{\cellcolor{argbg}\sigla{ARG}}
+\newcommand{\hCOM}{\cellcolor{combg}\sigla{COM}}
+\newcommand{\hIND}{\cellcolor{indbg}\sigla{IND}}
+\newcommand{\hDAT}{\cellcolor{datbg}\sigla{DAT}}
+
+% ---------- macro di struttura ----------
+% Sezione semplice
+\newcommand{\sez}[1]{\needspace{4\baselineskip}\par\vspace{1em}%
+  {\large\bfseries #1}\par\vspace{-0.4em}\rule{\linewidth}{0.6pt}\par\vspace{0.2em}}
+% Esercizio: \esercizio{Titolo}{ANA}{SVI}{ARG}{COM}{TOT}
+\newcommand{\esercizio}[6]{\needspace{8\baselineskip}\par\vspace{1em}%
+  {\large\bfseries #1}\par\vspace{0.25em}}
+% Punto: \punto{a) titolo}
+\newcommand{\punto}[1]{\needspace{6\baselineskip}\par\vspace{0.7em}{\bfseries #1}\par\vspace{0.2em}}
+% Tabella punteggi del punto: \tabpunti{ANA}{SVI}{ARG}{COM}{TOT}  (usare 0 se assente)
+\newcommand{\tabpunti}[5]{\par\noindent\renewcommand{\arraystretch}{1.15}\small
+  \begin{tabular}{*{5}{|>{\centering\arraybackslash}p{1.4cm}}|}\hline
+  \hANA & \hSVI & \hARG & \hCOM & \textbf{Tot}\\\hline
+  #1 & #2 & #3 & #4 & \textbf{#5}\\\hline\end{tabular}\par\smallskip}
+% Griglie d'esame: \tabpuntiesame{ANA}{IND}{SVI}{ARG}{v1}{v2}{v3}{v4}{TOT} (sigle nell'ordine dei valori)
+\newcommand{\tabpuntiesame}[9]{\par\noindent\renewcommand{\arraystretch}{1.15}\small
+  \begin{tabular}{*{5}{|>{\centering\arraybackslash}p{1.4cm}}|}\hline
+  \csname h#1\endcsname & \csname h#2\endcsname & \csname h#3\endcsname & \csname h#4\endcsname & \textbf{Tot}\\\hline
+  #5 & #6 & #7 & #8 & \textbf{#9}\\\hline\end{tabular}\par\smallskip}
+% Nota (alternative, errori trascinati, criteri)
+\newcommand{\nota}[1]{\begin{itemize}[font=\footnotesize]\item {\footnotesize #1}\end{itemize}}
+\newcommand{\criteri}[1]{\par\nopagebreak[3]\smallskip\needspace{3\baselineskip}%
+  {\footnotesize\textbf{Alternative, errori e criteri}\par
+  \begin{itemize}[itemsep=1pt,topsep=1pt]#1\end{itemize}}}
+
+% ---------- intestazione e piè di pagina ----------
+\newcommand{\materia}{}
+\newcommand{\classe}{}
+\newcommand{\argomenti}{}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.3pt}
+\lhead{\small\textsc{Correttore\ \materia}}
+\rhead{}
+\cfoot{\small Pag.\ \thepage\ di \pageref{LastPage}}
+
+\renewcommand{\materia}{Fisica}
+\renewcommand{\classe}{Classe terza, liceo scientifico \textperiodcentered\ Urti e quantità di moto}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Correttore\ \materia}\\[3pt]
+\classe
+\end{center}
+
+\legenda
+\sez{Registro delle evidenze}
+\registrogruppo{1}{URT}{
+E01 & Riconosce la conservazione della quantità di moto & intero & \sigla{ANA} & 40\\
+E02 & Ricava e calcola la velocità finale & intero & \sigla{SVI} & 100\\
+E03 & Calcola l'energia cinetica dissipata & intero & \sigla{SVI} & 80\\
+E04 & Scrive formule, risultati e unità & intero & \sigla{COM} & 40\\}
+\registrogruppo{2}{URT}{
+E05 & Sceglie quantità di moto ed energia cinetica & intero & \sigla{ANA} & 50\\
+E06 & Ricava le velocità finali & intero & \sigla{SVI} & 120\\
+E07 & Commenta il segno e verifica l'energia cinetica & intero & \sigla{ARG} & 60\\}
+\registrogruppo{3}{URT, ENE (indicati per evidenza)}{
+E08 & Separa urto e risalita, ENE & intero & \sigla{ANA} & 70\\
+E09 & Velocità del sistema dopo l'urto, ENE & intero & \sigla{SVI} & 110\\
+E10 & Velocità del proiettile, URT & intero & \sigla{SVI} & 110\\
+E11 & Spiega la non conservazione dell'energia, ENE & intero & \sigla{ARG} & 70\\
+E12 & Organizza il percorso con unità, ENE & intero & \sigla{COM} & 80\\}
+\registrogruppo{Intero elaborato}{TRASVERSALE, Competenze trasversali}{
+E13 & Notazione, unità e cifre significative & Intero elaborato & \sigla{COM} & 70\\}
+
+\riepiloghi{%
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+ & \hANA & \hSVI & \hARG & \hCOM & Tot\\\midrule
+Esercizio 1 & 40 & 180 & 0 & 40 & 260\\
+Esercizio 2 & 50 & 120 & 60 & 0 & 230\\
+Esercizio 3 & 70 & 220 & 70 & 80 & 440\\
+Intero elaborato & 0 & 0 & 0 & 70 & 70\\\midrule
+Totale & 160 & 520 & 130 & 190 & 1000\\\bottomrule
+\end{tabular}}{%
+\begin{tabular}{@{}lr@{}}\toprule
+Argomento & Max\\\midrule
+URT, Urti e quantità di moto & 600\\
+ENE, Energia meccanica & 330\\
+Trasversale & 70\\\midrule
+Totale & 1000\\\bottomrule
+\end{tabular}}
+
+\inizioesercizi
+\esercizio{Esercizio 1 -- Urto completamente anelastico}{}{}{}{}{}
+\begin{enun}
+Carrello $m_1=\SI{0.50}{kg}$ a $v_1=\SI{4.0}{m/s}$ contro $m_2=\SI{1.5}{kg}$ fermo; restano agganciati. Velocità finale ed energia dissipata.
+\end{enun}
+\evidenza{E01}{1}{ANA}{URT}{40}
+\begin{boxana}[Riconosce la conservazione della quantità di moto]
+\begin{enumerate}
+\item Non agiscono forze esterne orizzontali sul sistema dei due carrelli: la quantità di moto totale si conserva.
+\item L'energia cinetica non si conserva, perché l'urto è completamente anelastico.
+\end{enumerate}
+\livelli{Non individua la legge di conservazione adatta.}{}{Sceglie la conservazione della quantità di moto con la condizione sul sistema isolato.}{}{Aggiunge che l'energia cinetica non si conserva.}
+\end{boxana}
+\evidenza{E02}{1}{SVI}{URT}{100}
+\begin{boxsvi}[Ricava e calcola la velocità finale]
+\begin{enumerate}
+\item $m_1v_1=(m_1+m_2)\,V$, da cui $V=\dfrac{m_1v_1}{m_1+m_2}$.
+\item $V=\dfrac{\SI{0.50}{kg}\cdot\SI{4.0}{m/s}}{\SI{2.0}{kg}}=\SI{1.0}{m/s}$.
+\end{enumerate}
+\livelli{Non ricava la velocità finale.}{}{Ricava $V$ in lettere e sostituisce i dati, con eventuali imprecisioni.}{}{Ricava $V$ in lettere e la calcola con unità e verso corretti.}
+\criteri{\item Ammessa la sostituzione diretta della formula del corpo unico purché derivata dalla conservazione.}
+\end{boxsvi}
+\evidenza{E03}{1}{SVI}{URT}{80}
+\begin{boxsvi}[Calcola l'energia cinetica dissipata]
+\begin{enumerate}
+\item $K_i=\tfrac12 m_1v_1^2=\SI{4.0}{J}$.
+\item $K_f=\tfrac12(m_1+m_2)V^2=\SI{1.0}{J}$.
+\item $|\Delta K|=K_i-K_f=\SI{3.0}{J}$, il $75\%$ dell'energia iniziale.
+\end{enumerate}
+\livelli{Non calcola l'energia dissipata.}{}{Calcola $K_i$ e $K_f$ ma sbaglia la differenza o l'unità.}{}{Calcola $|\Delta K|=\SI{3.0}{J}$ con unità.}
+\end{boxsvi}
+\evidenza{E04}{1}{COM}{URT}{40}
+\begin{boxcom}[Scrive formule, risultati e unità]
+\begin{enumerate}
+\item Le formule sono scritte in lettere prima della sostituzione dei dati.
+\item Ogni risultato ha l'unità di misura al termine dell'espressione.
+\end{enumerate}
+\livelli{Formule e unità mancano.}{}{Usa formule e unità con qualche omissione.}{}{Formule in lettere e unità sempre corrette.}
+\end{boxcom}
+
+\esercizio{Esercizio 2 -- Urto elastico}{}{}{}{}{}
+\begin{enun}
+Blocco $m_1=\SI{2.0}{kg}$ a $v_1=\SI{4.0}{m/s}$ contro $m_2=\SI{3.0}{kg}$ fermo, urto elastico: velocità finali, segno e verifica dell'energia cinetica.
+\end{enun}
+\evidenza{E05}{2}{ANA}{URT}{50}
+\begin{boxana}[Sceglie quantità di moto ed energia cinetica]
+\begin{enumerate}
+\item Nell'urto elastico si conservano la quantità di moto e l'energia cinetica totale.
+\item Il sistema è: $m_1v_1=m_1u_1+m_2u_2$ e $\tfrac12m_1v_1^2=\tfrac12m_1u_1^2+\tfrac12m_2u_2^2$.
+\end{enumerate}
+\livelli{Sceglie una sola conservazione o nessuna.}{}{Scrive entrambe le leggi, con qualche imprecisione.}{}{Scrive correttamente il sistema delle due leggi.}
+\end{boxana}
+\evidenza{E06}{2}{SVI}{URT}{120}
+\begin{boxsvi}[Ricava le velocità finali]
+\begin{enumerate}
+\item Dal sistema: $u_1=\dfrac{m_1-m_2}{m_1+m_2}\,v_1$ e $u_2=\dfrac{2m_1}{m_1+m_2}\,v_1$.
+\item $u_1=\dfrac{\SI{2.0}{kg}-\SI{3.0}{kg}}{\SI{5.0}{kg}}\cdot\SI{4.0}{m/s}=\SI{-0.80}{m/s}$.
+\item $u_2=\dfrac{2\cdot\SI{2.0}{kg}}{\SI{5.0}{kg}}\cdot\SI{4.0}{m/s}=\SI{3.2}{m/s}$.
+\end{enumerate}
+\livelli{Non ricava le velocità.}{}{Ricava una velocità o commette errori di segno.}{}{Ricava entrambe le velocità in lettere e con unità.}
+\criteri{\item Ammessa la risoluzione del sistema per sostituzione o con la velocità relativa $u_2-u_1=v_1$.}
+\end{boxsvi}
+\evidenza{E07}{2}{ARG}{URT}{60}
+\begin{boxarg}[Commenta il segno e verifica l'energia cinetica]
+\begin{enumerate}
+\item $u_1<0$: il blocco più leggero rimbalza e torna indietro.
+\item $K_i=\SI{16}{J}$ e $K_f=\SI{0.64}{J}+\SI{15.36}{J}=\SI{16}{J}$: l'energia cinetica si conserva.
+\end{enumerate}
+\livelli{Nessun commento o verifica.}{}{Commenta il segno oppure verifica $K$, non entrambi.}{}{Commenta il segno e verifica la conservazione di $K$ con i valori.}
+\end{boxarg}
+
+\esercizio{Esercizio 3 -- Pendolo balistico}{}{}{}{}{}
+\begin{enun}
+Proiettile $m=\SI{20}{g}$ in un blocco $M=\SI{1.98}{kg}$; il sistema sale di $\SI{10.0}{cm}$. Velocità del proiettile e perché l'energia meccanica non si conserva nell'urto. Costante concessa: accelerazione di gravità $\SI{9.81}{m/s^2}$ (non valutata).
+\end{enun}
+\evidenza{E08}{3}{ANA}{ENE}{70}
+\begin{boxana}[Separa urto e risalita]
+\begin{enumerate}
+\item L'urto è brevissimo e completamente anelastico: si conserva la quantità di moto.
+\item Dopo l'urto agisce solo la gravità: si conserva l'energia meccanica del sistema.
+\end{enumerate}
+\livelli{Applica una sola legge a tutto il fenomeno.}{}{Distingue le due fasi con qualche confusione.}{}{Distingue le due fasi e assegna a ciascuna la legge corretta.}
+\end{boxana}
+\evidenza{E09}{3}{SVI}{ENE}{110}
+\begin{boxsvi}[Ricava la velocità subito dopo l'urto]
+\begin{enumerate}
+\item $\tfrac12(m+M)V^2=(m+M)\,g\,h$, da cui $V=\sqrt{2gh}$.
+\item $V=\sqrt{2\cdot\SI{9.81}{m/s^2}\cdot\SI{0.100}{m}}=\SI{1.40}{m/s}$.
+\end{enumerate}
+\livelli{Non determina $V$.}{}{Imposta l'energia ma sbaglia la massa o il calcolo.}{}{Ricava $V$ in lettere e la calcola con unità.}
+\end{boxsvi}
+\evidenza{E10}{3}{SVI}{URT}{110}
+\begin{boxsvi}[Ricava la velocità del proiettile]
+\begin{enumerate}
+\item $mv=(m+M)\,V$, da cui $v=\dfrac{m+M}{m}\,V$.
+\item $v=\dfrac{\SI{2.00}{kg}}{\SI{0.020}{kg}}\cdot\SI{1.40}{m/s}\approx\SI{1.4e2}{m/s}$.
+\end{enumerate}
+\livelli{Non ricava $v$.}{}{Ricava $v$ con errori di unità, di massa o di arrotondamento.}{}{Ricava $v$ in lettere e la calcola con unità e cifre significative corrette.}
+\criteri{\item Un errore su $V$ è già penalizzato in E09: qui il seguito coerente vale il massimo.}
+\end{boxsvi}
+\evidenza{E11}{3}{ARG}{ENE}{70}
+\begin{boxarg}[Spiega la non conservazione dell'energia]
+\begin{enumerate}
+\item Durante l'urto agiscono forze interne dissipative: parte dell'energia cinetica diventa energia interna.
+\item Per questo l'energia meccanica si conserva solo dopo l'urto, non prima.
+\end{enumerate}
+\livelli{Nessuna spiegazione o spiegazione errata.}{}{Dice che l'urto è anelastico senza spiegare dove va l'energia.}{}{Spiega la dissipazione e distingue prima e dopo l'urto.}
+\end{boxarg}
+\evidenza{E12}{3}{COM}{ENE}{80}
+\begin{boxcom}[Organizza il percorso con unità]
+\begin{enumerate}
+\item Le due fasi sono separate e le formule sono scritte in lettere prima di sostituire.
+\item Le unità compaiono nei risultati intermedi e finali.
+\end{enumerate}
+\livelli{Percorso non leggibile.}{}{Percorso leggibile con unità mancanti.}{}{Percorso ordinato in due fasi, con formule in lettere e unità.}
+\end{boxcom}
+
+\esercizio{Intero elaborato}{}{}{}{}{}
+\evidenza{E13}{Intero elaborato}{COM}{TRASVERSALE}{70}
+\begin{boxcom}[Usa notazione, unità e cifre significative]
+\begin{enumerate}
+\item I simboli distinguono velocità prima e dopo l'urto, con pedici chiari.
+\item Le cifre significative dei risultati sono coerenti con i dati.
+\end{enumerate}
+\livelli{Notazione confusa.}{}{Notazione corretta con cifre significative non sempre scelte.}{}{Notazione e cifre significative sempre corrette.}
+\criteri{\item Lo stesso errore ripetuto vale una volta sola.}
+\end{boxcom}
+\end{document}

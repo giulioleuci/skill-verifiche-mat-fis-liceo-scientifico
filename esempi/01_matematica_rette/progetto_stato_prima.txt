@@ -1,0 +1,26 @@
+{
+  "A": {
+    "standard": null,
+    "durata_minuti": 100,
+    "font": "Palatino",
+    "fase": "correttore approvato",
+    "scaletta": "approvato",
+    "registro": "da revisionare"
+  },
+  "B": {
+    "standard": "A",
+    "durata_minuti": 100,
+    "font": "Palatino",
+    "fase": "correttore approvato",
+    "scaletta": "approvato",
+    "registro": "da riallineare"
+  },
+  "R": {
+    "standard": "A",
+    "durata_minuti": 85,
+    "font": "Palatino",
+    "fase": "registro approvato",
+    "scaletta": "approvato",
+    "registro": "da riallineare"
+  }
+}
